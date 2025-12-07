@@ -7,8 +7,8 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="revisit-after" content="7 day">
     <meta name="language" content="en">
-    <meta name="author" content="usama s- ctool">
-    <meta name="publisher" content="usama s - ctool">
+    <meta name="author" content="usama - livegrade">
+    <meta name="publisher" content="usama - livegrade">
     <meta name="googlebot" content="translate">
     <meta name="rating" content="general">
     <meta name="format-detection" content="telephone=no">
@@ -27,7 +27,7 @@
         content="Use the LSAC GPA Calculator to estimate your admission eligibility and convert your grades according to the official law school conversion scale.">
 
     <meta name="keywords"
-        content="LSAC GPA calculator, calculate LSAC GPA, how does LSAC calculate GPA, how to calculate LSAC GPA, convert grade for law school, admission predictor, estimate law school score">
+        content="LSAC GPA calculator, calculate LSAC GPA, law school admission council (“lsac”), lsac gpa converter, lsat gpa calculator, how does LSAC calculate GPA, how to calculate LSAC GPA, convert grade for law school, admission predictor, estimate law school score">
 
     <style>
         .tool {
@@ -98,12 +98,12 @@
         }
 
         .tool-result>p {
-            width: min(250px, 100%);
+            width: min(190px, 100%);
         }
     </style>
 
 
-
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -112,7 +112,7 @@
 
         gtag('config', 'G-YSXB5G97K8');
     </script>
-
+    
 </head>
 <body>
     <header>
@@ -133,12 +133,11 @@
     <main>
         <section class="clm" style="align-items: center; text-align: center; width: min(750px, 100%);">
             <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" width="110">
-            <h1>Law School Admission Council GPA Calculator</h1>
+            <h1>Law School Admission Council (LSAC) GPA Calculator</h1>
             <!-- <p class="wraper">
                 <a href="#" class="clr">How It's Work</a> | <a href="#" class="clr">How To Use</a>
             </p> -->
-            <p>Use the LSAC GPA calculator to convert your grades and estimate your grade point average. Plus, find out
-                if you're eligible for law school. <a href="#gpatool" class="clr">Try Now!</a></p>
+            <p>To convert your grade for law school, use the LSAC GPA Calculator. This tool works on the official LSAC scale so you can estimate your admission eligibility. Let's select the grade and credit hour and get the result instantly. <a href="#gpatool" class="clr">Try Now!</a></p>
 
         </section>
 
@@ -150,20 +149,19 @@
             <div class="tool-input-section clm" id="input_container">
                 <div class="inputs-row">
                     <div class="input clm">
-                        <label for="name">Subject Name: </label>
-                        <input type="text" placeholder="e.g. Math" title="Subject (Optional)" id="name"
+                        <label for="name">Course Name: </label>
+                        <input type="text" placeholder="e.g. Criminal Justice" title="Course (Optional)" id="name"
                             onkeyup="calculate()">
-                    </div>
-
-                    <div class="input clm">
-                        <label for="letter">Grade Letter: </label>
-                        <select name="gradeLetters" id="letter" title="Select your Grade" onchange="calculate()">
-                        </select>
                     </div>
                     <div class="input clm">
                         <label for="hour">Credit Hours: </label>
                         <input type="number" placeholder="e.g. 5" title="Put Credit Hours Here" id="hour"
                             onkeyup="calculate()">
+                    </div>
+                    <div class="input clm">
+                        <label for="letter">Grade Letter: </label>
+                        <select name="gradeLetters" id="letter" title="Select your Grade" onchange="calculate()">
+                        </select>
                     </div>
                     <img src="/src/remove-button-icon.svg" alt="remove icon" title="Click to Delete" width="35"
                         height="35" class="hover" onclick="remove(this)">
@@ -258,7 +256,7 @@
                 let option = document.createElement("option");
                 option.value = grade_scale[i].point;
                 option.innerText = grade_scale[i].letter;
-                selector.children[1].children[1].appendChild(option)
+                selector.children[2].children[1].appendChild(option)
             }
         }
         fetchOptions()
@@ -267,20 +265,22 @@
             let row = document.createElement("div")
             row.className = "inputs-row";
             row.innerHTML = `<div class="input clm">
-                        <label for="name">Subject Name: </label>
-                        <input type="text" placeholder="e.g. Math" title="Subject (Optional)" id="name" onkeyup="calculate()">
+                        <label for="name">Course Name: </label>
+                        <input type="text" placeholder="e.g. Criminal Justice" title="Course (Optional)" id="name"
+                            onkeyup="calculate()">
                     </div>
-                    
+                    <div class="input clm">
+                        <label for="hour">Credit Hours: </label>
+                        <input type="number" placeholder="e.g. 5" title="Put Credit Hours Here" id="hour"
+                            onkeyup="calculate()">
+                    </div>
                     <div class="input clm">
                         <label for="letter">Grade Letter: </label>
                         <select name="gradeLetters" id="letter" title="Select your Grade" onchange="calculate()">
                         </select>
                     </div>
-                    <div class="input clm">
-                        <label for="hour">Credit Hours: </label>
-                        <input type="number" placeholder="e.g. 5" title="Put Credit Hours Here" id="hour" onkeyup="calculate()">
-                    </div>
-                    <img src="/src/remove-button-icon.svg" alt="remove icon" title="Click to Delete" width="35" height="35" class="hover" onclick="remove(this)">`
+                    <img src="/src/remove-button-icon.svg" alt="remove icon" title="Click to Delete" width="35"
+                        height="35" class="hover" onclick="remove(this)">`
             container.appendChild(row);
             fetchOptions();
         }
