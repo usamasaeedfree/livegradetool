@@ -53,46 +53,49 @@
     <meta name="twitter:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp">
 
 
-    <style>
+    <style>     
         .tool {
-            width: min(950px, 100%);
-            padding: 20px;
-            border-radius: 2px;
+            margin-top: 16px;
             border: 1px solid gainsboro;
-            gap: 20px;
+            border-radius: 8px;
         }
 
         .tool_top {
             display: flex;
-            align-items: center;
             justify-content: flex-end;
+            align-items: flex-end;
+            border-bottom: 1px solid gainsboro;
+            padding: 12px;
         }
 
         .tool_top>button {
-            padding: 8px 16px;
-            color: white;
-            background-color: orangered;
-            font-size: 16px;
-            border-radius: 2px;
+            background-color: #f5f5f5;
+            padding: 12px;
+            color: orangered;
+            font-weight: 600;
+            border-radius: 4px;
         }
 
         .tool_input {
-            margin: 20px 0px;
-            gap: 24px;
+            margin-top: 20px;
+            padding: 20px;
         }
 
         .input_row {
-            background-color: rgb(245, 245, 245);
+            display: flex;
+            background-color: #f5f5f5a4;
             padding: 20px;
             border: 2px;
             gap: 8px;
             align-items: flex-end;
+            flex-wrap: wrap;
         }
 
         .input_row>img {
             background-color: orangered;
             padding: 4px;
             border-radius: 2px;
+            width: 35px;
         }
 
         .input {
@@ -110,26 +113,37 @@
             background-color: #fff;
             font-size: 16px;
         }
-
-        .tool_result {
-            width: min(300px, 100%);
-            align-self: center;
+        .result {
+            margin-top: 20px;
+            border-top: 1px solid gainsboro;
+            padding: 20px;
             display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
         }
-
-        .tool_result>p {
-            gap: 48px;
+        .gpaPoint{
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f5f5f5a4;
+            align-items: center;
         }
-
-        .tool_result>strong {
-            font-size: 48px;
+        .gpaPoint>h2{
+            font-size: 50px;
+        }
+        .moreInfo>p{
+            display: flex;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+        .moreInfo>p>:first-child{
+            align-items: flex-end;
+            width: 180px;
         }
     </style>
 
-
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -243,8 +257,7 @@
     </script>
 
 
-
-
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -252,78 +265,73 @@
         gtag('js', new Date());
         gtag('config', 'G-YSXB5G97K8');
     </script>
-
+    -->
 </head>
-<body>
 
+<body>
     <header>
-        <div class="header">
-            <a href="/" class="logo"><img src="/src/header-logo.png" alt="Live Grade Logo" width="32"
-                    height="30">Live Grade</a>
-            <!-- <nav class="effect" id="navLinks" role="navigation">
+        <div class="header" role="banner">
+            <a href="/" class="logo"><img src="/src/header-logo.png" alt="Live Grade Logo" width="32" height="30">Live
+                Grade</a>
+            <nav id="navLinks" class="effect">
                 <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()">
                 <a href="/">Home</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </nav>
-            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"> -->
+            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()">
         </div>
     </header>
 
-
     <main>
+        <section class="clm">
+            <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" width="90" height="97" style="align-self: center; width: 100px;">
+            <h1 style="text-align: center;">LSAC GPA Calculator & Grade Converter</h1>
+            <p style="text-align: center;">Convert your grade and calculate GPA using the official LSAC 4.0 grade scale. This LSAC GPA Calculator
+                helps you estimate your CAS GPA accurately. Calculate CAS GPA with the U.S. law school grade conversion
+                method.</p>
 
-        <section class="clm" style="text-align: center; align-items: center; width: min(750px, 100%);">
-            <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" width="90" height="97">
-            <h1 style="margin-top: 28px;">LSAC GPA Calculator & Grade Converter</h1>
-            <!-- <p class="wraper">
-                <a href="#" class="clr">How It's Work</a> | <a href="#" class="clr">How To Use</a>
-            </p> -->
-            <p>Convert your grade and calculate GPA using the official LSAC 4.0 grade scale. <a
-                    href="#gpatool" class="clr"> This LSAC GPA Calculator </a> helps you estimate your CAS GPA accurately. Calculate CAS GPA with the U.S. law school grade conversion method.</p>
-            
-        </section>
-
-
-
-        <div class="tool clm" id="gpatool">
-            <div class="tool_top">
-                <button class="hover" onclick="add()" title="Click to add subject">+ Add Subject</button>
-            </div>
-            <hr>
-
-            <div class="tool_input clm" id="input_container">
-
-                <div class="input_row wrap">
-                    <div class="input clm">
-                        <label for="name">Course Name: </label>
-                        <input type="text" placeholder="e.g. Criminal Justice" title="Course (Optional)" id="name"
-                            onkeyup="calculate()">
-                    </div>
-                    <div class="input clm">
-                        <label for="hour">Credit Hours: </label>
-                        <input type="number" placeholder="e.g. 5" title="Put Credit Hours Here" id="hour"
-                            onkeyup="calculate()">
-                    </div>
-                    <div class="input clm">
-                        <label for="letter">Grade Letter: </label>
-                        <select name="gradeLetters" id="letter" title="Select your Grade" onchange="calculate()">
-                        </select>
-                    </div>
-                    <img src="/src/remove-button-icon.svg" alt="remove icon" title="Click to Delete" width="35"
-                        height="35" class="hover" onclick="remove(this)">
+            <form class="tool">
+                <div class="tool_top">
+                    <button type="button" class="hover" onclick="add()" title="Click to add subject">+ Add Subject</button>
                 </div>
 
-            </div>
+                <div class="tool_input clm" id="input_container">
+                    <div class="input_row wrap">
+                        <div class="input clm">
+                            <label for="name">Course Name: </label>
+                            <input type="text" autocomplete="name" placeholder="e.g. Criminal Justice" title="Course (Optional)" id="name"
+                                onkeyup="calculate()">
+                        </div>
+                        <div class="input clm">
+                            <label for="hour">Credit Hours: </label>
+                            <input type="number" placeholder="e.g. 5" title="Put Credit Hours Here" id="hour"
+                                onkeyup="calculate()">
+                        </div>
+                        <div class="input clm">
+                            <label for="letter">Grade Letter: </label>
+                            <select name="gradeLetters" id="letter" title="Select your Grade" onchange="calculate()">
+                            </select>
+                        </div>
+                        <img src="/src/remove-button-icon.svg" alt="remove icon" title="Click to Delete" width="35"
+                            height="35" class="hover" onclick="remove(this)">
+                    </div>
+                </div>
 
-            <hr>
-            <div class="tool_result clm">
-                <strong class="clr" id="point">0.0</strong>
-                <span>Your <b class="clr">Grade Point</b> Average</span>
-                <p class="wrap"><span>Total Hours: </span> <span id="totalHours">0.00</span></p>
-                <b id="remarks">Performance</b>
-            </div>
-        </div>
+                <div class="result" role="status">
+                    <div class="gpaPoint clm">
+                        <h2 id="point" class="clr">0.0</h2>
+                        <span>Your CAS Grade Point Average</span>
+                    </div>
+                    <div class="moreInfo">
+                        <p><span>Total Subjects: </span> <span id="totalCourse">0.0</span></p>
+                        <p><span>Total Credit Hours: </span> <span id="totalHours">0.0</span></p>
+                        <p><span>Total Quality Points: </span> <span id="totalQualityPoints">0.0</span></p>
+                        <p><span>Your Perfromance: </span> <span id="remarks">Great Job!</span></p>
+                    </div>
+                </div>
+            </form>
+        </section>
 
         <hr>
         <section class="clm">
@@ -334,72 +342,28 @@
             </div>
 
 
-            <h2 style="margin-top: 40px;">How Does It Work?</h2>
+            <h2 style="margin-top: 28px;">How Does It Work?</h2>
             <p>Our GPA Calculator accuracy depends on two things: the accuracy of your input and the use of the official Law School Admission Council grading scale methodology. </p>
             <p>Our calculation logic mirrors the process used by LSAC's Credential Assembly Service (CAS), ensuring that it closely aligns with the way law schools evaluate academic records.</p>
             <p>Below is a clear, step-by-step explanation of how our tool calculates your GPA.</p>
 
-            <h3 style="margin-top: 40px;">1. Getting User Data:</h3>
+            <h3 style="margin-top: 28px;">1. Getting User Data:</h3>
             <p>This grade calculator relies on the information you provide, including course grades and credit hours. These inputs form the basis of the grade point calculation and directly impact the final result.</p>
             <p>To ensure accuracy, you must enter grades and credit hours exactly as they appear on your official academic transcripts. Even smaller discrepancies can affect the estimated GPA. So, make sure to put in correct information.</p>
 
-            <h3 style="margin-top: 40px;">2. Converting Your Grades:</h3>
+            <h3 style="margin-top: 28px;">2. Converting Your Grades:</h3>
             <p>After entering, each grade is converted to a standard numerical value, based on the official LSAC Grade Conversion Table. This is the same grading scale used by LSAC when they calculate CAS GPAs.</p>
             <p>This conversion step is important because LSAC grade values can differ from the institutional GPA scale. This step makes our tool accurate. Applying the correct LSAC values ensures consistency with how law schools evaluate applications.</p>
 
-            <h3 style="margin-top: 40px;">3. Applying the GPA Formula:</h3>
+            <h3 style="margin-top: 28px;">3. Applying the GPA Formula:</h3>
             <p>After converting the grades, this tool calculates total quality points by multiplying each grade value by its corresponding credit hours. Then a standard GPA formula is used. which is</p>
 
-            <b style="margin-top: 40px;">GPA = <span style="white-space: nowrap;">&Sigma; (Credit Hours * Letter Grade Value) / Total Credit
+            <b style="margin-top: 28px;">GPA = <span style="white-space: nowrap;">&Sigma; (Credit Hours * Letter Grade Value) / Total Credit
                     Hours</span></b>
 
             <p>This is the same weighted GPA formula used across standardized academic evaluations, including LSAC's CAS GPA calculation.</p>
 
-
-            <!-- <table>
-                <caption>Employee Details: ID, Name, Position, Office, Age, Start Date</caption>
-
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Office</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Start Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Alice Johnson</td>
-                        <td>Software Engineer</td>
-                        <td>New York</td>
-                        <td>30</td>
-                        <td>2020-02-15</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Bob Smith</td>
-                        <td>Product Manager</td>
-                        <td>San Francisco</td>
-                        <td>35</td>
-                        <td>2018-06-22</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Carol Williams</td>
-                        <td>Designer</td>
-                        <td>London</td>
-                        <td>28</td>
-                        <td>2021-10-10</td>
-                    </tr>
-
-                </tbody>
-            </table> -->
         </section>
-
-
         <hr>
         <section class="clm">
             <h2>How to use this LSAC GPA calculator?</h2>
@@ -407,19 +371,19 @@
 
             <p>Most students use this tool to compare their current GPA with law school admission. Follow these steps to ensure reliable results.</p>
 
-            <h3 style="margin-top: 40px;">1. Enter Course Name:</h3>
+            <h3 style="margin-top: 28px;">1. Enter Course Name:</h3>
             <p>Including course names is optional and does not affect your GPA calculation. However, course names can help you organize and verify your entries, especially when submitting a complete academic transcript.</p>
 
-            <h3 style="margin-top: 40px;">2. Put Credit Hours:</h3>
+            <h3 style="margin-top: 28px;">2. Put Credit Hours:</h3>
             <p>Enter the correct credit hours for each course. LSAC calculates GPA as a credit-weighted average, meaning higher-credit courses contribute more heavily to your final CAS GPA, regardless of when the course was taken.</p>
 
             <p>Entering the exact credit hours will give you an accurate result.</p>
 
-            <h3 style="margin-top: 40px;">3. Select your grade:</h3>
+            <h3 style="margin-top: 28px;">3. Select your grade:</h3>
             <p>Select your transcript grade from the options. Thereafter, our tool converts your grade into the numeric value that is given in the law school grading table.</p>
             <p>To get the result, it will automatically apply the GPA standard formula and calculate the average point.</p>
 
-            <h3 style="margin-top: 40px;">Optional Steps:</h3>
+            <h3 style="margin-top: 28px;">Optional Steps:</h3>
             <p>These steps are useful when you are calculating a full transcript. Here are the steps to add or remove any course.</p>
             <ul>
                 <li>Clicking “Add Subject” to include another course</li>
@@ -435,27 +399,25 @@
             <p>The Law School Admission Council (LSAC) does not use your university GPA exactly as it appears on your transcript. Instead, LSAC recalculates your undergraduate GPA through the Credential Assembly Service (CAS) to ensure a fair and consistent evaluation for all applicants.</p>
             <p>Now let's see how LSAC calculates GPA.</p>
 
-            <h3 style="margin-top: 40px;">Transcript Review:</h3>
+            <h3 style="margin-top: 28px;">Transcript Review:</h3>
             <p>LSAC collects transcripts from each undergraduate institution you attended. This includes all courses completed before your first bachelor’s degree. That ensures a complete, accurate record of your academic history. After that, they review them.</p>
 
-            <h3 style="margin-top: 40px;">Grade Standardization:</h3>
+            <h3 style="margin-top: 28px;">Grade Standardization:</h3>
             <p>Since universities use different grading systems, LSAC converts each grade into a numerical value using its official LSAC Grade Conversion Table. This standardizes all grades to a common 4.33 GPA scale, allowing comparison across schools and education systems.</p>
 
-            <h3 style="margin-top: 40px;">Weighted GPA Calculation:</h3>
+            <h3 style="margin-top: 28px;">Weighted GPA Calculation:</h3>
             <p>Each converted grade is multiplied by its corresponding credit hours to calculate quality points. Courses with higher credit hours have a greater impact on your final GPA.</p>
             <p>This weighted approach ensures that your GPA accurately reflects the importance of each course.</p>
 
-            <h3 style="margin-top: 40px;">Final CAS GPA:</h3>
+            <h3 style="margin-top: 28px;">Final CAS GPA:</h3>
             <p>After processing all coursework, LSAC calculates the final CAS GPA by adding all grade points together and dividing the total by the number of credit hours, which is reported to law schools. This standardized GPA is used for:</p>
 
-            <br>
             <ul>
                 <li>Admissions decisions</li>
                 <li>Scholarship evaluations</li>
                 <li>Comparing applicants from different universities and grading systems</li>
             </ul>
 
-            <br>
 
             <p >This standardized method allows law schools to fairly compare applicants from different universities and education systems. Your LSAC GPA may differ from your university GPA due to variations in grading scales and conversion rules. This ensures fairness, transparency, and consistency for all applicants.</p>
 
@@ -467,7 +429,6 @@
             <h2>Features of the CAS GPA Calculator</h2>
             <p>This LSAC GPA Calculator is designed to be accurate, transparent, and easy to use, helping students clearly understand their law school GPA.</p>
 
-            <br>
             <ul>
                 <li>Uses the official LSAC 4.0 GPA grading scale as follows in Credential Assembly Service (CAS) evaluations.</li>
                 <li>Easily add or remove courses to match your full transcript. This flexibility helps you include all undergraduate coursework accurately.</li>
@@ -477,7 +438,7 @@
                 <li>The tool is completely free and fully functional across desktop, tablet, and mobile devices.</li>
                 <li>Designed for clarity, the interface makes it easy to navigate, enter data, and view results.</li>
             </ul>
-            <br>
+
 
             <p>Each feature is focused on accuracy and trust, so you can confidently estimate your LSAC GPA before submitting your law school application.</p>
             <p>Unlike many other GPA tools like 7sage, this calculator focuses solely on LSAC GPA conversion, avoiding unnecessary steps or unrelated grading systems that can confuse.</p>
@@ -488,31 +449,30 @@
             <h2>Use this GPA estimator for:</h2>
             <p>This LSAC GPA estimator helps students at various stages of their law school journey. It completely aligns with how law schools and LSAC evaluate academic records. So you need it for planning, applications, and academic decision-making.</p>
 
-            <h3 style="margin-top: 40px;">Law School Applications (USA & UK):</h3>
+            <h3 style="margin-top: 28px;">Law School Applications (USA & UK):</h3>
             <p>Estimate your LSAC-style GPA before applying to law schools that rely on CAS GPA for admissions decisions. This helps you understand how your academic record will be viewed.</p>
 
-            <h3 style="margin-top: 40px;">Grade Conversion Clarity:</h3>
+            <h3 style="margin-top: 28px;">Grade Conversion Clarity:</h3>
             <p>Understand how your university grades or marks convert into the official LSAC 4.0 GPA scale used by law schools.</p>
 
-            <h3 style="margin-top: 40px;">GPA Comparison:</h3>
+            <h3 style="margin-top: 28px;">GPA Comparison:</h3>
             <p>Compare your institution's grading system with the LSAC to assess your academic standing accurately. Identify strengths and areas for improvement relative to standardized benchmarks.</p>
 
-            <h3 style="margin-top: 40px;">Admissions Competitiveness:</h3>
+            <h3 style="margin-top: 28px;">Admissions Competitiveness:</h3>
             <p>Get a realistic idea of the GPA range typically required to remain competitive for law school admissions. Use this insight to guide your application strategy.</p>
 
-            <h3 style="margin-top: 40px;">Scholarship Evaluation:</h3>
+            <h3 style="margin-top: 28px;">Scholarship Evaluation:</h3>
             <p>Analyze potential eligibility for merit-based law school scholarships that consider LSAC GPA. Understand how small changes in your GPA may affect funding opportunities.</p>
 
-            <h3 style="margin-top: 40px;">Academic Planning:</h3>
+            <h3 style="margin-top: 28px;">Academic Planning:</h3>
             <p>Set clear GPA targets and plan future coursework strategically to strengthen your law school application. The calculator helps you prioritize high-impact courses.</p>
 
-            <h3 style="margin-top: 40px;">International Student Guidance:</h3>
+            <h3 style="margin-top: 28px;">International Student Guidance:</h3>
             <p>Reduce confusion for international applicants by clearly explaining how LSAC recalculates grades from different education systems.</p>
 
-            <h3 style="margin-top: 40px;">Transcript Verification:</h3>
+            <h3 style="margin-top: 28px;">Transcript Verification:</h3>
             <p>Resolve transcript-related questions by seeing how multiple courses, grades, and credit hours are combined into a single LSAC GPA. Confirm inputs and match official LSAC methodology.</p>
         </section>
-
 
         <hr>
         <section class="clm">
@@ -533,27 +493,22 @@
 
             <p>This tool is independently developed and is not affiliated with or endorsed by LSAC. All calculations are based on publicly available LSAC documentation.</p>
 
-            <h3 style="margin-top: 40px;">Sources, and Last Updated:</h3>
+            <h3 style="margin-top: 28px;">Sources, and Last Updated:</h3>
             <p>All information and methodology used in this calculator are based on official LSAC Credential Assembly Service (CAS) policies.</p>
 
-            <h3 style="margin-top: 40px;">Last Updated</h3>
+            <h3 style="margin-top: 28px;">Last Updated</h3>
             <span>December 2025</span>
         </section>
 
     </main>
 
-
-
-
-
     <footer>
         <div class="footer clm">
             <a href="/" class="logo"><img src="/src/footer-logo.png" alt="live GPA Logo" title="Grades Calculator Tool"
                     width="32" height="30">Live Grade</a>
-            <p>Convert your grade instantly with the Live Grade online tool, which is reliable, easy to use, and
-                accurate.</p>
+            <p>Convert your grade and calculate your GPA instantly with the Live Grade online tool, which is reliable, easy to use, and accurate.</p>
 
-            <!-- <div class="wrap" style="justify-content: space-between;">
+            <div class="wrap" style="justify-content: space-between;">
                 <div class="site effect wrap">
                     <a href="/">Home</a>
                     <a href="#">About</a>
@@ -569,13 +524,11 @@
                     <a href="#"><img src="/src/linkedin-profile.svg" alt="linkedin icon" width="25">vist my linkind
                         profile</a>
                 </div>
-            </div> -->
+            </div>
         </div>
         <hr>
         <small>&copy; 2025 Live Grade. All Rights Reserved.</small>
     </footer>
-
-
 
     <script>
         function navBar() {
@@ -663,6 +616,8 @@
                 }
             }
 
+            document.getElementById("totalCourse").innerText = hour.length.toFixed(2);
+            document.getElementById("totalQualityPoints").innerText = totalpoints.toFixed(2);
             document.getElementById("point").innerText = (totalpoints / totalhours).toFixed(2);
             document.getElementById("totalHours").innerText = totalhours.toFixed(2);
             document.getElementById("remarks").innerText = getRemarkFromAnyPoint((totalpoints / totalhours).toFixed(2))
