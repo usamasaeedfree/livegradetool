@@ -1,2 +1,22 @@
-User-Agent: *
-Allow: /
+# LiveGrade - LSAC GPA Calculator & Converter
+
+> An accurate, web-based tool designed to help law school applicants estimate their CAS GPA using official LSAC 4.0/4.33 grade conversion methodology.
+
+This site provides a specialized calculator that mirrors the Law School Admission Council (LSAC) Credential Assembly Service (CAS) process, allowing students to convert letter grades and credit hours into a standardized GPA.
+
+## Core Tool
+- [LSAC GPA Calculator](https://livegrade.site/): The primary tool to add subjects, credit hours, and letter grades to calculate an estimated CAS GPA.
+
+## Key Information
+- [How LSAC Calculates GPA](https://livegrade.site/#how-it-works): Detailed explanation of transcript review, grade standardization, and the weighted GPA formula used by LSAC.
+- [Official LSAC Grade Conversion Table](https://livegrade.site/#lsac-gpa-scale): A reference table showing the numerical values assigned to letter grades (e.g., A+ = 4.33, A = 4.0).
+- [LSAC vs. University GPA](https://livegrade.site/#lsac-vs-university): Clarification on why official CAS GPAs often differ from institutional GPAs.
+
+## Resources & FAQ
+- [GPA Targets for Law Schools](https://livegrade.site/#faqs): Benchmarks for T14 schools and regional programs.
+- [Frequently Asked Questions](https://livegrade.site/#faqs): Answers regarding retaken courses, graduate school grades, and community college credits in the LSAC system.
+- [About the Developer](https://livegrade.site/#about): Background on the project and its commitment to accurate academic tools.
+
+## Optional
+- [International Student Guidance](https://livegrade.site/#international): Information on how international transcripts are processed.
+- [Privacy Policy](https://livegrade.site/): No user data is stored; all calculations are performed locally in the browser.
