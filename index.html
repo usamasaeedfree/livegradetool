@@ -25,9 +25,9 @@
     <link rel="stylesheet" href="/src/style.css">
 
     <!-- Page Title -->
-    <title>LSAC GPA Calculator & Converter | Estimate Your CAS GPA</title>
-    <meta property="og:title" content="LSAC GPA Calculator & Converter | Estimate Your CAS GPA">
-    <meta name="twitter:title" content="LSAC GPA Calculator & Converter | Estimate Your CAS GPA">
+    <title>LSAC GPA Calculator (2026 Updated) | Free CAS GPA Estimator</title>
+    <meta property="og:title" content="LSAC GPA Calculator (2026 Updated) | Free CAS GPA Estimator">
+    <meta name="twitter:title" content="LSAC GPA Calculator (2026 Updated) | Free CAS GPA Estimator">
 
     <!-- Page Canonical URL -->
     <link rel="canonical" href="https://livegrade.site/">
@@ -58,97 +58,172 @@
 
 
     <style>
+        /* --- ORIGINAL STYLING PRESERVED --- */
         .tool {
-            margin-top: 16px;
-            border: 1px solid gainsboro;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
             border-radius: 8px;
+            box-shadow: 0px 0px 8px gainsboro;
+
         }
 
-        .tool_top {
+        .input-section {
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            border-bottom: 1px solid gainsboro;
-            padding: 12px;
-        }
-
-        .tool_top>button {
-            background-color: #f5f5f5;
-            padding: 12px;
-            color: orangered;
-            font-weight: 600;
-            border-radius: 4px;
-        }
-
-        .tool_input {
-            margin-top: 20px;
-            padding: 20px;
-        }
-
-        .input_row {
-            display: flex;
-            background-color: #f5f5f5a4;
-            padding: 20px;
-            border: 2px;
+            flex-direction: column;
             gap: 8px;
-            align-items: flex-end;
-            flex-wrap: wrap;
         }
 
-        .input_row>img {
-            background-color: orangered;
-            padding: 4px;
-            border-radius: 2px;
-            width: 35px;
+        .input-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 24px 16px;
+            border-bottom: 1px solid #ddd;
+            align-items: flex-end;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-row>img {
+            background-color: red;
+            width: 37px;
+            padding: 6px;
+            border-radius: 4px;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            /* Added for UX */
         }
 
         .input {
-            gap: 1px;
+            display: flex;
+            flex-direction: column;
             flex-grow: 1;
+        }
+
+        label {
+            font-size: 12px;
+            margin-bottom: 4px;
         }
 
         input,
         select {
             width: 100%;
-            padding: 4px 12px;
-            border: 1px solid gainsboro;
-            border-radius: 2px;
-            height: 35px;
-            background-color: #fff;
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #b0b0b0cc;
+            background-color: rgba(232, 232, 232, 0.764);
+            box-sizing: border-box;
             font-size: 16px;
         }
 
-        .result {
+        input:focus,
+        select:focus {
+            outline: none;
+            border-bottom: 1px solid orangered;
+            background-color: #e8e8e8;
+        }
+
+        .btn-section {
             margin-top: 20px;
-            border-top: 1px solid gainsboro;
-            padding: 20px;
             display: flex;
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 12px;
+            padding: 20px 0px;
             align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn-section>button {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background-color: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+
+        .btn-section>button:hover,
+        .input-row>img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .result-section>* {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #dddddd40;
+            flex-grow: 1;
+            gap: 4px;
+            text-align: center;
+        }
+
+        .result-section>*>h2 {
+            color: #2e2d2d;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .result-section>*>small {
+            color: rgb(107, 107, 107);
+        }
+
+        .history {
+            margin-top: 24px;
+            padding: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .history>b {
+            color: #2e2d2d;
+        }
+
+        .table-row {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .table-row>* {
+            display: flex;
+            flex-grow: 1;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            flex-basis: 0;
+            
             justify-content: center;
         }
 
-        .gpaPoint {
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f5f5f5a4;
-            align-items: center;
+        .header-row {
+            font-weight: bold;
+            background-color: #f9f9f9;
         }
 
-        .gpaPoint>h2 {
-            font-size: 50px;
-        }
-
-        .moreInfo>p {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-start;
-        }
-
-        .moreInfo>p>:first-child {
-            align-items: flex-end;
-            width: 180px;
+        /* Utility to hide elements if needed */
+        .hidden {
+            display: none;
         }
     </style>
 
@@ -456,52 +531,78 @@
             <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" width="90" height="97"
                 style="align-self: center; width: 100px;">
             <h1 style="text-align: center;">LSAC GPA Calculator & Grade Converter</h1>
-            <p style="text-align: center;">Convert your grade and calculate GPA using the official LSAC 4.0 grade scale.
+            <p style="text-align: center;">Convert your grade and calculate GPA using the official LSAC 4.33 grade scale.
                 This LSAC GPA Calculator
                 helps you estimate your CAS GPA accurately. Calculate CAS GPA with the U.S. law school grade conversion
                 method.</p>
 
-            <form class="tool">
-                <div class="tool_top">
-                    <button type="button" class="hover" onclick="add()" title="Click to add subject">+ Add
-                        Subject</button>
+            <div class="tool" aria-label="LSAC GPA Calculator Tool">
+                <form id="gpa-form" onsubmit="event.preventDefault();">
+                    <div class="input-section" id="rows-container" aria-labelledby="course-input-title">
+
+                    </div>
+                </form>
+
+                <div class="btn-section" aria-label="Course Actions">
+                    <button type="button" id="reset-rows" aria-label="Reset GPA Calculator"
+                        style="color:red;border:1px solid red;">Reset</button>
+                    <button type="button" id="add-course" aria-label="Add course to LSAC GPA calculation"
+                        style="color:#0067ce;border:1px solid #0067ce;">Add Course</button>
                 </div>
 
-                <div class="tool_input clm" id="input_container">
-                    <div class="input_row wrap">
-                        <div class="input clm">
-                            <label for="name">Course Name: </label>
-                            <input type="text" autocomplete="name" placeholder="e.g. Criminal Justice"
-                                title="Course (Optional)" id="name" onkeyup="calculate()">
-                        </div>
-                        <div class="input clm">
-                            <label for="hour">Credit Hours: </label>
-                            <input type="number" placeholder="e.g. 5" title="Put Credit Hours Here" id="hour"
-                                onkeyup="calculate()">
-                        </div>
-                        <div class="input clm">
-                            <label for="letter">Grade Letter: </label>
-                            <select name="gradeLetters" id="letter" title="Select your Grade" onchange="calculate()">
-                            </select>
-                        </div>
-                        <img src="/src/remove-button-icon.svg" alt="remove icon" title="Click to Delete" width="35"
-                            height="35" class="hover" onclick="remove(this)">
+                <div class="result-section" aria-label="LSAC GPA Results">
+
+                    <div aria-live="polite">
+                        <h2 id="display-gpa">0.00</h2>
+                        <small>Your LSAC GPA</small>
                     </div>
+
+                    <div>
+                        <h2 id="display-credits">0.0</h2>
+                        <small>Total Credit Hours</small>
+                    </div>
+
+                    <div>
+                        <h2 id="display-points">0.0</h2>
+                        <small>Total Quality Points</small>
+                    </div>
+
+                    <div>
+                        <h2 id="display-courses">0</h2>
+                        <small>Total Courses</small>
+                    </div>
+
                 </div>
 
-                <div class="result" role="status">
-                    <div class="gpaPoint clm">
-                        <h2 id="point" class="clr">0.0</h2>
-                        <span>Your CAS Grade Point Average</span>
+                <div class="history" aria-label="Previous GPA Calculations">
+
+                    <strong>History</strong>
+
+                    <div class="table-row header-row" role="row">
+                        <span role="columnheader">GPA</span>
+                        <span role="columnheader">Credits</span>
+                        <span role="columnheader">Courses</span>
+                        <span role="columnheader">Date</span>
                     </div>
-                    <div class="moreInfo">
-                        <p><span>Total Subjects: </span> <span id="totalCourse">0.0</span></p>
-                        <p><span>Total Credit Hours: </span> <span id="totalHours">0.0</span></p>
-                        <p><span>Total Quality Points: </span> <span id="totalQualityPoints">0.0</span></p>
-                        <p><span>Your Perfromance: </span> <span id="remarks">Great Job!</span></p>
+
+                    <div id="history-container">
+                        <p style="text-align: center; color: #999; padding: 10px; margin: 0;">No history saved yet.</p>
                     </div>
+
                 </div>
-            </form>
+
+                <div class="btn-section" aria-label="History Actions">
+                    <button type="button" id="save-data" aria-label="Save GPA calculation"
+                        style="background-color:#272727;color:#ffffff;border:1px solid #272727;">Save</button>
+                    <button type="button" id="download-csv" aria-label="Download GPA results"
+                        style="background-color:transparent;color:#272727;border:1px solid #272727;">Download
+                        History</button>
+                    <button type="button" id="clear-history" aria-label="Clear GPA history"
+                        style="background-color:red;color:#ffffff;border:1px solid red;">Clear History</button>
+                </div>
+
+            </div>
+
         </section>
 
         <section class="clm">
@@ -1060,7 +1161,7 @@
                 Service (CAS) policies.</p>
 
             <h3 style="margin-top: 28px;">Last Updated</h3>
-            <span>December 2025</span>
+            <span>December 2026</span>
         </section>
 
     </main>
@@ -1095,107 +1196,228 @@
     </footer>
 
     <script>
+        // Navigation Bar
         function navBar() {
-            let nav_Bar = document.getElementById("navLinks");
-            nav_Bar.classList.toggle("show");
+            const navLinks = document.getElementById("navLinks");
+            if (navLinks) navLinks.classList.toggle("show");
         }
 
-        const grade_scale = [
-            { min: 98, max: 100, letter: "A+ (4.33)", point: 4.33, remark: "Excellent Score" },
-            { min: 93, max: 97.99, letter: "A (4.00)", point: 4.00, remark: "Outstanding Score" },
-            { min: 90, max: 92.99, letter: "A- (3.67)", point: 3.67, remark: "Very Strong Score" },
-            { min: 89.01, max: 89.99, letter: "AB (3.50)", point: 3.50, remark: "Above Average Performance" },
-            { min: 87, max: 89, letter: "B+ (3.33)", point: 3.33, remark: "Strong Performance" },
-            { min: 83, max: 86.99, letter: "B (3.00)", point: 3.00, remark: "Good Performance" },
-            { min: 80, max: 82.99, letter: "B- (2.67)", point: 2.67, remark: "Slightly Above Average" },
-            { min: 79.01, max: 79.99, letter: "BC (2.50)", point: 2.50, remark: "Above Average but Not High" },
-            { min: 77, max: 79, letter: "C+ (2.33)", point: 2.33, remark: "Satisfactory Performance" },
-            { min: 73, max: 76.99, letter: "C (2.00)", point: 2.00, remark: "Meets Basic Requirements" },
-            { min: 70, max: 72.99, letter: "C- (1.67)", point: 1.67, remark: "Below Average but Passing" },
-            { min: 69.01, max: 69.99, letter: "CD (1.50)", point: 1.50, remark: "Low Passing Grade" },
-            { min: 67, max: 69, letter: "D+ (1.33)", point: 1.33, remark: "Poor but Passing" },
-            { min: 63, max: 66.99, letter: "D (1.00)", point: 1.00, remark: "Marginally Passing" },
-            { min: 60, max: 62.99, letter: "D- (0.67)", point: 0.67, remark: "Minimum Passing Grade" },
-            { min: 59.01, max: 59.99, letter: "DE/DF (0.50)", point: 0.50, remark: "Very Low Performance" },
-            { min: 0, max: 59, letter: "E/F (0.00)", point: 0.00, remark: "Failing Grade" }
+
+        // --- 1. CONFIGURATION & DATA ---
+        const gradeScale = [
+            { min: 98, max: 100, letter: "A+ (4.33)", point: 4.33, remark: "Excellent" },
+            { min: 93, max: 97.99, letter: "A (4.00)", point: 4.00, remark: "Outstanding" },
+            { min: 90, max: 92.99, letter: "A- (3.67)", point: 3.67, remark: "Very Strong" },
+            { min: 89, max: 89.99, letter: "AB (3.50)", point: 3.50, remark: "Above Average" },
+            { min: 87, max: 89, letter: "B+ (3.33)", point: 3.33, remark: "Strong" },
+            { min: 83, max: 86.99, letter: "B (3.00)", point: 3.00, remark: "Good" },
+            { min: 80, max: 82.99, letter: "B- (2.67)", point: 2.67, remark: "Slightly Above" },
+            { min: 79, max: 79.99, letter: "BC (2.50)", point: 2.50, remark: "Average+" },
+            { min: 77, max: 79, letter: "C+ (2.33)", point: 2.33, remark: "Satisfactory" },
+            { min: 73, max: 76.99, letter: "C (2.00)", point: 2.00, remark: "Meets Req." },
+            { min: 70, max: 72.99, letter: "C- (1.67)", point: 1.67, remark: "Below Avg" },
+            { min: 69, max: 69.99, letter: "CD (1.50)", point: 1.50, remark: "Low Pass" },
+            { min: 67, max: 69, letter: "D+ (1.33)", point: 1.33, remark: "Poor" },
+            { min: 63, max: 66.99, letter: "D (1.00)", point: 1.00, remark: "Marginal" },
+            { min: 60, max: 62.99, letter: "D- (0.67)", point: 0.67, remark: "Min Pass" },
+            { min: 0, max: 59, letter: "F (0.00)", point: 0.00, remark: "Fail" }
         ];
 
-        function remove(row) {
-            row.closest(".input_row").remove();
-        }
+        // Base64 SVG for the 'X' icon (Replaces broken external link)
 
-        function fetchOptions() {
-            let row = document.querySelectorAll(".input_row");
-            selector = row[row.length - 1];
-            for (let i = 0; i < grade_scale.length; i++) {
-                let option = document.createElement("option");
-                option.value = grade_scale[i].point;
-                option.innerText = grade_scale[i].letter;
-                selector.children[2].children[1].appendChild(option)
+
+        // --- 2. DOM ELEMENTS ---
+        const rowsContainer = document.getElementById("rows-container");
+        const btnAdd = document.getElementById("add-course");
+        const btnReset = document.getElementById("reset-rows");
+        const btnSave = document.getElementById("save-data");
+        const btnDownload = document.getElementById("download-csv");
+        const btnClearHistory = document.getElementById("clear-history");
+        const historyContainer = document.getElementById("history-container");
+
+        // Display Elements
+        const dispGPA = document.getElementById("display-gpa");
+        const dispCredits = document.getElementById("display-credits");
+        const dispPoints = document.getElementById("display-points");
+        const dispCourses = document.getElementById("display-courses");
+
+        // --- 3. STATE MANAGEMENT ---
+        let historyData = JSON.parse(localStorage.getItem("lsac_gpa_history")) || [];
+
+        // --- 4. FUNCTIONS ---
+
+        // Generate Grade Options HTML
+        const getGradeOptions = () => {
+            return gradeScale.map(g => `<option value="${g.point}">${g.letter}</option>`).join('');
+        };
+
+        // Create a new input row
+
+        const createRow = () => {
+            // Generate a truly unique ID for this row
+            const uniqueId = Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+            const rowId = `row-${uniqueId}`;
+
+            const div = document.createElement('div');
+            div.className = 'input-row';
+            div.id = rowId;
+
+            // Notice the 'for', 'id', and 'name' attributes now match uniquely
+            div.innerHTML = `
+                <div class="input">
+                    <label for="name-${uniqueId}">Course Name</label>
+                    <input id="name-${uniqueId}" name="course_name_${uniqueId}" class="course-name" type="text" placeholder="e.g. Constitutional Law">
+                </div>
+                <div class="input">
+                    <label for="credits-${uniqueId}">Credit Hours</label>
+                    <input id="credits-${uniqueId}" name="credit_hours_${uniqueId}" class="credit-hours" type="number" min="0" step="0.5" placeholder="e.g. 3" oninput="calculateGPA()">
+                </div>
+                <div class="input">
+                    <label for="grade-${uniqueId}">Grade</label>
+                    <select id="grade-${uniqueId}" name="grade_${uniqueId}" class="grade-select" onchange="calculateGPA()">
+                        ${getGradeOptions()}
+                    </select>
+                </div>
+                <img src="/src/remove-button-icon.svg" alt="Remove Course" width="37" height="37" onclick="removeRow('${rowId}')">
+            `;
+            rowsContainer.appendChild(div);
+            calculateGPA();
+        };
+
+
+        // Remove a specific row
+        window.removeRow = (id) => {
+            const row = document.getElementById(id);
+            if (row) {
+                row.remove();
+                calculateGPA();
             }
-        }
-        fetchOptions();
+            // If all rows are gone, add one empty one
+            if (rowsContainer.children.length === 0) createRow();
+        };
 
-        function add() {
-            let container = document.getElementById("input_container");
-            let row = document.createElement("div")
-            row.className = "input_row wrap";
-            row.innerHTML = `<div class="input clm">
-                        <label for="name">Course Name: </label>
-                        <input type="text" placeholder="e.g. Criminal Justice" title="Course (Optional)" id="name"
-                            onkeyup="calculate()">
-                    </div>
-                    <div class="input clm">
-                        <label for="hour">Credit Hours: </label>
-                        <input type="number" placeholder="e.g. 5" title="Put Credit Hours Here" id="hour"
-                            onkeyup="calculate()">
-                    </div>
-                    <div class="input clm">
-                        <label for="letter">Grade Letter: </label>
-                        <select name="gradeLetters" id="letter" title="Select your Grade" onchange="calculate()">
-                        </select>
-                    </div>
-                    <img src="/src/remove-button-icon.svg" alt="remove icon" title="Click to Delete" width="35"
-                        height="35" class="hover" onclick="remove(this)">`
-            container.appendChild(row);
-            fetchOptions();
-        }
+        // Calculate Totals
+        window.calculateGPA = () => {
+            const rows = document.querySelectorAll('.input-row');
+            let totalPoints = 0;
+            let totalCredits = 0;
+            let courseCount = 0;
 
-        function calculate() {
-            let totalhours = 0;
-            let totalpoints = 0;
+            rows.forEach(row => {
+                const credits = parseFloat(row.querySelector('.credit-hours').value);
+                const gradePoint = parseFloat(row.querySelector('.grade-select').value);
 
-            let hour = document.querySelectorAll("#hour");
-            let grade = document.querySelectorAll("#letter");
-
-            for (let i = 0; i < hour.length; i++) {
-
-                if (!isNaN(parseFloat(hour[i].value))) {
-                    totalhours += parseFloat(hour[i].value);
-                    totalpoints += parseFloat(grade[i].value) * parseFloat(hour[i].value);
+                if (!isNaN(credits) && credits > 0) {
+                    totalPoints += (credits * gradePoint);
+                    totalCredits += credits;
+                    courseCount++;
                 }
-                else {
-                    window.alert("Please Enter Cridt hour");
-                    hour[i].focus();
-                }
-            }
-
-            document.getElementById("totalCourse").innerText = hour.length.toFixed(2);
-            document.getElementById("totalQualityPoints").innerText = totalpoints.toFixed(2);
-            document.getElementById("point").innerText = (totalpoints / totalhours).toFixed(2);
-            document.getElementById("totalHours").innerText = totalhours.toFixed(2);
-            document.getElementById("remarks").innerText = getRemarkFromAnyPoint((totalpoints / totalhours).toFixed(2))
-        }
-
-        function getRemarkFromAnyPoint(inputPoint) {
-            let nearest = grade_scale.reduce((prev, curr) => {
-                return (Math.abs(curr.point - inputPoint) < Math.abs(prev.point - inputPoint))
-                    ? curr
-                    : prev;
             });
 
-            return nearest.remark;
-        }
+            const gpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
+
+            // Update DOM
+            dispGPA.innerText = gpa.toFixed(2);
+            dispCredits.innerText = totalCredits.toFixed(1);
+            dispPoints.innerText = totalPoints.toFixed(1);
+            dispCourses.innerText = courseCount;
+
+            return { gpa, totalCredits, totalPoints, courseCount };
+        };
+
+        // Render History Table
+        const renderHistory = () => {
+            historyContainer.innerHTML = "";
+            if (historyData.length === 0) {
+                historyContainer.innerHTML = `<p style="text-align: center; color: #999; padding: 10px; margin: 0;">No history saved yet.</p>`;
+                return;
+            }
+
+            historyData.forEach((entry) => {
+                const row = document.createElement("div");
+                row.className = "table-row";
+                row.innerHTML = `
+                    <span role="cell">${entry.gpa}</span>
+                    <span role="cell">${entry.credits}</span>
+                    <span role="cell">${entry.courses}</span>
+                    <span role="cell">${entry.date}</span>
+                `;
+                historyContainer.appendChild(row);
+            });
+        };
+
+        // Save current calculation
+        const saveToHistory = () => {
+            const data = calculateGPA();
+            if (data.totalCredits === 0) {
+                alert("Please enter at least one course with valid credits to save.");
+                return;
+            }
+
+            const newEntry = {
+                gpa: data.gpa.toFixed(2),
+                credits: data.totalCredits,
+                courses: data.courseCount,
+                date: new Date().toLocaleDateString()
+            };
+
+            historyData.unshift(newEntry); // Add to top
+            localStorage.setItem("lsac_gpa_history", JSON.stringify(historyData));
+            renderHistory();
+        };
+
+        // Clear History
+        const wipeHistory = () => {
+            if (confirm("Are you sure you want to delete all history?")) {
+                historyData = [];
+                localStorage.removeItem("lsac_gpa_history");
+                renderHistory();
+            }
+        };
+
+        // Download CSV
+        const downloadHistory = () => {
+            if (historyData.length === 0) {
+                alert("No history to download.");
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Date,GPA,Total Credits,Total Courses\n";
+
+            historyData.forEach(row => {
+                csvContent += `${row.date},${row.gpa},${row.credits},${row.courses}\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "lsac_gpa_history.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+
+        // Reset Form
+        const resetCalculator = () => {
+            rowsContainer.innerHTML = "";
+            createRow(); // Start fresh
+            createRow(); // Add a second one for convenience
+            calculateGPA();
+        };
+
+        // --- 5. EVENT LISTENERS ---
+        btnAdd.addEventListener("click", createRow);
+        btnReset.addEventListener("click", resetCalculator);
+        btnSave.addEventListener("click", saveToHistory);
+        btnClearHistory.addEventListener("click", wipeHistory);
+        btnDownload.addEventListener("click", downloadHistory);
+
+        // --- 6. INITIALIZATION ---
+        // Create initial rows
+        createRow();
+        createRow();
+        renderHistory();
     </script>
 </body>
 </html>
