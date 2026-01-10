@@ -9,5 +9,13 @@
     <priority>1.00</priority>
   </url>
 
+  <!-- LSAC FAQs PAGE -->
+  <url>
+    <loc>https://livegrade.site/lsac-gpa-faqs.html</loc>
+    <lastmod>2026-01-10T12:31:44+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.80</priority>
+  </url>
+
 
 </urlset>
