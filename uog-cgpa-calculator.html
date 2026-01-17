@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="en">
+    <meta name="rating" content="general">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Usama - LiveGrade">
+    <meta name="publisher" content="Usama - LiveGrade">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LiveGrade">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@LiveGrade">
+    <meta name="twitter:creator" content="@Usama">
+    <link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/src/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/src/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/src/style.css">
+
+    <!-- Page Title -->
+    <title>University of Gujrat (UOG) GPA Calculator (2026)</title>
+    <meta property="og:title" content="University of Gujrat (UOG) GPA Calculator (2026)">
+    <meta name="twitter:title" content="University of Gujrat (UOG) GPA Calculator (2026)">
+
+    <!-- Page Canonical URL -->
+    <link rel="canonical" href="https://livegrade.site/uog-cgpa-calculator.html">
+    <meta property="og:url" content="https://livegrade.site/uog-cgpa-calculator.html">
+
+
+    <!-- Page Description -->
+    <meta name="description"
+        content="Calculate your GPA using the University of Gujrat 4.00 grading scale. Simply enter your grades and credit hours for all subjects or semesters to get accurate results for both GPA and CGPA.">
+
+    <meta property="og:description"
+        content="Calculate your GPA using the University of Gujrat 4.00 grading scale. Simply enter your grades and credit hours for all subjects or semesters to get accurate results for both GPA and CGPA.">
+    <meta name="twitter:description"
+        content="Calculate your GPA using the University of Gujrat 4.00 grading scale. Simply enter your grades and credit hours for all subjects or semesters to get accurate results for both GPA and CGPA.">
+
+
+    <!-- Page Keywords -->
+    <meta name="keywords"
+        content="UOG GPA calculator, University of Gujrat GPA, UOG CGPA calculator, University of Gujrat CGPA, UOG 4.00 grading scale, calculate UOG GPA, UOG semester GPA, UOG transcript calculator, University of Gujrat grades, UOG academic performance">
+
+
+    <!-- Twitter Card Meta Tags 
+    <meta property="og:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp">
+    <meta name="twitter:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp">
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSXB5G97K8');
+    </script>
+    -->
+</head>
+
+<body>
+    <header>
+        <div class="header" role="banner">
+            <a href="/" class="logo"><img src="/src/header-logo.png"
+                    alt="LiveGrade - Professional GPA Calculation Tools" width="32" height="30">Live
+                Grade</a>
+            <!-- <nav id="navLinks" class="effect">
+                <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()">
+                <a href="/">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"> -->
+        </div>
+    </header>
+
+    <main>
+        <section class="clm" id="lsac-gpa-calculator">
+
+            <!-- <img src="/src/lsac-gpa-calculator.webp"
+                alt="LSAC GPA calculator for CAS GPA estimation for U.S. law school applicants" loading="lazy"
+                width="90" height="97" style="align-self: center; width: 100px;"> -->
+            <h1 style="text-align: center;">Your UOG GPA and CGPA Calculator</h1>
+            <p style="text-align: center;">Calculate your GPA and CGPA easily using the University of Gujrat 4.00 scale. Simply enter your grades and credit hours for all subjects or semesters, and this calculator will provide accurate results for your entire academic transcript in seconds. It’s a fast, reliable way for UOG students to track their academic performance and plan for future semesters.</p>
+           
+
+            <div class="tool">
+                <form id="course-list"></form>
+
+                <div class="btn-section" aria-label="Course Actions">
+                    <button type="button" id="reset-rows"
+                        style="color:#d32f2f; border:1px solid #d32f2f; background:white;">Reset</button>
+                    <button type="button" id="save-data"
+                        style="background-color:#272727; color:#ffffff; border:1px solid #272727;">Save to
+                        History</button>
+                    <button type="button" id="add-course"
+                        style="color:#0067ce; border:1px solid #0067ce; background:white;" onclick="AddCourse()">Add
+                        Course</button>
+                </div>
+
+                <div class="result-section" aria-label="GPA Results">
+                    <div aria-live="polite">
+                        <h2 id="display-gpa">0.00</h2>
+                        <small>Calculated GPA</small>
+                    </div>
+                    <div>
+                        <h2 id="display-credits">0.0</h2>
+                        <small>Total Credit Hours</small>
+                    </div>
+                    <div>
+                        <h2 id="display-points">0.0</h2>
+                        <small>Total Quality Points</small>
+                    </div>
+                    <div>
+                        <h2 id="display-courses">0</h2>
+                        <small>Total Courses</small>
+                    </div>
+                </div>
+
+                <div class="history" aria-label="Previous GPA Calculations">
+                    <h3 style="margin-bottom: 15px; color: #333;">History</h3>
+                    <div class="table-row header-row" role="row">
+                        <span role="columnheader">GPA</span>
+                        <span role="columnheader">Credits</span>
+                        <span role="columnheader">Courses</span>
+                        <span role="columnheader">Date</span>
+                    </div>
+                    <div id="history-container">
+                        <p id="no-history-msg" style="text-align: center; color: #999; padding: 15px;">No history saved
+                            yet.</p>
+                    </div>
+                </div>
+
+                <div class="btn-section" aria-label="History Actions">
+                    <button type="button" id="download-csv"
+                        style="background-color:transparent; color:#272727; border:1px solid #272727;">Download
+                        CSV</button>
+                    <button type="button" id="clear-history"
+                        style="background-color:#d32f2f; color:#ffffff; border:1px solid #d32f2f;">Clear
+                        History</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <style>
+        /* --- ORIGINAL STYLING PRESERVED --- */
+        .tool {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px gainsboro;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 24px 16px;
+            border-bottom: 1px solid #ddd;
+            align-items: flex-end;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-row>img {
+            background-color: red;
+            width: 37px;
+            padding: 6px;
+            border-radius: 4px;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            /* Added for UX */
+        }
+
+        .input {
+            width: min(150px, 100%);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        label {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #b0b0b0cc;
+            background-color: rgba(232, 232, 232, 0.764);
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-bottom: 1px solid orangered;
+            background-color: #e8e8e8;
+        }
+
+        .btn-section {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 0px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn-section>button {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background-color: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+
+        .btn-section>button:hover,
+        .input-row>img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .result-section>* {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #dddddd40;
+            flex-grow: 1;
+            gap: 4px;
+            text-align: center;
+        }
+
+        .result-section>*>h2 {
+            color: #2e2d2d;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .result-section>*>small {
+            color: rgb(107, 107, 107);
+        }
+
+        .history {
+            margin-top: 24px;
+            padding: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .history>b {
+            color: #2e2d2d;
+        }
+
+        .table-row {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .table-row>* {
+            display: flex;
+            flex-grow: 1;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            flex-basis: 0;
+            /* Ensures equal width columns */
+            justify-content: center;
+        }
+
+        .header-row {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        /* Utility to hide elements if needed */
+        .hidden {
+            display: none;
+        }
+    </style>
+
+
+    <footer>
+        <div class="footer clm">
+            <a href="/" class="logo">
+                <img src="/src/footer-logo.png" alt="Live Grade - Official UOG GPA Calculator"
+                    title="Grades Calculator Tool" width="32" height="30">
+                Live Grade
+            </a>
+            <p>Convert your grades and calculate your UOG GPA instantly with Live Grade. Our online tool provides
+                reliable, easy-to-use, and accurate UOG GPA estimations for University of Gujrat.</p>
+
+            <!-- <div class="wrap" style="justify-content: space-between;">
+                <div class="site effect wrap" style="gap: 15px;">
+                    <a href="/">Home</a>
+                    <a href="/about-us">About Us</a>
+                    <a href="/contact-us">Contact Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms & Conditions</a>
+                </div>
+
+                <div class="social effect wrap" style="gap: 15px;">
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/src/facebook-profile.svg" alt="Facebook" width="25"> Visit Facebook
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/src/instagram-profile.svg" alt="Instagram" width="25"> Visit Instagram
+                    </a>
+                    <a href="#" target="_blank" rel="noopener">
+                        <img src="/src/linkedin-profile.svg" alt="LinkedIn" width="25"> Visit LinkedIn
+                    </a>
+                </div>
+            </div> -->
+        </div>
+        <hr>
+        <small>&copy; 2025 Live Grade. All Rights Reserved.</small>
+    </footer>
+    <script>
+        // Navigation Bar
+        function navBar() {
+            const navLinks = document.getElementById("navLinks");
+            if (navLinks) navLinks.classList.toggle("show");
+        }
+
+        // --- 1. CONFIGURATION & STATE ---
+        let courseCount = 0;
+
+        // Strict UOG Grading Map (Fixed Ranges)
+        const GRADE_MAP = [
+            { min: 85, max: 101, label: 'A+', point: 4.00 },
+            { min: 80, max: 85, label: 'A', point: 3.70 },
+            { min: 75, max: 80, label: 'B+', point: 3.40 },
+            { min: 70, max: 75, label: 'B', point: 3.00 },
+            { min: 65, max: 70, label: 'B-', point: 2.50 },
+            { min: 60, max: 65, label: 'C+', point: 2.00 },
+            { min: 55, max: 60, label: 'C', point: 1.50 },
+            { min: 50, max: 55, label: 'D', point: 1.00 },
+            { min: 0, max: 50, label: 'F', point: 0.00 }
+        ];
+
+        // --- 2. HELPER FUNCTIONS ---
+
+        // Generates dropdown options dynamically from GRADE_MAP
+        function getGradeOptions() {
+            let options = `<option value="" disabled selected>Select Grade</option>`;
+            GRADE_MAP.forEach(grade => {
+                options += `<option value="${grade.point}">${grade.label}</option>`;
+            });
+            return options;
+        }
+
+        // Converts Marks (0-100) to Grade Point
+        function getPointFromMarks(marks) {
+            let m = parseFloat(marks);
+            if (isNaN(m)) return 0;
+
+            for (let grade of GRADE_MAP) {
+                // Using >= min and < max logic
+                if (m >= grade.min && m < grade.max) {
+                    return grade.point;
+                }
+            }
+            return 0.00; // Default to F
+        }
+
+        // --- 3. DOM MANIPULATION ---
+
+        function AddCourse() {
+            courseCount++;
+            const container = document.getElementById("course-list");
+            const inputRow = document.createElement("div");
+            inputRow.classList.add("input-row");
+            inputRow.id = `row-${courseCount}`;
+
+            // HTML Structure for a single row
+            inputRow.innerHTML = `
+            <div class="input">
+                <label for="subName${courseCount}">Course / Semester:</label>
+                <input type="text" id="subName${courseCount}" placeholder="Enter Name...">
+            </div>
+
+            <div class="input">
+                <label for="subHours${courseCount}">Credit Hours:</label>
+                <input type="number" id="subHours${courseCount}" placeholder="e.g. 3" min="1" max="6" oninput="calculateResults()">
+            </div>
+
+            <div class="input">
+                <label for="inputType${courseCount}">Input Type:</label>
+                <select id="inputType${courseCount}" onchange="toggleInputType(${courseCount})">
+                    <option value="Letter">Grade Letter</option>
+                    <option value="Marks">Marks (0-100)</option>
+                    <option value="Point">Grade Point</option>
+                </select>
+            </div>
+
+            <div class="input" id="Letter-Group${courseCount}">
+                <label for="subLetter${courseCount}">Grade:</label>
+                <select id="subLetter${courseCount}" onchange="calculateResults()">
+                    ${getGradeOptions()}
+                </select>
+            </div>
+
+            <div class="input hidden" id="Marks-Group${courseCount}">
+                <label for="subMarks${courseCount}">Obtained Marks:</label>
+                <input type="number" id="subMarks${courseCount}" placeholder="0-100" oninput="calculateResults()">
+            </div>
+
+            <div class="input hidden" id="Point-Group${courseCount}">
+                <label for="subPoint${courseCount}">Direct Point:</label>
+                <input type="number" id="subPoint${courseCount}" placeholder="e.g. 3.5" step="0.01" oninput="calculateResults()">
+            </div>
+            <img src="/src/remove-button-icon.svg" alt="Remove Course" width="37" height="37" onclick="RemoveCourse(this)">
+        `;
+            container.appendChild(inputRow);
+        }
+
+        function RemoveCourse(element) {
+            element.closest(".input-row").remove();
+            calculateResults(); // Recalculate immediately after removal
+        }
+
+        function toggleInputType(id) {
+            const type = document.getElementById(`inputType${id}`).value;
+
+            // Hide all three input groups for this specific row ID
+            document.getElementById(`Letter-Group${id}`).classList.add('hidden');
+            document.getElementById(`Marks-Group${id}`).classList.add('hidden');
+            document.getElementById(`Point-Group${id}`).classList.add('hidden');
+
+            // Show the selected one
+            document.getElementById(`${type}-Group${id}`).classList.remove('hidden');
+
+            // Trigger calculation to update results based on the new visible input
+            calculateResults();
+        }
+
+        // --- 4. CALCULATION LOGIC ---
+
+        function calculateResults() {
+            let totalCredits = 0;
+            let totalPoints = 0;
+            let validCourses = 0;
+
+            const rows = document.querySelectorAll('.input-row');
+
+            rows.forEach(row => {
+                // Extract the number from the row ID (e.g., row-1 -> 1)
+                const id = row.id.split('-')[1];
+
+                // Get Credit Hours
+                const creditInput = document.getElementById(`subHours${id}`);
+                const credits = parseFloat(creditInput.value);
+
+                // Skip this row if credits are invalid
+                if (!credits || credits <= 0) return;
+
+                // Determine which input type is active
+                const inputType = document.getElementById(`inputType${id}`).value;
+                let gradePoint = 0;
+
+                if (inputType === 'Letter') {
+                    const letterVal = document.getElementById(`subLetter${id}`).value;
+                    gradePoint = parseFloat(letterVal);
+                }
+                else if (inputType === 'Marks') {
+                    const marksVal = document.getElementById(`subMarks${id}`).value;
+                    gradePoint = getPointFromMarks(marksVal);
+                }
+                else if (inputType === 'Point') {
+                    const pointVal = document.getElementById(`subPoint${id}`).value;
+                    gradePoint = parseFloat(pointVal);
+                }
+
+                // Final Math for this row
+                if (!isNaN(gradePoint)) {
+                    totalPoints += (credits * gradePoint);
+                    totalCredits += credits;
+                    validCourses++;
+                }
+            });
+
+            // Calculate GPA
+            let gpa = 0;
+            if (totalCredits > 0) {
+                gpa = totalPoints / totalCredits;
+            }
+
+            // Update UI
+            document.getElementById('display-gpa').innerText = gpa.toFixed(2);
+            document.getElementById('display-credits').innerText = totalCredits.toFixed(1);
+            document.getElementById('display-points').innerText = totalPoints.toFixed(1);
+            document.getElementById('display-courses').innerText = validCourses;
+
+            return { gpa, totalCredits, totalPoints, validCourses };
+        }
+
+        // --- 5. HISTORY MANAGEMENT ---
+
+        function saveHistory() {
+            const result = calculateResults();
+
+            if (result.validCourses === 0) {
+                alert("Please enter at least one valid course with credit hours to save.");
+                return;
+            }
+
+            const historyItem = {
+                id: Date.now(),
+                gpa: result.gpa.toFixed(2),
+                credits: result.totalCredits,
+                courses: result.validCourses,
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
+            };
+
+            // Get existing history, add new item to top, save back
+            let history = JSON.parse(localStorage.getItem('uog_gpa_history')) || [];
+            history.unshift(historyItem);
+            localStorage.setItem('uog_gpa_history', JSON.stringify(history));
+
+            renderHistory();
+            alert("Calculation saved to history!");
+        }
+
+        function renderHistory() {
+            const container = document.getElementById('history-container');
+            const history = JSON.parse(localStorage.getItem('uog_gpa_history')) || [];
+
+            container.innerHTML = '';
+
+            if (history.length === 0) {
+                container.innerHTML = '<p id="no-history-msg" style="text-align: center; color: #999; padding: 15px;">No history saved yet.</p>';
+                return;
+            }
+
+            history.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'table-row';
+                row.innerHTML = `
+                <span style="font-weight:bold; color:#272727;">${item.gpa}</span>
+                <span>${item.credits}</span>
+                <span>${item.courses}</span>
+                <span style="font-size:12px; color:#666;">${item.date}</span>
+            `;
+                container.appendChild(row);
+            });
+        }
+
+        function clearHistory() {
+            if (confirm("Are you sure you want to delete all history? This cannot be undone.")) {
+                localStorage.removeItem('uog_gpa_history');
+                renderHistory();
+            }
+        }
+
+        function downloadCSV() {
+            const history = JSON.parse(localStorage.getItem('uog_gpa_history')) || [];
+
+            if (history.length === 0) {
+                alert("No history available to download.");
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "GPA,Total Credits,Total Courses,Date\n";
+
+            history.forEach(row => {
+                csvContent += `${row.gpa},${row.credits},${row.courses},"${row.date}"\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "uog_gpa_history.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function resetForm() {
+            document.getElementById("course-list").innerHTML = "";
+            calculateResults(); // Resets counters to 0
+            AddCourse(); // Add one fresh row
+        }
+
+        // --- 6. INITIALIZATION ---
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize tool with 2 empty rows
+            AddCourse();
+            AddCourse();
+
+            // Load saved history
+            renderHistory();
+
+            // Attach Button Listeners
+            document.getElementById('reset-rows').addEventListener('click', resetForm);
+            document.getElementById('save-data').addEventListener('click', saveHistory);
+            document.getElementById('clear-history').addEventListener('click', clearHistory);
+            document.getElementById('download-csv').addEventListener('click', downloadCSV);
+        });
+
+    </script>
+</body>
+</html>
