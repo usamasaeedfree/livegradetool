@@ -55,6 +55,177 @@
     <meta name="twitter:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp"> -->
 
 
+    <style>
+        /* --- ORIGINAL STYLING PRESERVED --- */
+        .tool {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px gainsboro;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 24px 16px;
+            border-bottom: 1px solid #ddd;
+            align-items: flex-end;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-row>img {
+            background-color: red;
+            width: 37px;
+            padding: 6px;
+            border-radius: 4px;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            /* Added for UX */
+        }
+
+        .input {
+            width: min(150px, 100%);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        label {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #b0b0b0cc;
+            background-color: rgba(232, 232, 232, 0.764);
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-bottom: 1px solid orangered;
+            background-color: #e8e8e8;
+        }
+
+        .btn-section {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 0px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn-section>button {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background-color: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+
+        .btn-section>button:hover,
+        .input-row>img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .result-section>* {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #dddddd40;
+            flex-grow: 1;
+            gap: 4px;
+            text-align: center;
+        }
+
+        .result-section>*>h2 {
+            color: #2e2d2d;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .result-section>*>small {
+            color: rgb(107, 107, 107);
+        }
+
+        .history {
+            margin-top: 24px;
+            padding: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .history>b {
+            color: #2e2d2d;
+        }
+
+        .table-row {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .table-row>* {
+            display: flex;
+            flex-grow: 1;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            flex-basis: 0;
+            /* Ensures equal width columns */
+            justify-content: center;
+        }
+
+        .header-row {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        /* Utility to hide elements if needed */
+        .hidden {
+            display: none;
+        }
+    </style>
+
+
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
     <script>
@@ -302,175 +473,7 @@
             </p>
         </section>
     </main>
-    <style>
-        /* --- ORIGINAL STYLING PRESERVED --- */
-        .tool {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: 24px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 8px gainsboro;
-        }
-
-        .input-section {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .input-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 24px 16px;
-            border-bottom: 1px solid #ddd;
-            align-items: flex-end;
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .input-row>img {
-            background-color: red;
-            width: 37px;
-            padding: 6px;
-            border-radius: 4px;
-            transition: 0.3s ease-in-out;
-            cursor: pointer;
-            /* Added for UX */
-        }
-
-        .input {
-            width: min(150px, 100%);
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        label {
-            font-size: 12px;
-            margin-bottom: 4px;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 8px;
-            border: none;
-            border-bottom: 1px solid #b0b0b0cc;
-            background-color: rgba(232, 232, 232, 0.764);
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        input:focus,
-        select:focus {
-            outline: none;
-            border-bottom: 1px solid orangered;
-            background-color: #e8e8e8;
-        }
-
-        .btn-section {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            padding: 20px 0px;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .btn-section>button {
-            padding: 8px 20px;
-            border-radius: 20px;
-            background-color: transparent;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.3s ease-in;
-        }
-
-        .btn-section>button:hover,
-        .input-row>img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .result-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .result-section>* {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #dddddd40;
-            flex-grow: 1;
-            gap: 4px;
-            text-align: center;
-        }
-
-        .result-section>*>h2 {
-            color: #2e2d2d;
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .result-section>*>small {
-            color: rgb(107, 107, 107);
-        }
-
-        .history {
-            margin-top: 24px;
-            padding: 4px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .history>b {
-            color: #2e2d2d;
-        }
-
-        .table-row {
-            display: flex;
-            align-items: center;
-            margin: 0;
-        }
-
-        .table-row>* {
-            display: flex;
-            flex-grow: 1;
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-            flex-basis: 0;
-            /* Ensures equal width columns */
-            justify-content: center;
-        }
-
-        .header-row {
-            font-weight: bold;
-            background-color: #f9f9f9;
-        }
-
-        /* Utility to hide elements if needed */
-        .hidden {
-            display: none;
-        }
-    </style>
+    
 
 
     <footer>
