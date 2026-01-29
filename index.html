@@ -34,6 +34,7 @@
     <link rel="canonical" href="https://livegrade.site/">
     <meta property="og:url" content="https://livegrade.site/">
 
+
     <!-- Page Description -->
     <meta name="description"
         content="Calculate your CAS GPA using the LSAC CAS 4.33 scale. Accurately convert your full transcript with this GPA calculator for U.S. law school admissions in 2026.">
@@ -431,13 +432,14 @@
     </script>
 
 
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-YSXB5G97K8');
-    </script>
+    </script> -->
 
     <!-- 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5118554117280809"
@@ -466,7 +468,7 @@
 
 
     <main>
-        <section class="clm" id="lsac-gpa-calculator">
+        <section class="clm">
             <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" width="90" height="97"
                 style="align-self: center; width: 100px;">
             <h1 style="text-align: center;">Calculate Your CAS GPA with the Official LSAC 4.33 Grade Scale</h1>
@@ -475,21 +477,21 @@
                 academic transcript in seconds, giving you a clear and reliable GPA result. <a
                     href="#lsac-gpa-calculator">Enter your grades to get started</a>.</p>
 
-            <div class="tool" aria-label="LSAC GPA Calculator Tool" id="lsac-gpa-calculator">
+            <div class="tool" id="lsac-gpa-calculator">
                 <form id="gpa-form" onsubmit="event.preventDefault();">
-                    <div class="input-section" id="rows-container" aria-labelledby="course-input-title">
+                    <div class="input-section" id="rows-container" >
 
                     </div>
                 </form>
 
-                <div class="btn-section" aria-label="Course Actions">
+                <div class="btn-section">
                     <button type="button" id="reset-rows" aria-label="Reset GPA Calculator"
                         style="color:red;border:1px solid red;">Reset</button>
                     <button type="button" id="add-course" aria-label="Add course to LSAC GPA calculation"
                         style="color:#0067ce;border:1px solid #0067ce;">Add Course</button>
                 </div>
 
-                <div class="result-section" aria-label="LSAC GPA Results">
+                <div class="result-section">
 
                     <div aria-live="polite">
                         <h2 id="display-gpa">0.00</h2>
@@ -513,7 +515,7 @@
 
                 </div>
 
-                <div class="history" aria-label="Previous GPA Calculations">
+                <div class="history">
 
                     <strong>History</strong>
 
@@ -530,7 +532,7 @@
 
                 </div>
 
-                <div class="btn-section" aria-label="History Actions">
+                <div class="btn-section">
                     <button type="button" id="save-data" aria-label="Save GPA calculation"
                         style="background-color:#272727;color:#ffffff;border:1px solid #272727;">Save</button>
                     <button type="button" id="download-csv" aria-label="Download GPA results"
