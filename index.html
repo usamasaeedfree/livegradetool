@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="google-adsense-account" content="ca-pub-5118554117280809">
     <meta name="revisit-after" content="7 days">
     <meta name="language" content="en">
     <meta name="rating" content="general">
@@ -33,10 +34,7 @@
     <link rel="canonical" href="https://livegrade.site/">
     <meta property="og:url" content="https://livegrade.site/">
 
-
     <!-- Page Description -->
-
-
     <meta name="description"
         content="Calculate your CAS GPA using the LSAC CAS 4.33 scale. Accurately convert your full transcript with this GPA calculator for U.S. law school admissions in 2026.">
 
@@ -57,6 +55,7 @@
 
     <meta property="og:image" content="https://livegrade.site/src/lsac-cas-gpa-calculator.webp">
     <meta name="twitter:image" content="https://livegrade.site/src/lsac-cas-gpa-calculator.webp">
+
 
     <style>
         /* --- ORIGINAL STYLING PRESERVED --- */
@@ -117,24 +116,6 @@
         label {
             font-size: 12px;
             margin-bottom: 4px;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 8px;
-            border: none;
-            border-bottom: 1px solid #b0b0b0cc;
-            background-color: rgba(232, 232, 232, 0.764);
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        input:focus,
-        select:focus {
-            outline: none;
-            border-bottom: 1px solid orangered;
-            background-color: #e8e8e8;
         }
 
         .btn-section {
@@ -213,7 +194,7 @@
             padding: 8px;
             border-bottom: 1px solid #ddd;
             flex-basis: 0;
-            
+
             justify-content: center;
         }
 
@@ -227,6 +208,7 @@
             display: none;
         }
     </style>
+
 
     <script type="application/ld+json">
     {
@@ -286,7 +268,7 @@
     }
     </script>
 
-    
+
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
@@ -449,7 +431,6 @@
     </script>
 
 
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -458,27 +439,41 @@
         gtag('config', 'G-YSXB5G97K8');
     </script>
 
+    <!-- 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5118554117280809"
+     crossorigin="anonymous"></script>
+      -->
 </head>
+
 <body>
     <header>
-        <div class="header" role="banner">
-            <a href="/" class="logo"><img src="/src/header-logo.png" alt="Live Grade Logo" width="32" height="30">Live
-                Grade</a>
-            <!-- <nav id="navLinks" class="effect">
-                <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()">
+        <div class="header">
+            <a href="/" class="logo"><img src="/src/header-logo.png"
+                    alt="LiveGrade - Professional GPA Calculation Tools" width="32" height="30">Live Grade</a>
+            <nav id="navLinks" class="effect">
+                <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()"
+                    aria-hidden="true">
                 <a href="/">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <!-- <a href="/">About</a>
+                <a href="#">Contact</a> -->
+                <a href="#how-to-use">How to Use</a>
+                <a href="#how-it-works">How It Works</a>
             </nav>
-            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"> -->
+            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"
+                style="cursor: pointer;">
         </div>
     </header>
 
+
     <main>
         <section class="clm" id="lsac-gpa-calculator">
-            <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" width="90" height="97" style="align-self: center; width: 100px;">
+            <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" width="90" height="97"
+                style="align-self: center; width: 100px;">
             <h1 style="text-align: center;">Calculate Your CAS GPA with the Official LSAC 4.33 Grade Scale</h1>
-            <p style="text-align: center;">Calculate your CAS GPA using the LSAC 4.33 grade scale—the standard used for U.S. law school admissions. This LSAC CAS GPA calculator helps you accurately convert your entire academic transcript in seconds, giving you a clear and reliable GPA result. <a href="#lsac-gpa-calculator">Enter your grades to get started</a>.</p>
+            <p style="text-align: center;">Calculate your CAS GPA using the LSAC 4.33 grade scale—the standard used for
+                U.S. law school admissions. This LSAC CAS GPA calculator helps you accurately convert your entire
+                academic transcript in seconds, giving you a clear and reliable GPA result. <a
+                    href="#lsac-gpa-calculator">Enter your grades to get started</a>.</p>
 
             <div class="tool" aria-label="LSAC GPA Calculator Tool" id="lsac-gpa-calculator">
                 <form id="gpa-form" onsubmit="event.preventDefault();">
@@ -522,11 +517,11 @@
 
                     <strong>History</strong>
 
-                    <div class="table-row header-row" role="row">
-                        <span role="columnheader">GPA</span>
-                        <span role="columnheader">Credits</span>
-                        <span role="columnheader">Courses</span>
-                        <span role="columnheader">Date</span>
+                    <div class="table-row header-row">
+                        <span>GPA</span>
+                        <span>Credits</span>
+                        <span>Courses</span>
+                        <span>Date</span>
                     </div>
 
                     <div id="history-container">
@@ -550,8 +545,7 @@
         </section>
 
         <section class="clm">
-            <div class="clm"
-                style="padding: 20px; background-color: rgb(240, 240, 240); border-left: 3px solid orangered;">
+            <div class="clm special" style="border-left: 4px solid orangered;">
                 <strong>Educational estimate disclaimer:</strong>
                 <p>This tool is designed for educational and planning purposes, and it follows the publicly documented
                     LSAC GPA calculation methodology. But final CAS GPA values are calculated and verified by the Law
@@ -559,7 +553,7 @@
             </div>
 
 
-            <h2 style="margin-top: 28px;">How Does It Work?</h2>
+            <h2 style="margin-top: 28px;" id="how-it-works">How Does It Work?</h2>
             <p>Our GPA Calculator accuracy depends on two things: the accuracy of your input and the use of the official
                 Law School Admission Council grading scale methodology. </p>
             <p>Our calculation logic mirrors the process used by LSAC's Credential Assembly Service (CAS), ensuring that
@@ -570,7 +564,8 @@
             <p>This grade calculator relies on the information you provide, including course grades and credit hours.
                 These inputs form the basis of the grade point calculation and directly impact the final result.</p>
             <p>To ensure accuracy, you must enter grades and credit hours exactly as they appear on your official
-                academic transcripts. Even smaller discrepancies can affect the estimated GPA. Ensure all data matches your official transcript exactly. </p>
+                academic transcripts. Even smaller discrepancies can affect the estimated GPA. Ensure all data matches
+                your official transcript exactly. </p>
 
             <h3 style="margin-top: 28px;">2. Converting Your Grades:</h3>
             <p>After entering, each grade is converted to a standard numerical value, based on the official LSAC Grade
@@ -590,7 +585,7 @@
 
         </section>
         <hr>
-        <section class="clm">
+        <section class="clm" id="how-to-use">
             <h2>How to use this LSAC GPA calculator?</h2>
             <p>This calculator is designed to follow the official LSAC GPA calculation process. It is intended to help
                 applicants accurately estimate their LSAC CAS GPA when preparing law school applications or reviewing
@@ -864,7 +859,8 @@
 
             <p>
                 To understand how these conversions affect your admissions chances, we recommend using our
-                <a href="#lsac-gpa-calculator" class="clr">LSAC GPA Calculator</a>, which follows the same publicly documented
+                <a href="#lsac-gpa-calculator" class="clr">LSAC GPA Calculator</a>, which follows the same publicly
+                documented
                 methodology.
             </p>
 
@@ -909,177 +905,252 @@
         <section class="clm">
             <h2>FAQs</h2>
 
-            <h3>What is a good LSAC GPA?</h3>
-            <p>A good LSAC GPA depends on the selectivity of the law schools you are targeting. Based on historical
-                admissions data and admissions committee guidance:</p>
-            <ul>
-                <li><strong>3.7+ LSAC GPA: </strong>Highly competitive for top-tier (T14) U.S. law schools</li>
-                <li><strong>3.4 &mdash; 3.69: </strong>Strong for many Tier-1 and Tier-2 schools</li>
-                <li><strong>3.0 &mdash; 3.39: </strong>Acceptable for regional and mid-tier programs</li>
-                <li><strong>Below 3.0: </strong>Challenging, but still viable with a strong LSAT and compelling profile
-                </li>
-            </ul>
-            <p>From an admissions perspective, LSAC GPA is treated as a standardized academic metric, which is why
-                schools rely on it more heavily than your university GPA.</p>
+            <details>
+                <summary>
+                    <h3>What is a good LSAC GPA?</h3>
+                </summary>
+                <p>A good LSAC GPA depends on the selectivity of the law schools you are targeting. Based on historical
+                    admissions data and admissions committee guidance:</p>
+                <ul>
+                    <li><strong>3.7+ LSAC GPA: </strong>Highly competitive for top-tier (T14) U.S. law schools</li>
+                    <li><strong>3.4 &mdash; 3.69: </strong>Strong for many Tier-1 and Tier-2 schools</li>
+                    <li><strong>3.0 &mdash; 3.39: </strong>Acceptable for regional and mid-tier programs</li>
+                    <li><strong>Below 3.0: </strong>Challenging, but still viable with a strong LSAT and compelling
+                        profile</li>
+                </ul>
+                <p>From an admissions perspective, LSAC GPA is treated as a standardized academic metric, which is why
+                    schools rely on it more heavily than your university GPA.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Why is my LSAC GPA lower than my undergraduate GPA?</h3>
+                </summary>
+                <p>This is one of the most common applicant concerns. In practice, LSAC GPA is often lower because LSAC:
+                </p>
+                <ul>
+                    <li>Counts all attempted courses, including failures and repeats</li>
+                    <li>Does not apply grade forgiveness or replacement policies</li>
+                    <li>Includes withdrawals that carry credit</li>
+                    <li>Converts grades using a uniform national scale, not institutional rules</li>
+                </ul>
+                <p>Applicants frequently discover this difference only after transcript processing, which is why
+                    estimating
+                    your CAS GPA early is critical.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">Why is my LSAC GPA lower than my undergraduate GPA?</h3>
-            <p>This is one of the most common applicant concerns. In practice, LSAC GPA is often lower because LSAC:</p>
-            <ul>
-                <li>Counts all attempted courses, including failures and repeats</li>
-                <li>Does not apply grade forgiveness or replacement policies</li>
-                <li>Includes withdrawals that carry credit</li>
-                <li>Converts grades using a uniform national scale, not institutional rules</li>
-            </ul>
-            <p>Applicants frequently discover this difference only after transcript processing, which is why estimating
-                your CAS GPA early is critical.</p>
+            <details>
+                <summary>
+                    <h3>How does LSAC calculate A+?</h3>
+                </summary>
+                <p>LSAC assigns 4.33 grade points to an A+, which exceeds the standard 4.0 scale:</p>
+                <ul>
+                    <li><strong>A+ = </strong>4.33</li>
+                    <li><strong>A = </strong>4.00</li>
+                    <li><strong>A- = </strong>3.67</li>
+                </ul>
+                <p>If your undergraduate institution issues A+ grades, LSAC may award the additional points. This can
+                    meaningfully increase your LSAC GPA, especially for applicants with multiple high-credit A+ courses.
+                </p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Is a 3.7 GPA good for law school in Canada?</h3>
+                </summary>
+                <p>Yes. A 3.7 GPA is considered very strong for Canadian law schools, including:</p>
+                <ul>
+                    <li>University of Toronto</li>
+                    <li>McGill University</li>
+                    <li>University of British Columbia</li>
+                    <li>Osgoode Hall Law School</li>
+                </ul>
+                <p>While Canadian schools do not use LSAC GPA, a 3.7 undergraduate GPA combined with a competitive LSAT
+                    places applicants in a strong admissions position.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">How does LSAC calculate A+?</h3>
-            <p>LSAC assigns 4.33 grade points to an A+, which exceeds the standard 4.0 scale:</p>
-            <ul>
-                <li><strong>A+ = </strong>4.33</li>
-                <li><strong>A = </strong>4.00</li>
-                <li><strong>A- = </strong>3.67</li>
-            </ul>
-            <p>If your undergraduate institution issues A+ grades, LSAC may award the additional points. This can
-                meaningfully increase your LSAC GPA, especially for applicants with multiple high-credit A+ courses.</p>
+            <details>
+                <summary>
+                    <h3>Does LSAC tell you your GPA?</h3>
+                </summary>
+                <p>Yes. Once your transcripts are processed, LSAC provides your official LSAC (CAS) GPA inside your
+                    Credential Assembly Service account. This is the GPA transmitted directly to law schools and used
+                    during
+                    admissions review.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Can your LSAC GPA be higher than your GPA?</h3>
+                </summary>
+                <p>Yes, though it is less common. LSAC GPA can be higher if:</p>
+                <ul>
+                    <li>Your transcript includes A+ grades (4.33)</li>
+                    <li>Your institution capped GPA calculations at 4.0</li>
+                    <li>Your grading system converts favorably under LSAC rules</li>
+                </ul>
+                <p>Applicants with strong letter grades from strict grading institutions occasionally benefit from
+                    LSAC’s
+                    standardized conversion.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">Is a 3.7 GPA good for law school in Canada?</h3>
-            <p>Yes. A 3.7 GPA is considered very strong for Canadian law schools, including:</p>
-            <ul>
-                <li>University of Toronto</li>
-                <li>McGill University</li>
-                <li>University of British Columbia</li>
-                <li>Osgoode Hall Law School</li>
-            </ul>
-            <p>While Canadian schools do not use LSAC GPA, a 3.7 undergraduate GPA combined with a competitive LSAT
-                places applicants in a strong admissions position.</p>
+            <details>
+                <summary>
+                    <h3>How to view, see, or find your LSAC GPA</h3>
+                </summary>
+                <p>To view your LSAC GPA:</p>
+                <ul>
+                    <li>Log in to your LSAC account</li>
+                    <li>Open Credential Assembly Service (CAS)</li>
+                    <li>Access your Academic Summary Report</li>
+                </ul>
+                <p>This report displays your LSAC GPA, grade conversions, and academic breakdown exactly as law schools
+                    see
+                    it.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Where to find LSAC GPA</h3>
+                </summary>
+                <p>Your LSAC GPA is found exclusively in your CAS Academic Summary Report. It is not calculated by law
+                    schools or shown elsewhere. Any other GPA is unofficial.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">Does LSAC tell you your GPA?</h3>
-            <p>Yes. Once your transcripts are processed, LSAC provides your official LSAC (CAS) GPA inside your
-                Credential Assembly Service account. This is the GPA transmitted directly to law schools and used during
-                admissions review.</p>
+            <details>
+                <summary>
+                    <h3>Does LSAC GPA round up?</h3>
+                </summary>
+                <p>No. LSAC does not round GPAs. CAS GPAs are calculated to precise decimal values, and even small
+                    differences can matter at competitive law schools.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Which GPA does LSAC use?</h3>
+                </summary>
+                <p>LSAC uses a standardized CAS GPA, not your institutional GPA. This ensures consistent academic
+                    evaluation
+                    across applicants from different universities and grading systems.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">Can your LSAC GPA be higher than your GPA?</h3>
-            <p>Yes, though it is less common. LSAC GPA can be higher if:</p>
-            <ul>
-                <li>Your transcript includes A+ grades (4.33)</li>
-                <li>Your institution capped GPA calculations at 4.0</li>
-                <li>Your grading system converts favorably under LSAC rules</li>
-            </ul>
-            <p>Applicants with strong letter grades from strict grading institutions occasionally benefit from LSAC’s
-                standardized conversion.</p>
+            <details>
+                <summary>
+                    <h3>LSAC GPA vs regular GPA / undergraduate GPA</h3>
+                </summary>
+                <ul>
+                    <li><strong>Undergraduate GPA: </strong>Calculated by your university</li>
+                    <li><strong>LSAC GPA: </strong>Recalculated by LSAC using CAS rules</li>
+                </ul>
+                <p>Admissions committees rely on LSAC GPA because it applies a uniform national standard.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Best CAS LSAC GPA calculator</h3>
+                </summary>
+                <p>The best LSAC GPA calculator is one that:</p>
+                <ul>
+                    <li>Uses official LSAC grade conversion rules</li>
+                    <li>Includes A+ = 4.33 logic</li>
+                    <li>Counts all attempted undergraduate credits</li>
+                    <li>Excludes graduate-level coursework</li>
+                </ul>
+                <p>A calculator built on LSAC’s documented methodology provides the most accurate pre-CAS estimate.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">How to view, see, or find your LSAC GPA</h3>
-            <p>To view your LSAC GPA:</p>
-            <ul>
-                <li>Log in to your LSAC account</li>
-                <li>Open Credential Assembly Service (CAS)</li>
-                <li>Access your Academic Summary Report</li>
-            </ul>
-            <p>This report displays your LSAC GPA, grade conversions, and academic breakdown exactly as law schools see
-                it.</p>
+            <details>
+                <summary>
+                    <h3>How do I calculate my LSAC GPA / CAS GPA?</h3>
+                </summary>
+                <p>To calculate your LSAC GPA:</p>
+                <ul>
+                    <li>Convert each grade to LSAC grade points</li>
+                    <li>Multiply grade points by credit hours</li>
+                    <li>Add all grade points together</li>
+                    <li>Divide by total attempted credit hours</li>
+                </ul>
+                <p>This mirrors the same process LSAC uses internally when generating your CAS GPA.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Is LSAC GPA weighted?</h3>
+                </summary>
+                <p>No. LSAC GPA is not weighted for honors, AP, or course difficulty. All courses are treated equally
+                    based
+                    on grade and credit hours.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">Where to find LSAC GPA</h3>
-            <p>Your LSAC GPA is found exclusively in your CAS Academic Summary Report. It is not calculated by law
-                schools or shown elsewhere. Any other GPA is unofficial.</p>
+            <details>
+                <summary>
+                    <h3>Is LSAC GPA out of 4.33?</h3>
+                </summary>
+                <p>Yes. LSAC GPA can exceed 4.0 because A+ grades are worth 4.33. This applies only if your institution
+                    issues A+ grades.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Does LSAC GPA include graduate school or master’s degrees?</h3>
+                </summary>
+                <p>No. LSAC GPA does not include graduate-level coursework, including master’s or doctoral programs.
+                    Only
+                    undergraduate coursework completed before the first bachelor’s degree is included.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">Does LSAC GPA round up?</h3>
-            <p>No. LSAC does not round GPAs. CAS GPAs are calculated to precise decimal values, and even small
-                differences can matter at competitive law schools.</p>
+            <details>
+                <summary>
+                    <h3>Does LSAC GPA include community college?</h3>
+                </summary>
+                <p>Yes. Community college courses taken for undergraduate credit are included in LSAC GPA calculations.
+                </p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Does LSAC GPA matter?</h3>
+                </summary>
+                <p>Yes. LSAC GPA is one of the most important quantitative factors in law school admissions. Alongside
+                    the
+                    LSAT score, it strongly influences admissions outcomes and scholarship decisions.</p>
+            </details>
 
-            <h3 style="margin-top: 28px;">Which GPA does LSAC use?</h3>
-            <p>LSAC uses a standardized CAS GPA, not your institutional GPA. This ensures consistent academic evaluation
-                across applicants from different universities and grading systems.</p>
+            <details>
+                <summary>
+                    <h3>Which is the official LSAC GPA system?</h3>
+                </summary>
+                <p>The Credential Assembly Service (CAS) GPA is the only official LSAC GPA system used by ABA-accredited
+                    law
+                    schools.</p>
+            </details>
 
+            <details>
+                <summary>
+                    <h3>Is a 3.8 GPA good for Harvard Law?</h3>
+                </summary>
+                <p>Yes. A 3.8 LSAC GPA is highly competitive for Harvard Law School. While admissions are holistic, a
+                    GPA at
+                    this level places applicants within the academic range of admitted students when paired with a
+                    strong
+                    LSAT.</p>
 
-            <h3 style="margin-top: 28px;">LSAC GPA vs regular GPA / undergraduate GPA</h3>
-            <ul>
-                <li><strong>Undergraduate GPA: </strong>Calculated by your university</li>
-                <li><strong>LSAC GPA: </strong>Recalculated by LSAC using CAS rules</li>
-            </ul>
-            <p>Admissions committees rely on LSAC GPA because it applies a uniform national standard.</p>
+            </details>
 
-
-            <h3 style="margin-top: 28px;">Best CAS LSAC GPA calculator</h3>
-            <p>The best LSAC GPA calculator is one that:</p>
-            <ul>
-                <li>Uses official LSAC grade conversion rules</li>
-                <li>Includes A+ = 4.33 logic</li>
-                <li>Counts all attempted undergraduate credits</li>
-                <li>Excludes graduate-level coursework</li>
-            </ul>
-            <p>A calculator built on LSAC’s documented methodology provides the most accurate pre-CAS estimate.</p>
-
-
-            <h3 style="margin-top: 28px;">How do I calculate my LSAC GPA / CAS GPA?</h3>
-            <p>To calculate your LSAC GPA:</p>
-            <ul>
-                <li>Convert each grade to LSAC grade points</li>
-                <li>Multiply grade points by credit hours</li>
-                <li>Add all grade points together</li>
-                <li>Divide by total attempted credit hours</li>
-            </ul>
-            <p>This mirrors the same process LSAC uses internally when generating your CAS GPA.</p>
-
-
-            <h3 style="margin-top: 28px;">Is LSAC GPA weighted?</h3>
-            <p>No. LSAC GPA is not weighted for honors, AP, or course difficulty. All courses are treated equally based
-                on grade and credit hours.</p>
-
-
-            <h3 style="margin-top: 28px;">Is LSAC GPA out of 4.33?</h3>
-            <p>Yes. LSAC GPA can exceed 4.0 because A+ grades are worth 4.33. This applies only if your institution
-                issues A+ grades.</p>
-
-
-            <h3 style="margin-top: 28px;">Does LSAC GPA include graduate school or master’s degrees?</h3>
-            <p>No. LSAC GPA does not include graduate-level coursework, including master’s or doctoral programs. Only
-                undergraduate coursework completed before the first bachelor’s degree is included.</p>
-
-
-            <h3 style="margin-top: 28px;">Does LSAC GPA include community college?</h3>
-            <p>Yes. Community college courses taken for undergraduate credit are included in LSAC GPA calculations.</p>
-
-
-            <h3 style="margin-top: 28px;">Does LSAC GPA matter?</h3>
-            <p>Yes. LSAC GPA is one of the most important quantitative factors in law school admissions. Alongside the
-                LSAT score, it strongly influences admissions outcomes and scholarship decisions.</p>
-
-
-            <h3 style="margin-top: 28px;">Which is the official LSAC GPA system?</h3>
-            <p>The Credential Assembly Service (CAS) GPA is the only official LSAC GPA system used by ABA-accredited law
-                schools.</p>
-
-
-            <h3 style="margin-top: 28px;">Is a 3.8 GPA good for Harvard Law?</h3>
-            <p>Yes. A 3.8 LSAC GPA is highly competitive for Harvard Law School. While admissions are holistic, a GPA at
-                this level places applicants within the academic range of admitted students when paired with a strong
-                LSAT.</p>
-
-
-            <h3 style="margin-top: 28px;">Does LSAC GPA count study abroad?</h3>
-            <p>It depends. LSAC includes study-abroad grades if they appear on your home institution transcript with
-                letter grades and credit values. Programs listed only as pass/fail or without grades may be excluded.
-            </p>
-
-
-
-
-
+            <details>
+                <summary>
+                    <h3>Does LSAC GPA count study abroad?</h3>
+                </summary>
+                <p>It depends. LSAC includes study-abroad grades if they appear on your home institution transcript with
+                    letter grades and credit values. Programs listed only as pass/fail or without grades may be
+                    excluded.
+                </p>
+            </details>
 
         </section>
 
         <hr>
-        <section class="clm">
+        <section class="clm special">
             <h2>About the Developer:</h2>
             <p>Hi, I'm Usama, a web developer with over five years of experience creating reliable, student-focused
                 academic tools. I specialize in developing calculators and conversion tools that simplify complex
@@ -1107,35 +1178,44 @@
 
     </main>
 
+
     <footer>
         <div class="footer clm">
-            <a href="/" class="logo"><img src="/src/footer-logo.png" alt="live GPA Logo" title="Grades Calculator Tool"
-                    width="32" height="30">Live Grade</a>
-            <p>Convert your grade and calculate your GPA instantly with the Live Grade online tool, which is reliable,
-                easy to use, and accurate.</p>
+            <a href="/" class="logo">
+                <img src="/src/footer-logo.png" alt="Live Grade - Official LSAC GPA Calculator Logo"
+                    title="Grades Calculator Tool" width="32" height="30"> Live Grade</a>
+            <p>Convert your grades and calculate your LSAC GPA instantly with Live Grade. Our online tool provides
+                reliable, easy-to-use, and accurate CAS GPA estimations for law school applicants.</p>
 
-            <!-- <div class="wrap" style="justify-content: space-between;">
-                <div class="site effect wrap">
+            <a href="mailto:usama.saeed.free@gmail.com" class="email">Email: usama.saeed.free@gmail.com</a>
+            <div class="wraper">
+                <div class="wraper site effect">
                     <a href="/">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
+                    <!-- <a href="/about-us">About Us</a>
+                    <a href="/contact-us">Contact Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms & Conditions</a> -->
                 </div>
-                <div class="social effect wrap">
-                    <a href="#"><img src="/src/facebook-profile.svg" alt="facebook icon" width="25">vist facebook
-                        profile</a>
-                    <a href="#"><img src="/src/instagram-profile.svg" alt="instagrame icon" width="25">vist instagrame
-                        profile</a>
-                    <a href="#"><img src="/src/linkedin-profile.svg" alt="linkedin icon" width="25">vist my linkind
-                        profile</a>
+                <div class="wraper social-media effect">
+                    <a href="https://web.facebook.com/profile.php?id=100081021373803" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/facebook-profile.svg" alt="Facebook" width="25" height="25"> Visit Facebook
+                    </a>
+
+                    <a href="https://www.instagram.com/saeedusama313/" target="_blank" rel="noopener noreferrer">
+                        <img src="/src/instagram-profile.svg" alt="Instagram" width="25" height="25"> Visit Instagram
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/usama-saeed-4b814123a" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/linkedin-profile.svg" alt="LinkedIn" width="25" height="25"> Visit LinkedIn
+                    </a>
                 </div>
-            </div> -->
+            </div>
         </div>
         <hr>
         <small>&copy; 2025 Live Grade. All Rights Reserved.</small>
     </footer>
-
     <script>
         // Navigation Bar
         function navBar() {
