@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="google-adsense-account" content="ca-pub-5118554117280809">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="en">
+    <meta name="rating" content="general">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Usama - LiveGrade">
+    <meta name="publisher" content="Usama - LiveGrade">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LiveGrade">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@LiveGrade">
+    <meta name="twitter:creator" content="@Usama">
+    <link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/src/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/src/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/src/style.css">
+
+    <!-- Page Title -->
+    <title>LSU Cumulative GPA Calculator | Calculate Your Overall GPA</title>
+    <meta property="og:title" content="LSU Cumulative GPA Calculator | Calculate Your Overall GPA">
+    <meta name="twitter:title" content="LSU Cumulative GPA Calculator | Calculate Your Overall GPA">
+
+    <!-- Page Canonical URL -->
+    <link rel="canonical" href="https://livegrade.site/lsu-cumulative-gpa-calculator.html">
+    <meta property="og:url" content="https://livegrade.site/lsu-cumulative-gpa-calculator.html">
+
+
+    <!-- Page Description -->
+    <meta name="description"
+        content="Calculate your cumulative GPA using this LSU GPA calculator. Enter grades and credit hours to estimate your overall Grade Point Average accurately.">
+
+    <meta property="og:description"
+        content="Calculate your cumulative GPA using this LSU GPA calculator. Enter grades and credit hours to estimate your overall Grade Point Average accurately.">
+    <meta name="twitter:description"
+        content="Calculate your cumulative GPA using this LSU GPA calculator. Enter grades and credit hours to estimate your overall Grade Point Average accurately.">
+
+
+    <!-- Page Keywords -->
+    <meta name="keywords"
+        content="LSU cumulative GPA calculator, calculate their overall Grade Point Average across multiple semesters, Louisiana State University grading system, calculate your GPA, semester-by-semester GPA, academic performance calculation">
+
+
+    <!-- Twitter Card Meta Tags -->
+    <meta property="og:image" content="https://livegrade.site/src/img/lsu-cumulative-gpa-calculator.webp">
+    <meta name="twitter:image" content="https://livegrade.site/src/img/lsu-cumulative-gpa-calculator.webp">
+
+
+
+    <style>
+        .tool {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            box-sizing: border-box;
+            /* Ensure padding doesn't overflow width */
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px gainsboro;
+            background: white;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 24px 16px;
+            border-bottom: 1px solid #ddd;
+            align-items: flex-end;
+            animation: fadeIn 0.3s ease-in;
+            background-color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-row>img {
+            background-color: red;
+            width: 37px;
+            padding: 6px;
+            border-radius: 4px;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            /* Added for UX */
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-width: 120px;
+        }
+
+        label {
+            font-size: 12px;
+            margin-bottom: 4px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .btn-section {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 0px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn-section>button {
+            padding: 10px 24px;
+            border-radius: 20px;
+            background-color: #FDD023;
+            /* LSU Gold */
+            border: none;
+            color: #2e2d2d;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+
+        .btn-section>button.secondary {
+            background-color: transparent;
+            border: 1px solid #ccc;
+        }
+
+        .btn-section>button:hover,
+        .input-row>img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+
+        .result-section>* {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            flex-grow: 1;
+            gap: 4px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .result-section>*>h2 {
+            color: #461D7C;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .result-section>*>small {
+            color: rgb(107, 107, 107);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        /* Section to input previous GPA */
+        .prior-data {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e1e4e8;
+        }
+
+        .prior-header {
+            font-weight: bold;
+            color: #461D7C;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a cumulative GPA at LSU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cumulative GPA at LSU represents a student’s overall Grade Point Average across all completed courses that are included in GPA calculations. It combines grade points from multiple semesters rather than reflecting performance in a single term."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between semester GPA and cumulative GPA at LSU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A semester GPA reflects grades earned during a single term, while a cumulative GPA combines results from all semesters included in the academic record. The cumulative GPA provides a broader view of academic performance at LSU."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do transfer credits affect my cumulative GPA at LSU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In many cases, transfer credits accepted by LSU count toward degree requirements but do not affect the LSU cumulative GPA. Only courses completed at LSU are typically included in GPA calculations, depending on university policy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do repeated courses affect cumulative GPA at LSU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Repeated courses may be treated differently depending on LSU academic policy. In some situations, both attempts may appear on the transcript, while GPA calculations may prioritize the most recent or highest grade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this LSU GPA calculator official?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This calculator is an unofficial estimation tool designed to help students understand their academic standing. Official GPA values are calculated and maintained by Louisiana State University."
+      }
+    }
+  ]
+}
+</script>
+
+
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSXB5G97K8');
+    </script> -->
+
+    <!-- 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5118554117280809"
+     crossorigin="anonymous"></script>
+      -->
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a href="/" class="logo"><img src="/src/header-logo.png"
+                    alt="LiveGrade - Professional GPA Calculation Tools" loading="lazy" width="32" height="30">Live
+                Grade</a>
+            <nav id="navLinks" class="effect">
+                <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()"
+                    aria-hidden="true">
+                <a href="/">Home</a>
+                <!-- <a href="/">About</a>
+                <a href="#">Contact</a> -->
+                <a href="#how-to-use">How to Use</a>
+                <a href="#how-it-works">How It Works</a>
+            </nav>
+            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"
+                style="cursor: pointer;">
+        </div>
+    </header>
+
+
+    <main>
+        <section class="clm">
+            <img src="/src/img/lsu-cumulative-gpa-calculator.webp" alt="law school gpa estimator" loading="lazy"
+                width="100" height="61" style="align-self: center; width: 100px;">
+            <h1 style="text-align: center;">Cumulative GPA Calculator for LSU (Louisiana State University)</h1>
+            <p>This LSU cumulative GPA calculator helps students accurately calculate their overall Grade Point Average
+                based on Louisiana State University’s grading system. Whether you are combining results from multiple
+                semesters or reviewing your academic progress, this tool uses credit hours and grade values aligned with
+                LSU standards to provide a reliable cumulative GPA estimate.</p>
+
+            <p>Calculate your LSU cumulative GPA by entering course grades and credit hours from all completed
+                semesters.</p>
+
+
+            <div class="tool">
+
+                <div class="prior-data">
+                    <span class="prior-header">Current Cumulative Stats (Optional)</span>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div class="input">
+                            <label>Current Cumulative GPA</label>
+                            <input type="number" id="prev-gpa" placeholder="e.g. 3.2" step="0.01"
+                                oninput="calculateGPA()">
+                        </div>
+                        <div class="input">
+                            <label>Credits Earned So Far</label>
+                            <input type="number" id="prev-credits" placeholder="e.g. 60" step="1"
+                                oninput="calculateGPA()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-section" id="course-list">
+                </div>
+
+                <div class="btn-section">
+                    <button class="secondary" onclick="resetCalculator()">Reset All</button>
+                    <button onclick="addCourseRow()">+ Add Course</button>
+                </div>
+
+                <div class="result-section">
+                    <div>
+                        <h2 id="semester-gpa">0.00</h2>
+                        <small>Semester GPA</small>
+                    </div>
+                    <div>
+                        <h2 id="cumulative-gpa">0.00</h2>
+                        <small>Cumulative GPA</small>
+                    </div>
+                    <div>
+                        <h2 id="total-credits">0</h2>
+                        <small>Total Credits</small>
+                    </div>
+                </div>
+            </div>
+
+            <strong>Who this tool is for:</strong>
+            <p>
+                This calculator is designed for LSU undergraduate and graduate students who want a quick, clear way to
+                estimate their cumulative GPA using official grading logic. Results are intended for academic planning
+                purposes and should be verified with LSU records or an academic advisor.</p>
+
+        </section>
+
+        <hr>
+        <section class="clm" id="how-it-works">
+            <h2>How Cumulative GPA Is Calculated at LSU</h2>
+            <p>At Louisiana State University (LSU), a student’s cumulative GPA is calculated by combining the grade
+                points earned in all completed courses and dividing them by the total number of attempted credit hours.
+            </p>
+            <p>Each letter grade is assigned a numerical value, which is then multiplied by the course’s credit hours to
+                determine quality points. The cumulative GPA reflects a student’s overall academic performance across
+                multiple semesters, not just a single term.</p>
+
+            <strong>LSU Cumulative GPA Formula <br></strong><span>Cumulative GPA = Total Quality Points ÷ Total
+                Attempted Credit Hours</span>
+
+
+            <p>Quality points are calculated by multiplying the numerical grade value (such as 4.0 for an A) by the
+                credit hours assigned to each course. All quality points from every semester are added together, then
+                divided by the total credit hours attempted to produce the cumulative GPA.</p>
+
+
+            <p>LSU’s cumulative GPA calculation follows standard university grading practices, but results may be
+                affected by factors such as repeated courses, withdrawals, or transfer credits, depending on how they
+                are recorded on a student’s official transcript.</p>
+        </section>
+
+
+        <hr>
+        <section class="clm">
+            <h2>LSU Grading Scale Used in This Calculator</h2>
+            <p>This calculator uses the standard LSU grading scale to convert letter grades into numerical grade points.
+                These values are applied to each course’s credit hours to calculate quality points, which are then used
+                to determine the cumulative GPA.</p>
+
+            <p>Some LSU programs or individual courses may apply alternative grading rules or exclusions. This
+                calculator reflects the most commonly used undergraduate grading scale for GPA estimation</p>
+
+
+            <p>Grades entered into the calculator are automatically converted to grade points using the LSU scale shown
+                above.</p>
+        </section>
+
+
+        <hr>
+        <section class="clm" id="how-to-use">
+            <h2>How to Use the LSU Cumulative GPA Calculator</h2>
+
+            <h3>Step 1: Enter Course Grades</h3>
+            <p>Select the letter grade earned for each course based on the LSU grading scale shown above.</p>
+
+            <h3 style="margin-top: 28px;">Step 2: Add Credit Hours</h3>
+            <p>Enter the number of credit hours assigned to each course. Most LSU courses range from 1 to 4 credit
+                hours.</p>
+
+            <h3 style="margin-top: 28px;">Step 3: Include Multiple Semesters</h3>
+            <p>Add courses from all completed semesters to calculate an accurate cumulative GPA.</p>
+
+            <h3 style="margin-top: 28px;">Step 4: Calculate Your GPA</h3>
+            <p>Click the calculate button to instantly generate your LSU cumulative Grade Point Average.</p>
+
+
+            <h3 style="margin-top: 28px;">Step 5: Review Your Results</h3>
+            <p>Your calculated GPA reflects the overall academic performance based on the information entered.</p>
+
+
+            <p>To ensure accurate results, double-check that all grades and credit hours are entered correctly. This
+                calculator is most effective when used with final grades from completed LSU courses.</p>
+
+
+            <span>Enter your grades and credit hours to calculate your LSU cumulative GPA instantly.</span>
+        </section>
+
+
+
+        <hr>
+        <section class="clm">
+            <h2>Factors That Can Affect Your Cumulative GPA at LSU</h2>
+            <p>A student’s cumulative GPA at LSU is influenced by more than just final letter grades. Several academic
+                factors can affect how courses are counted and how quality points are calculated, which in turn impacts
+                the overall GPA shown on an official transcript.</p>
+
+
+            <h3 style="margin-top: 28px;">Repeated Courses</h3>
+            <p>When a course is repeated, LSU may apply specific rules regarding how the original and repeated grades
+                are included in the cumulative GPA. Depending on university policy and timing, both attempts or only the
+                most recent grade may be factored into the final GPA calculation.</p>
+
+
+            <h3 style="margin-top: 28px;">Withdrawals and Non-Graded Courses</h3>
+            <p>Courses marked as withdrawals or assigned non-graded symbols typically do not contribute grade points,
+                but they may still appear on a student’s academic record. These courses generally do not affect the
+                cumulative GPA unless otherwise specified by LSU policy.</p>
+
+            <h3 style="margin-top: 28px;">Transfer Credits</h3>
+            <p>Transfer credits accepted by LSU may count toward degree requirements, but they do not always impact the
+                LSU cumulative GPA. In many cases, only courses completed at LSU are included when calculating the
+                official cumulative GPA.</p>
+
+
+            <h3 style="margin-top: 28px;">Credit Hour Weight</h3>
+            <p>Courses with higher credit hours have a greater impact on cumulative GPA because they contribute more
+                quality points. Accurately entering credit hours is essential for obtaining a reliable GPA estimate.</p>
+
+
+        </section>
+
+
+        <hr>
+        <section class="clm">
+            <h2>Is This LSU Cumulative GPA Calculator Accurate?</h2>
+            <p>This LSU cumulative GPA calculator provides an accurate estimate based on the grading scale and GPA
+                calculation method commonly used at Louisiana State University. When grades and credit hours are entered
+                correctly, the results closely reflect how cumulative GPA is calculated for most LSU students.</p>
+
+
+            <div class="special">
+                <h3>Important Note:</h3>
+                <p>This tool is intended for informational and academic planning purposes only. Official GPA values are
+                    determined by Louisiana State University and may vary based on program rules, repeated coursework,
+                    or transcript evaluations. For official records, always refer to your LSU transcript or consult an
+                    academic advisor.</p>
+            </div>
+
+            <p>Students commonly use GPA calculators like this to track progress, plan future semesters, and understand
+                how grades may affect overall academic standing.</p>
+        </section>
+
+
+        <hr>
+        <section class="clm">
+            <h2>LSU Cumulative GPA Calculator FAQs</h2>
+
+            <details>
+                <summary>
+                    <h3>What is a cumulative GPA at LSU?</h3>
+                </summary>
+                <p>A cumulative GPA at LSU represents a student’s overall Grade Point Average across all completed
+                    courses that are included in GPA calculations. It combines grade points from multiple semesters
+                    rather than reflecting performance in a single term.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What is the difference between semester GPA and cumulative GPA at LSU?</h3>
+                </summary>
+                <p>A semester GPA reflects grades earned during a single term, while a cumulative GPA combines results
+                    from all semesters included in the academic record. The cumulative GPA provides a broader view of
+                    academic performance at LSU.</p>
+            </details>
+
+
+            <details>
+                <summary>
+                    <h3>Do transfer credits affect my cumulative GPA at LSU?</h3>
+                </summary>
+                <p>In many cases, transfer credits accepted by LSU count toward degree requirements but do not affect
+                    the LSU cumulative GPA. Only courses completed at LSU are typically included in GPA calculations,
+                    depending on university policy.</p>
+            </details>
+
+
+            <details>
+                <summary>
+                    <h3>How do repeated courses affect cumulative GPA at LSU?</h3>
+                </summary>
+                <p>Repeated courses may be treated differently depending on LSU academic policy. In some situations,
+                    both attempts may appear on the transcript, while GPA calculations may prioritize the most recent or
+                    highest grade. Students should consult LSU guidelines for specific rules.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Is this LSU GPA calculator official?</h3>
+                </summary>
+                <p>No. This calculator is an unofficial estimation tool designed to help students understand their
+                    academic standing. Official GPA values are calculated and maintained by Louisiana State University.
+                </p>
+            </details>
+
+        </section>
+
+
+        <hr>
+        <section class="clm">
+            <h2>Why Use This LSU Cumulative GPA Calculator?</h2>
+            <p>This LSU cumulative GPA calculator is designed to help students quickly understand their overall academic
+                standing without needing to manually calculate grade points and credit hours. By aligning with LSU’s
+                grading structure, the tool provides a clear and convenient way to estimate cumulative GPA for academic
+                planning and goal setting.</p>
+
+            <ul>
+                <li>Calculates cumulative GPA across multiple semesters</li>
+                <li>Uses a grading scale aligned with Louisiana State University</li>
+                <li>Helps students plan future coursework and track progress</li>
+                <li>Provides instant results with clear inputs</li>
+                <li>Suitable for both undergraduate and graduate students</li>
+            </ul>
+
+
+            <p>While this calculator offers a reliable estimate, students should always refer to their official LSU
+                transcript or consult an academic advisor for confirmed GPA values.</p>
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="footer clm">
+            <a href="/" class="logo">
+                <img src="/src/footer-logo.png" alt="Live Grade - Official LSAC GPA Calculator Logo"
+                    title="Grades Calculator Tool" width="32" height="30"> Live Grade</a>
+            <p>Convert your grades and calculate your LSU GPA instantly with Live Grade. Our easy-to-use online tool
+                provides accurate Grade Point Average estimates for Louisiana State University students.</p>
+
+            <a href="mailto:usama.saeed.free@gmail.com" class="email">Email: usama.saeed.free@gmail.com</a>
+            <div class="wraper">
+                <div class="wraper site effect">
+                    <a href="/">Home</a> |
+                    <a href="/about-us.html">About Us</a> |
+                    <a href="/contact-us.html">Contact Us</a> |
+                    <a href="/privacy-policy.html">Privacy Policy</a> |
+                    <a href="/terms-and-conditions.html">Terms and Conditions</a> |
+                    <a href="/disclaimer.html">Disclaimer</a>
+                </div>
+                <div class="wraper social-media effect">
+                    <a href="https://web.facebook.com/profile.php?id=100081021373803" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/facebook-profile.svg" alt="Facebook" width="25" height="25"> Visit Facebook
+                    </a>
+
+                    <a href="https://www.instagram.com/saeedusama313/" target="_blank" rel="noopener noreferrer">
+                        <img src="/src/instagram-profile.svg" alt="Instagram" width="25" height="25"> Visit Instagram
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/usama-saeed-4b814123a" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/linkedin-profile.svg" alt="LinkedIn" width="25" height="25"> Visit LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <small>&copy; 2025 Live Grade. All Rights Reserved.</small>
+    </footer>
+    <script>
+        // Navigation Bar
+        function navBar() {
+            const navLinks = document.getElementById("navLinks");
+            if (navLinks) navLinks.classList.toggle("show");
+        }
+
+
+
+        // LSU Grading Scale Data
+        const gradingScale = {
+            "A+": 4.3, "A": 4.0, "A-": 3.7,
+            "B+": 3.3, "B": 3.0, "B-": 2.7,
+            "C+": 2.3, "C": 2.0, "C-": 1.7,
+            "D+": 1.3, "D": 1.0, "D-": 0.7,
+            "F": 0.0
+        };
+
+        // Trash Icon SVG (embedded for single-file portability)
+        const trashIcon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z'/%3E%3C/svg%3E";
+
+        // Initialize with 4 rows
+        window.onload = function () {
+            for (let i = 0; i < 4; i++) {
+                addCourseRow();
+            }
+        };
+
+        function addCourseRow() {
+            const container = document.getElementById('course-list');
+            const row = document.createElement('div');
+            row.className = 'input-row';
+
+            // Generate Options for Select
+            let options = `<option value="" disabled selected>Select Grade</option>`;
+            for (let grade in gradingScale) {
+                options += `<option value="${gradingScale[grade]}">${grade}</option>`;
+            }
+
+            row.innerHTML = `
+                <div class="input" style="flex-grow: 2;">
+                    <label>Course Name</label>
+                    <input type="text" placeholder="e.g. BIOL 1001">
+                </div>
+                <div class="input">
+                    <label>Credits</label>
+                    <input type="number" class="course-credits" placeholder="3" min="0" oninput="calculateGPA()">
+                </div>
+                <div class="input">
+                    <label>Grade</label>
+                    <select class="course-grade" onchange="calculateGPA()">
+                        ${options}
+                    </select>
+                </div>
+                <img src="${trashIcon}" onclick="removeRow(this)" title="Remove Course">
+            `;
+
+            container.appendChild(row);
+        }
+
+        function removeRow(btn) {
+            // Ensure at least one row remains
+            const rows = document.querySelectorAll('.input-row');
+            if (rows.length > 1) {
+                btn.parentElement.remove();
+                calculateGPA();
+            } else {
+                // Just clear the inputs if it's the last row
+                const row = btn.parentElement;
+                row.querySelector('input[type="text"]').value = '';
+                row.querySelector('.course-credits').value = '';
+                row.querySelector('.course-grade').selectedIndex = 0;
+                calculateGPA();
+            }
+        }
+
+        function calculateGPA() {
+            let totalSemesterPoints = 0;
+            let totalSemesterCredits = 0;
+
+            // 1. Calculate Semester Data
+            const rows = document.querySelectorAll('.input-row');
+
+            rows.forEach(row => {
+                const credits = parseFloat(row.querySelector('.course-credits').value);
+                const gradePoints = parseFloat(row.querySelector('.course-grade').value);
+
+                if (!isNaN(credits) && !isNaN(gradePoints)) {
+                    totalSemesterPoints += (credits * gradePoints);
+                    totalSemesterCredits += credits;
+                }
+            });
+
+            // Calculate Semester GPA
+            let semesterGPA = 0;
+            if (totalSemesterCredits > 0) {
+                semesterGPA = totalSemesterPoints / totalSemesterCredits;
+            }
+
+            // 2. Get Previous Data
+            const prevGPA = parseFloat(document.getElementById('prev-gpa').value) || 0;
+            const prevCredits = parseFloat(document.getElementById('prev-credits').value) || 0;
+
+            // 3. Calculate Cumulative Data
+            const totalPriorPoints = prevGPA * prevCredits;
+            const grandTotalPoints = totalPriorPoints + totalSemesterPoints;
+            const grandTotalCredits = prevCredits + totalSemesterCredits;
+
+            let cumulativeGPA = 0;
+            if (grandTotalCredits > 0) {
+                cumulativeGPA = grandTotalPoints / grandTotalCredits;
+            }
+
+            // 4. Update UI
+            // Important: LSU caps calculation visual at 4.0? 
+            // Actually, LSU displays GPA to 3 decimals usually, but standard is 2. 
+            // Note: Even though A+ is 4.3, Cumulative GPA is often capped at 4.0 for display 
+            // in some systems, but strictly mathematically it can go higher for the semester. 
+            // We will show the raw calculation.
+
+            document.getElementById('semester-gpa').innerText = semesterGPA.toFixed(2);
+            document.getElementById('cumulative-gpa').innerText = cumulativeGPA.toFixed(2);
+            document.getElementById('total-credits').innerText = grandTotalCredits;
+        }
+
+        function resetCalculator() {
+            document.getElementById('prev-gpa').value = '';
+            document.getElementById('prev-credits').value = '';
+            document.getElementById('course-list').innerHTML = '';
+            // Add back default rows
+            for (let i = 0; i < 4; i++) addCourseRow();
+            calculateGPA();
+        }   
+    </script>
+</body>
+
+</html>
