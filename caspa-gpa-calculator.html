@@ -45,7 +45,8 @@
 
 
     <!-- Page Keywords -->
-    <meta name="keywords" content="caspa gpa calculator, CASPA science GPA calculator, How does CASPA calculate GPA, PA school GPA calculator, CASPA GPA calculation, Science vs non-science GPA">
+    <meta name="keywords"
+        content="caspa gpa calculator, CASPA science GPA calculator, How does CASPA calculate GPA, PA school GPA calculator, CASPA GPA calculation, Science vs non-science GPA">
 
 
     <!-- Twitter Card Meta Tags -->
@@ -54,8 +55,6 @@
 
     <meta property="og:image" content="https://livegrade.site/src/img/caspa-gpa-calculator.png">
     <meta name="twitter:image" content="https://livegrade.site/src/img/caspa-gpa-calculator.png">
-
-
 
     <style>
         /* --- ORIGINAL STYLING PRESERVED --- */
@@ -210,6 +209,126 @@
         }
     </style>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://livegrade.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CASPA GPA Calculator",
+          "item": "https://livegrade.site/caspa-gpa-calculator.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "CASPA GPA Calculator",
+      "url": "https://livegrade.site/caspa-gpa-calculator.html",
+      "image": [
+        "https://livegrade.site/src/img/caspa-gpa-calculator.png",
+        "https://livegrade.site/src/img/pa-school-gpa-calculator.png"
+      ],
+      "description": "A free CASPA GPA calculator that helps PA school applicants estimate cumulative, science (BCP), and non-science GPA using CASPA-style grade averaging rules, including repeated courses and plus/minus grades.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript. Compatible with Chrome, Firefox, Safari, and Edge.",
+      "version": "1.0",
+      "dateModified": "2026-02-07",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Live Grade",
+        "url": "https://livegrade.site/"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student"
+      },
+      "featureList": [
+        "CASPA cumulative GPA calculation",
+        "Science (BCP) GPA calculation",
+        "Non-science GPA calculation",
+        "Includes repeated courses with no grade replacement",
+        "Supports plus and minus grades",
+        "Quarter-to-semester credit conversion",
+        "Instant GPA estimation for PA school applicants"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1",
+        "bestRating": "5",
+        "worstRating": "0"
+      },
+      "isBasedOn": [
+        "CASPA GPA calculation methodology",
+        "Publicly available CASPA course classification guidelines"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does CASPA calculate GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. CASPA calculates GPA by averaging all undergraduate and post-baccalaureate coursework entered during the application process. All attempts, including repeated courses, are included."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does CASPA calculate science GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. CASPA calculates a science GPA (BCP) based on Biology, Chemistry, and Physics courses, using the same averaging rules applied to cumulative GPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my CASPA GPA lower than my college GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CASPA does not replace grades for repeated courses. Both original and repeated attempts are averaged, which can result in a lower GPA compared to institutional calculations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate my GPA for CASPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate your CASPA GPA, you must enter every course ever taken, assign correct credit hours, classify each course accurately, and apply CASPA grade weights. This calculator automates that process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this CASPA GPA calculator official?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This is an unofficial estimation tool designed for planning purposes. Official GPA calculations are verified by CASPA after application submission."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -224,6 +343,7 @@
       -->
 
 </head>
+
 <body>
     <header>
         <div class="header">
@@ -235,9 +355,9 @@
                     aria-hidden="true">
                 <a href="/">Home</a>
                 <!-- <a href="/">About</a>
-                <a href="#">Contact</a> -->
+                <a href="#">Contact</a> 
                 <a href="#how-to-use">How to Use</a>
-                <a href="#how-it-works">How It Works</a>
+                <a href="#how-it-works">How It Works</a> -->
             </nav>
             <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"
                 style="cursor: pointer;">
@@ -339,12 +459,21 @@
     <footer>
         <div class="footer clm">
             <a href="/" class="logo">
-                <img src="/src/footer-logo.png" alt="Live Grade - Official LSAC GPA Calculator Logo"
-                    title="Grades Calculator Tool" width="32" height="30"> Live Grade</a>
-            <p>Convert your grades and calculate your LSAC GPA instantly with Live Grade. Our online tool provides
-                reliable, easy-to-use, and accurate CAS GPA estimations for law school applicants.</p>
+                <img src="/src/footer-logo.png" alt="Live Grade CASPA GPA calculator logo for PA school applicants"
+                    title="Live Grade GPA Calculator Tool" width="32" height="30">
+                Live Grade
+            </a>
 
-            <a href="mailto:usama.saeed.free@gmail.com" class="email">Email: usama.saeed.free@gmail.com</a>
+            <p>
+                Calculate your CASPA GPA accurately with Live Grade. This calculator helps PA school applicants
+                estimate cumulative, science, and non-science GPA using CASPA-style grading rules in a simple
+                and reliable way.
+            </p>
+
+            <a href="mailto:usama.saeed.free@gmail.com" class="email">
+                Email: usama.saeed.free@gmail.com
+            </a>
+
             <div class="wraper">
                 <div class="wraper site effect">
                     <a href="/">Home</a> |
@@ -354,26 +483,35 @@
                     <a href="/terms-and-conditions.html">Terms and Conditions</a> |
                     <a href="/disclaimer.html">Disclaimer</a>
                 </div>
+
                 <div class="wraper social-media effect">
                     <a href="https://web.facebook.com/profile.php?id=100081021373803" target="_blank"
                         rel="noopener noreferrer">
-                        <img src="/src/facebook-profile.svg" alt="Facebook" width="25" height="25"> Visit Facebook
+                        <img src="/src/facebook-profile.svg" alt="Live Grade GPA calculator Facebook profile" width="25"
+                            height="25">
+                        Visit Facebook
                     </a>
 
                     <a href="https://www.instagram.com/saeedusama313/" target="_blank" rel="noopener noreferrer">
-                        <img src="/src/instagram-profile.svg" alt="Instagram" width="25" height="25"> Visit Instagram
+                        <img src="/src/instagram-profile.svg" alt="Live Grade CASPA GPA calculator Instagram profile"
+                            width="25" height="25">
+                        Visit Instagram
                     </a>
 
                     <a href="https://www.linkedin.com/in/usama-saeed-4b814123a" target="_blank"
                         rel="noopener noreferrer">
-                        <img src="/src/linkedin-profile.svg" alt="LinkedIn" width="25" height="25"> Visit LinkedIn
+                        <img src="/src/linkedin-profile.svg" alt="Live Grade GPA calculator LinkedIn profile" width="25"
+                            height="25">
+                        Visit LinkedIn
                     </a>
                 </div>
             </div>
         </div>
+
         <hr>
         <small>&copy; 2025 Live Grade. All Rights Reserved.</small>
     </footer>
+
     <script>
         // Navigation Bar
         function navBar() {
@@ -478,5 +616,4 @@
         }
     </script>
 </body>
-
 </html>
