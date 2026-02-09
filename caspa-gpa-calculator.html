@@ -354,10 +354,9 @@
                 <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()"
                     aria-hidden="true">
                 <a href="/">Home</a>
-                <!-- <a href="/">About</a>
-                <a href="#">Contact</a> 
+                <a href="#faqs">FAQs</a> 
                 <a href="#how-to-use">How to Use</a>
-                <a href="#how-it-works">How It Works</a> -->
+                <a href="#how-it-works">How It Works</a> 
             </nav>
             <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"
                 style="cursor: pointer;">
@@ -369,14 +368,22 @@
             <img src="/src/img/caspa-gpa-calculator-pa-school.webp"
                 alt="CASPA GPA calculator used to calculate PA school science and non-science GPA" width="250"
                 height="109" style="width: 250px; align-self: center;">
-            <h1 style="text-align: center;">Calculate GPA for PA School With CASPA Calculator</h1>
-            <p style="text-align: center;">Calculating your GPA for PA school just got simple. Our CASPA GPA Calculator
-                helps you determine your cumulative and science GPAs exactly the way CASPA does. Enter your grades,
-                credit hours, and course type, and get an instant, accurate result. Designed for future physician
-                assistant applicants in the USA, this tool ensures you know where you stand before submitting your CASPA
-                application.</p>
+            <h1 style="text-align: center;">CASPA GPA Calculator &dash; Calculate Your PA School GPA</h1>
+            <p style="text-align: center;">
+                Calculating your <strong>PA school GPA</strong> just got simple. Our <strong>CASPA GPA
+                    Calculator</strong> helps you determine your cumulative and science grade point averages exactly the
+                way CASPA does for your official verified GPA.
+            </p>
+            <p style="text-align: center;">
+                <a href="#calculator-tool"><strong>By entering your grades</strong></a>, credit hours, and course types,
+                you will receive an instant, accurate result.
+                Designed specifically for future <strong>physician assistant applicants in the USA</strong>, this tool
+                ensures you know exactly where you stand before submitting your CASPA application.
+            </p>
 
-            <div class="tool">
+            
+
+            <div class="tool" id="calculator-tool">
                 <div class="result-section" aria-label="GPA Results">
                     <div>
                         <small>Cumulative GPA</small>
@@ -453,75 +460,370 @@
         </section>
 
         <hr>
-        <section class="clm">
-            <h2>How to Calculate Your CASPA GPA</h2>
-            <p>Follow these steps to ensure your GPA calculation aligns with the CASPA GPA verifiy methodology.</p>
+        <section class="clm" id="how-it-works">
+            <h2>How CASPA Calculates GPA</h2>
+            <p>
+                CASPA uses a standardized method to ensure a fair, nationwide comparison across all PA school
+                applicants. Understanding these rules helps you accurately predict your standing and plan your
+                application strategy. Here is the process step-by-step:
+            </p>
 
-            <h3 style="margin-top: 28px;">1. Gather All Academic Transcripts</h3>
-            <p>Collect transcripts from every college or university you have attended.</p>
-            <span>CASPA requires applicants to report all coursework, even if:</span>
-            <ul>
-                <li>Credits were transferred</li>
-                <li>Courses were repeated</li>
-                <li>Grades did not count toward graduation</li>
-            </ul>
-            <p>No course is excluded from CASPA GPA calculations.</p>
+            <ol>
+                <li class="clm">
+                    <h3>Inclusion of All Undergraduate Coursework</h3>
+                    <p>
+                        Every course you have ever completed counts toward your <strong>CASPA GPA</strong>. This
+                        includes transfer courses from other institutions and post-baccalaureate work. Unlike many
+                        universities, CASPA does not offer <strong>grade replacement</strong>; if you repeat a course,
+                        both grades are factored into your GPA.
+                    </p>
+                </li>
 
-            <h3 style="margin-top: 28px;">2. Classify Each Course Correctly</h3>
-            <p>CASPA separates GPA into specific categories. When entering courses into the calculator, select the
-                appropriate classification:</p>
-            <ul>
-                <li><strong>Science GPA (BCP)</strong> <br> Includes Biology, Chemistry, and Physics courses.</li>
-                <li><strong>Non-Science GPA</strong> <br> Includes Social Sciences, Humanities, Business, and elective
-                    courses.</li>
-                <li><strong>Cumulative GPA</strong> <br> Reflects the average of all courses combined, regardless of
-                    subject.</li>
-            </ul>
-            <p>Accurate classification is essential for an accurate CASPA GPA estimate.</p>
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>Standardized 4.0 Grade Conversion</h3>
+                    <p>
+                        CASPA standardizes all letter grades into its official 4.0 scale, regardless of your school’s
+                        internal system. This includes the consistent weighting of <strong>plus/minus grades</strong> to
+                        ensure applicants from different universities are evaluated equally.
+                    </p>
+                </li>
 
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>Credit Hour Weighting (Quality Points)</h3>
+                    <p>
+                        Each course is weighted by its credit hours to determine its impact. CASPA calculates
+                        <strong>quality points</strong> using the formula:
+                    </p>
+                    <strong class="special">
+                        Grade Value &times; Credits &equals;= Quality Points</strong>
+                    <p>
+                        Because of this weighting, higher-credit courses (like 4-credit labs) have a significantly
+                        larger impact on your cumulative GPA than 1-credit electives.
+                    </p>
+                </li>
 
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>Categorization of Science (BCP) vs. Non-Science</h3>
+                    <p>
+                        CASPA categorizes your coursework to highlight your academic strengths:
+                    </p>
+                    <ul>
+                        <li><strong>Science (BCP) GPA:</strong> Includes Biology, Chemistry, Physics, Anatomy,
+                            Physiology, and Microbiology. PA programs often weigh this core science GPA most heavily.
+                        </li>
+                        <li><strong>Non-Science GPA:</strong> Includes Humanities, Social Sciences
+                            (Psychology/Sociology), Business, and English.</li>
+                    </ul>
+                </li>
 
-            <h3 style="margin-top: 28px;">3. Enter Grades and Credit Hours</h3>
-            <p>For each course, enter:</p>
-            <ul>
-                <li>The letter grade</li>
-                <li>The credit hours earned</li>
-            </ul>
-            <p><b>Important: </b>CASPA does not use grade replacement.</p>
-            <p>If you repeated a course, both the original and repeated grades must be entered. Each attempt is included
-                and averaged into your final GPA.</p>
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>Handling Withdrawals and Pass/Fail</h3>
+                    <ul>
+                        <li><strong>Withdrawals (W):</strong> Generally do not affect your GPA.</li>
+                        <li><strong>Pass/Fail:</strong> Passing grades (P) count toward your total earned hours but do
+                            not impact the GPA value. However, a failing grade in a pass/fail course is calculated as a
+                            <strong>0.0</strong>.
+                        </li>
+                    </ul>
+                </li>
 
-
-
-            <h3 style="margin-top: 28px;">4. Convert Quarter Credits (If Applicable)</h3>
-            <p>If your institution uses a quarter system, credits must be converted to semester hours before entry.</p>
-            <strong>Conversion Formula:</strong>
-            <span>Quarter Hours * 0.667 = Semester Hours</span>
-            <b>Example:</b>
-            <p>A 4.0 quarter-credit course equals 2.67 semester hours.</p>
-
-
-
-            <h3 style="margin-top: 28px;">5. Review Your CASPA GPA Results</h3>
-            <p>Once all courses are entered, the calculator will automatically display:</p>
-            <ul>
-                <li><strong>Total Quality Points: </strong>(Grade value * credit hours)</li>
-                <li><strong>Total Semester Hours: </strong>Sum of all converted credits</li>
-                <li><strong>Estimated CASPA GPA: </strong>Total Quality Points ÷ Total Semester Hours</li>
-            </ul>
-            <p>This mirrors how CASPA verifies GPA during the application review process.</p>
-
-
-
-            <h3 style="margin-top: 28px;"></h3>
-
-
-
-            <h3 style="margin-top: 28px;"></h3>
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>Final GPA Computation</h3>
+                    <p>
+                        CASPA sums the total quality points and divides them by the total credit hours. This calculation
+                        is performed separately for your <strong>Science (BCP) GPA</strong> and your <strong>Overall
+                            Cumulative GPA</strong>, providing a comprehensive view of your academic history.
+                    </p>
+                </li>
+            </ol>
         </section>
+
 
         <hr>
         <section class="clm">
+            <h2>Use Cases for the CASPA GPA Calculator</h2>
+            <p>Our <strong>CASPA GPA calculator</strong> is designed for anyone applying to physician assistant
+                programs. Here’s how you can use it to build a winning application:</p>
+
+            <ul>
+                <li style="margin-top: 28px;" class="clm">
+                    <h3>Evaluate Your PA School Readiness:</h3> The current national average GPA for accepted
+                    students is approximately 3.6 overall and 3.5 for science. Use the calculator to see if you are in
+                    the competitive range for your top-choice schools.
+                </li>
+                <li style="margin-top: 28px;" class="clm">
+                    <h3>Plan Academic Improvements:</h3> Identify specific courses where a higher grade could
+                    significantly boost your verified GPA.
+                </li>
+                <li style="margin-top: 28px;" class="clm">
+                    <h3>Compare GPA Scenarios (Scenario Testing):</h3> Not sure if you should retake a class?
+                    Test different outcomes to see how a "B" vs. an "A" in a future course will impact your final
+                    numbers.
+                </li>
+                <li style="margin-top: 28px;" class="clm">
+                    <h3>Understand Science GPA (BCP) Impact:</h3> Learn how your biology, chemistry, and physics
+                    courses influence your standing separately from your elective classes.
+                </li>
+                <li style="margin-top: 28px;" class="clm">
+                    <h3>Estimate Eligibility for Specific Programs:</h3> Many US programs have a 3.0 minimum GPA
+                    cutoff. Use the calculator to ensure you meet these thresholds before paying application fees.
+                </li>
+                <li style="margin-top: 28px;" class="clm">
+                    <h3>Track Your "Upward Trend":</h3> Quickly see how your recent semesters (last 30-60
+                    credits) are improving your cumulative average—a key metric for admissions committees.
+                </li>
+            </ul>
+
+            <p><em><strong>Tip:</strong> Use the calculator regularly to monitor your progress and plan strategically
+                    for the 2026-2027 CASPA cycle.</em></p>
+        </section>
+
+
+        <hr>
+        <section class="clm">
+            <h2>Features That Set Our CASPA GPA Calculator Apart</h2>
+            <p>
+                Our tool is more than just a basic calculator; it is a professional-grade simulator designed to mirror
+                the exact verification process used by <strong>Liaison CAS</strong>. Here is what makes our calculator
+                the preferred choice for <strong>USA physician assistant applicants</strong>:
+            </p>
+
+            <ul>
+                <li style="margin-top: 28px;">
+                    <strong>Official Liaison CAS Methodology:</strong> Unlike generic tools that offer "grade
+                    replacement," our calculator follows strict CASPA rules. It includes every attempt for repeated
+                    courses and applies precise quality point weighting <strong>(Grade Value &times; Credits)</strong> to ensure your
+                    estimate matches your final verified report.
+                </li>
+                <li style="margin-top: 28px;">
+                    <strong>Precision Science (BCP) GPA Tracking:</strong> We prioritize what admissions committees care
+                    about most. By allowing you to tag specific Biology, Chemistry, and Physics (BCP) courses, our tool
+                    generates a dedicated <strong>Science GPA</strong>—the #1 metric used to screen PA school
+                    candidates.
+                </li>
+                <li style="margin-top: 28px;">
+                    <strong>Accurate Grade-to-Value Conversion:</strong> We use the standardized 4.0 scale (including
+                    3.7 for A- and 3.3 for B+). This ensures that grades from various universities are converted exactly
+                    how a CASPA verifier will handle them, regardless of your school's internal scale.
+                </li>
+                <li style="margin-top: 28px;" >
+                    <strong>Comprehensive Transcript Coverage:</strong> Our tool is built for the "messy" parts of a
+                    real academic history. It easily handles transfer credits, remedial courses, and multiple retakes,
+                    preventing the "fake high GPA" results common with simpler calculators.
+                </li>
+                <li style="margin-top: 28px;" >
+                    <strong>Mobile-First Design for 2026:</strong> Most GPA tools are outdated and clunky. Our interface
+                    is fast, intuitive, and fully responsive, allowing you to update your grades on your smartphone the
+                    moment your semester ends.
+                </li>
+                <li style="margin-top: 28px;">
+                    <strong>Educational Transparency:</strong> We believe in showing the "why" behind the numbers. Our
+                    calculator provides clear instructions and disclaimers, helping you understand the underlying math
+                    of your semester hours and quality points.
+                </li>
+            </ul>
+
+            <p>
+                <strong>Why This Matters:</strong> By using our <strong>CASPA GPA Calculator</strong>, you gain a
+                trustworthy, up-to-date estimate that allows you to plan strategically, compare school requirements, and
+                submit your application with total confidence.
+            </p>
+        </section>
+
+
+
+        <hr>
+        <section class="clm">
+            <h2>CASPA Grading Scale Explained</h2>
+            <p>
+                CASPA uses a standardized <strong>4.0 GPA scale</strong> to ensure consistency across all applicants
+                from different universities. When you enter a grade into our calculator, it is automatically assigned
+                the following grade value:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transcript Grade</th>
+                            <th>CASPA Grade Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A / A+</td>
+                            <td>4.0</td>
+                        </tr>
+                        <tr>
+                            <td>A-</td>
+                            <td>3.7</td>
+                        </tr>
+                        <tr>
+                            <td>AB</td>
+                            <td>3.5</td>
+                        </tr>
+                        <tr>
+                            <td>B+</td>
+                            <td>3.3</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>3.0</td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>2.7</td>
+                        </tr>
+                        <tr>
+                            <td>BC</td>
+                            <td>2.5</td>
+                        </tr>
+
+                        <tr>
+                            <td>C+</td>
+                            <td>2.3</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>2.0</td>
+                        </tr>
+                        <tr>
+                            <td>C-</td>
+                            <td>1.7</td>
+                        </tr>
+                        <tr>
+                            <td>CD</td>
+                            <td>1.5</td>
+                        </tr>
+                        <tr>
+                            <td>D+</td>
+                            <td>1.3</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>1.0</td>
+                        </tr>
+                        <tr>
+                            <td>D-</td>
+                            <td>0.7</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>0.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <p>
+                <em>Source: Official <a
+                        href="https://help.liaisonedu.com/CASPA_Applicant_Help_Center/Submitting_and_Monitoring_Your_CASPA_Application/Verification_and_GPA_Calculations_for_CASPA/CASPA_Grade_Value_Charts"
+                        target="_blank" rel="noopener">Liaison CAS Grade Value Charts</a>.</em>
+            </p>
+
+            <p><strong>Important Scale Notes:</strong></p>
+            <ul>
+                <li>
+                    <strong>No Grade Forgiveness:</strong> Unlike many colleges, CASPA does not replace grades for
+                    repeated courses. Every attempt is included in the cumulative and science GPA.
+                </li>
+                <li>
+                    <strong>Science (BCP) Focus:</strong> Science courses are used to calculate a separate science GPA.
+                    Most <strong>PA programs in the USA</strong> prioritize this <strong>BCP GPA</strong> (biology,
+                    chemistry, physics) during the initial screening process.
+                </li>
+                <li>
+                    <strong>Automatic Conversion:</strong> This calculator automatically handles these values for you,
+                    so you don't have to worry about the decimal math.
+                </li>
+            </ul>
+        </section>
+
+
+        <hr>
+        <section class="clm" id="how-to-use">
+            <h2>How to Calculate Your CASPA GPA: A Step-by-Step Guide</h2>
+            <p>
+                Using our calculator is the fastest way to estimate your standing for the <strong>2026-2027
+                    cycle</strong>. To ensure your results mirror the official CASPA verification, follow this
+                comprehensive process:
+            </p>
+
+            <ol>
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>1. Gather and Prepare Your Transcripts</h3>
+                    <p>
+                        Before you begin, collect transcripts from every college attended, including community colleges
+                        and study abroad programs. Remember, <strong>CASPA requires all coursework to be
+                            reported</strong>, even if credits were transferred, courses were repeated, or they didn't
+                        count toward your degree.
+                    </p>
+                </li>
+
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>2. Enter Courses and Identify Science (BCP)</h3>
+                    <p>Input each course, grade, and credit hour into the calculator. Accuracy here is essential:</p>
+                    <ul>
+                        <li><strong>Science GPA (BCP):</strong> Tag Biology, Chemistry, and Physics.</li>
+                        <li><strong>Other Science:</strong> Tag Anatomy, Physiology, and Microbiology.</li>
+                        <li><strong>Non-Science:</strong> Include Humanities, Social Sciences, Business, and English.
+                        </li>
+                    </ul>
+                    <p>
+                        <em><strong>Note on Math:</strong> While science-heavy, Mathematics is typically categorized as
+                            "Non-Science" or "other science" and is not included in the core BCP GPA.</em>
+                    </p>
+                </li>
+
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>3. Account for Weighting (Quality Points)</h3>
+                    <p>
+                        GPA isn't just an average of grades; it’s a weighted calculation. Our tool automatically
+                        determines your quality points using the official formula:
+                    </p>
+                    <strong class="special">
+                        Grade Value &times; Credit Hours &equals; Quality Points
+                    </strong>
+                    <p>
+                        <strong>Example:</strong> An A- (3.7) in a 4-credit course equals 14.8 quality points.
+                    </p>
+                </li>
+
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>4. Convert Quarter Credits (If Applicable)</h3>
+                    <p>
+                        If your school uses a quarter system, you must convert these to <strong>semester hours</strong>
+                        to match CASPA’s standardized reporting.
+                    </p>
+                    <p><strong>Conversion Formula:</strong></p>
+                    <strong class="special">
+                        Quarter Hours &times; 0.667 &equals; Semester Hours
+                    </strong>
+                    <p>
+                        <strong>Example:</strong> A 4.0 quarter-credit course becomes 2.67 semester hours.
+                    </p>
+                </li>
+
+                <li class="clm" style="margin-top: 28px;">
+                    <h3>5. Review Your Instant Results</h3>
+                    <p>
+                        Once entered, the calculator sums your total quality points and divides them by your total
+                        semester hours:
+                    </p>
+                    <strong class="special">
+                        Estimated CASPA GPA = Total Quality Points &divide; Total Semester Hours
+                    </strong>
+                    <p>
+                        Instantly, you’ll see your <strong>cumulative GPA</strong> and <strong>science GPA</strong>,
+                        ensuring you aren't surprised by a lower number than expected when you finally submit your
+                        application.
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+
+        <hr>
+        <section class="clm" id="faqs">
             <h2>Frequently Asked Questions About CASPA GPA</h2>
 
             <br>
@@ -643,6 +945,77 @@
                 </p>
             </details>
 
+        </section>
+
+        <hr>
+
+        <section class="clm">
+            <h2>Trust, Accuracy, and Developer Insights</h2>
+
+            <h3>Disclaimer &amp; Accuracy</h3>
+            <p>
+                This <strong>CASPA GPA Calculator</strong> provides an educational estimate for the <strong>2026-2027
+                    application cycle</strong>. While our logic follows official Liaison CAS grading rules, please note:
+            </p>
+            <ul>
+                <li><strong>Estimates Only:</strong> This is not an official report from CASPA or Liaison International.
+                </li>
+                <li><strong>Data Integrity:</strong> Results depend on your accurate input of grades, credits, and BCP
+                    classifications.</li>
+                <li><strong>Final Word:</strong> Official verification is performed only by CASPA during the transcript
+                    review process. Use this as a strategic planning tool to understand your competitiveness.</li>
+            </ul>
+
+            <h3>About the Developer</h3>
+            <p>
+                Built by a team of education and technology experts, this tool was created to help <strong>USA physician
+                    assistant applicants</strong> navigate the transition to the <strong>"CAS 3+" portal</strong>. We
+                built this to:
+            </p>
+            <ul>
+                <li><strong>Ensure Reliability:</strong> Automate "True GPA" math to eliminate manual errors.</li>
+                <li><strong>Drive Strategy:</strong> Help you monitor your <strong>Science (BCP) GPA</strong> and
+                    demonstrate an upward trend.</li>
+                <li><strong>Stay Current:</strong> We regularly update our logic to reflect 2026 standards, including
+                    the rising 3.3–3.4 GPA minimums.</li>
+            </ul>
+
+            <h3>Sources &amp; References</h3>
+            <p>To provide the most reliable estimate online, we utilize data from:</p>
+            <ul>
+                <li>
+                    <strong><a href="https://help.liaisonedu.com/CASPA_Applicant_Help_Center" target="_blank"
+                            rel="noopener">CASPA Help Center</a>:</strong>
+                    The primary source for the official Liaison CAS grade conversion table and BCP course subject lists.
+                </li>
+                <li>
+                    <strong><a href="https://paeaonline.org/resources/member-resources/data-reports" target="_blank"
+                            rel="noopener">PAEA (Physician Assistant Education Association)</a>:</strong>
+                    Source for national applicant guides and GPA benchmarks for matriculated students.
+                </li>
+                <li>
+                    <strong><a
+                            href="https://help.liaisonedu.com/CASPA_Applicant_Help_Center/Submitting_and_Monitoring_Your_CASPA_Application/Verification_and_GPA_Calculations_for_CASPA"
+                            target="_blank" rel="noopener">Official GPA Calculation Rules</a>:</strong>
+                    Verified against the standard US semester-to-quarter conversion ratio (0.667) used by all Liaison
+                    CAS systems.
+                </li>
+            </ul>
+        </section>
+
+        <section class="clm">
+            <h2>Calculate Your CASPA GPA Now</h2>
+            <p>
+                Ready to see where you stand for the 2026-2027 cycle? Use our calculator to instantly view your
+                cumulative and science GPA.
+            </p>
+            <ol>
+                <li>Enter your courses and credit hours.</li>
+                <li>Tag your Science (BCP) classes.</li>
+            </ol>
+            <p>
+                <strong><a href="#calculator-tool">[Get Started Now—Free, Accurate, and Easy to Use!]</a></strong>
+            </p>
         </section>
 
 
