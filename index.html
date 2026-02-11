@@ -208,6 +208,121 @@
         .hidden {
             display: none;
         }
+
+
+
+
+
+
+        /* Layout Wrapper */
+    .product-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+        background-color: #f9f9f9; /* Light contrast to make cards pop */
+        border-radius: 15px;
+    }
+
+    /* Base Card Style */
+    .product-card {
+        flex: 1;
+        min-width: 300px;
+        max-width: 450px;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px); /* Subtle hover effect for higher clicks */
+    }
+
+    .product-image {
+        flex: 1;
+        max-width: 100px;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .product-info {
+        flex: 2;
+    }
+
+    .badge {
+        background: #fdf2f2;
+        color: #d32f2f;
+        padding: 4px 10px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 50px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .badge-practice {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+
+    .product-title {
+        font-size: 17px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+        color: #222;
+        line-height: 1.2;
+    }
+
+    .product-desc {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .cta-button {
+        display: block;
+        background: #FF9900;
+        color: #000 !important;
+        text-align: center;
+        padding: 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .cta-button:hover {
+        background: #e68a00;
+        text-decoration: none;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+        .product-card {
+            flex-direction: column;
+            text-align: center;
+            max-width: 100%;
+        }
+        .product-image {
+            max-width: 120px;
+            margin-bottom: 10px;
+        }
+    }
     </style>
 
 
@@ -545,6 +660,42 @@
             </div>
 
         </section>
+
+
+
+        <section class="product-wrapper">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/51LT-OMX1YL._SY385_.jpg" alt="The LSAT Trainer">
+                </div>
+                <div class="product-info">
+                    <span class="badge">Top Rated Prep Tool</span>
+                    <h3 class="product-title">The LSAT Trainer</h3>
+                    <p class="product-desc">Master the LSAT with Mike Kim’s self-study guide. Perfect for students
+                        aiming for a T14 score.</p>
+                    <a href="https://amzn.to/3OaiXSv" target="_blank" rel="sponsored nofollow" class="cta-button">Check
+                        Price on Amazon</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81EHHUWDaZL._SY342_.jpg"
+                        alt="10 Actual Official LSAT PrepTests">
+                </div>
+                <div class="product-info">
+                    <span class="badge badge-practice">Essential Practice</span>
+                    <h3 class="product-title">10 Actual, Official LSAT PrepTests</h3>
+                    <p class="product-desc">The most effective way to prepare is with real exams. Includes 10 previously
+                        administered LSATs.</p>
+                    <a href="https://amzn.to/403iXGt" target="_blank" rel="sponsored nofollow" class="cta-button">Check
+                        Price on Amazon</a>
+                </div>
+            </div>
+        </section>
+
+
+        
 
         <section class="clm">
             <div class="clm special" style="border-left: 4px solid orangered;">
