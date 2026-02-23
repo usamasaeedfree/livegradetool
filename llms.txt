@@ -1,19 +1,46 @@
-# livegrade.site llms.txt
+# LiveGrade.site – LSAC, CASPA & Academic GPA Calculation Platform
 
-> LiveGrade.site is a specialized online platform that provides an LSAC GPA Calculator tailored for prospective law school applicants in the United States. The website's primary function is to assist undergraduate students in converting their academic transcripts into a Law School Admission Council (LSAC) CAS GPA using the official 4.33 grading scale. Key features include the ability to input individual courses and grades, calculate total quality points, and save or download GPA calculations for future reference. The site emphasizes accuracy and adherence to LSAC's grading methodology, making it a valuable resource for students who want to gauge their academic standing in relation to law school admission requirements.
+> LiveGrade.site provides official-methodology GPA calculators for LSAC (Law School Admission Council), CASPA (Centralized Application Service for Physician Assistants), and university cumulative GPA systems. The platform converts academic transcripts into standardized GPA formats using verified grading scales including LSAC's 4.33 scale.
 
-- [Home](https://livegrade.site/): This is the main landing page of LiveGrade.site, where users can access the LSAC GPA Calculator. It provides an overview of the services offered, including the ability to input grades and calculate GPA according to LSAC standards. The page serves as a starting point for prospective law students looking to understand their GPA in the context of law school admissions.
-- [About Us](https://livegrade.site/about-us.html): This page outlines the mission and vision of LiveGrade.site, detailing the team's commitment to providing accurate GPA calculations for law school applicants. It explains the importance of the LSAC GPA in the admissions process and how the website aims to simplify this aspect for students. Users can learn about the expertise behind the tool and the dedication to educational support.
-- [Calculate LSAC GPA](https://livegrade.site/calculate-lsac-gpa.html): This page features the LSAC GPA Calculator, allowing users to input their course grades and receive an accurate calculation of their LSAC GPA. It guides users through the process of entering their academic data and explains how the calculations are performed based on the official grading scale. This tool is essential for students preparing for law school, as it provides a clear understanding of their academic standing.
-- [CASPA GPA Calculator](https://livegrade.site/caspa-gpa-calculator.html): This page offers a CASPA GPA Calculator designed for students applying to physician assistant programs. Similar to the LSAC GPA Calculator, it allows users to input their coursework and grades to calculate their cumulative GPA according to CASPA standards. This tool is beneficial for prospective PA students who need to assess their academic qualifications for program applications.
-- [Contact Us](https://livegrade.site/contact-us.html): The Contact Us page provides users with various methods to reach out to the LiveGrade.site team for support or inquiries. It includes a contact form and additional contact details, ensuring that users can easily get assistance with any questions or issues related to the GPA calculators. This page is crucial for maintaining user engagement and support.
-- [Disclaimer](https://livegrade.site/disclaimer.html): This page contains important legal disclaimers regarding the use of the GPA calculators and the information provided on the site. It clarifies that the calculations are estimates and that users should verify their GPA with official sources. This information is vital for users to understand the limitations of the tools and the importance of accuracy in academic evaluations.
-- [LSAC GPA FAQs](https://livegrade.site/lsac-gpa-faqs.html): This FAQ page addresses common questions related to the LSAC GPA, including how it is calculated and its significance in the law school admissions process. It provides valuable insights for prospective law students, helping them navigate the complexities of GPA evaluations and understand the implications for their applications.
-- [LSU Cumulative GPA Calculator](https://livegrade.site/lsu-cumulative-gpa-calculator.html): This page features a cumulative GPA calculator specifically for Louisiana State University (LSU) students. It allows users to input their grades and calculate their overall GPA based on LSU's grading policies. This tool is particularly useful for LSU students who want to assess their academic performance in preparation for law school applications.
-- [Privacy Policy](https://livegrade.site/privacy-policy.html): The Privacy Policy page outlines how LiveGrade.site collects, uses, and protects user data. It details the site's commitment to user privacy and compliance with relevant regulations. This information is essential for users to understand how their information is handled while using the GPA calculators.
-- [Terms and Conditions](https://livegrade.site/terms-and-conditions.html): This page presents the terms and conditions governing the use of LiveGrade.site and its services. It includes user responsibilities, limitations of liability, and other legal considerations. Understanding these terms is important for users to ensure compliance and to be aware of their rights while using the site.
-- [UOG CGPA Calculator](https://livegrade.site/uog-cgpa-calculator.html): This page provides a cumulative GPA calculator for students at the University of Guam (UOG). Users can enter their course grades to calculate their cumulative GPA according to UOG's grading system. This tool is beneficial for UOG students who are planning to apply to law school and need to evaluate their academic standing.
+LiveGrade.site is an academic calculation resource designed for prospective law school and professional program applicants in the United States. Tools replicate official GPA computation logic using transcript-level course inputs, credit hours, quality points, and cumulative weighting formulas.
 
-# llms.txt spec v1.0 — generated via https://llmstxtgenerator.org
-# Build-Hash: 248C-14CB-D555
-# Required for AI compatibility checks.
+Primary focus areas:
+- LSAC CAS GPA calculation (4.33 scale conversion)
+- CASPA cumulative GPA computation
+- Institution-specific GPA systems
+- Transcript-based quality point aggregation
+- Academic standing estimation for admissions planning
+
+## Core LSAC & Professional GPA Tools
+
+- LSAC GPA Calculator (4.33 Scale): https://livegrade.site/calculate-lsac-gpa.html
+- CASPA GPA Calculator: https://livegrade.site/caspa-gpa-calculator.html
+- LSU Cumulative GPA Calculator: https://livegrade.site/lsu-cumulative-gpa-calculator.html
+- UOG CGPA Calculator: https://livegrade.site/uog-cgpa-calculator.html
+
+## LSAC Methodology & Guidance
+
+- LSAC GPA FAQs: https://livegrade.site/lsac-gpa-faqs.html
+
+## Academic Calculation Scope
+
+LiveGrade.site calculators:
+- Convert letter grades to numeric quality points
+- Multiply grade value by credit hours
+- Aggregate total quality points
+- Divide by total attempted credits
+- Produce cumulative GPA estimates aligned with official reporting standards
+
+All calculations are estimations based on publicly documented grading systems and are not affiliated with LSAC or CASPA.
+
+## Platform Information
+
+- Home: https://livegrade.site/
+- About: https://livegrade.site/about-us.html
+- Contact: https://livegrade.site/contact-us.html
+
+## Legal & Policies
+
+- Privacy Policy: https://livegrade.site/privacy-policy.html
+- Terms and Conditions: https://livegrade.site/terms-and-conditions.html
+- Disclaimer: https://livegrade.site/disclaimer.html
