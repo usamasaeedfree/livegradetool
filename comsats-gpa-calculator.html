@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="google-adsense-account" content="ca-pub-5118554117280809">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="en">
+    <meta name="rating" content="general">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Usama - LiveGrade">
+    <meta name="publisher" content="Usama - LiveGrade">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LiveGrade">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@LiveGrade">
+    <meta name="twitter:creator" content="@Usama">
+    <link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/src/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/src/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/src/style.css">
+
+    <link rel="manifest" href="/manifest/lsac.json">
+
+    <!-- Page Title -->
+    <title>COMSATS GPA Calculator | Accurate SGPA & CGPA Tool 2026</title>
+    <meta property="og:title" content="COMSATS GPA Calculator | Accurate SGPA & CGPA Tool 2026">
+    <meta name="twitter:title" content="COMSATS GPA Calculator | Accurate SGPA & CGPA Tool 2026">
+
+    <!-- Page Canonical URL -->
+    <link rel="canonical" href="https://livegrade.site/comsats-gpa-calculator.html">
+    <meta property="og:url" content="https://livegrade.site/comsats-gpa-calculator.html">
+
+
+    <!-- Page Description -->
+    <meta name="description"
+        content="Calculate your SGPA and CGPA instantly with this accurate COMSATS GPA Calculator. Enter credit hours and grades to get precise results based on official grading policy.">
+
+    <meta property="og:description"
+        content="Calculate your SGPA and CGPA instantly with this accurate COMSATS GPA Calculator. Enter credit hours and grades to get precise results based on official grading policy.">
+    <meta name="twitter:description"
+        content="Calculate your SGPA and CGPA instantly with this accurate COMSATS GPA Calculator. Enter credit hours and grades to get precise results based on official grading policy.">
+
+
+    <!-- Page Keywords -->
+    <meta name="keywords" content="COMSATS GPA calculator, COMSATS CGPA calculator, COMSATS SGPA calculator, CUI GPA calculator, COMSATS University GPA calculation, COMSATS grading scale, COMSATS grading policy, calculate GPA COMSATS, credit hour GPA calculator, COMSATS semester GPA, COMSATS cumulative GPA, GPA formula COMSATS, COMSATS academic calculator, GPA calculator for COMSATS students, SGPA CGPA calculator Pakistan">
+
+
+    <!-- Twitter Card Meta Tags 
+    <meta property="og:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp">
+    <meta name="twitter:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp">
+
+    <meta property="og:image" content="https://livegrade.site/src/lsac-cas-gpa-calculator.webp">
+    <meta name="twitter:image" content="https://livegrade.site/src/lsac-cas-gpa-calculator.webp"> -->
+
+
+    <style>
+        /* --- ORIGINAL STYLING PRESERVED --- */
+        .tool {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px gainsboro;
+
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 24px 16px;
+            border-bottom: 1px solid #ddd;
+            align-items: flex-end;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-row>img {
+            background-color: red;
+            width: 37px;
+            padding: 6px;
+            border-radius: 4px;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            /* Added for UX */
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        label {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .btn-section {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px 0px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn-section>button {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background-color: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s ease-in;
+        }
+
+        .btn-section>button:hover,
+        .input-row>img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .result-section>* {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #dddddd40;
+            flex-grow: 1;
+            gap: 4px;
+            text-align: center;
+        }
+
+        .result-section>*>h2 {
+            color: #2e2d2d;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .result-section>*>small {
+            color: rgb(107, 107, 107);
+        }
+
+        .history {
+            margin-top: 24px;
+            padding: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .history>b {
+            color: #2e2d2d;
+        }
+
+        .table-row {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .table-row>* {
+            display: flex;
+            flex-grow: 1;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            flex-basis: 0;
+
+            justify-content: center;
+        }
+
+        .header-row {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        /* Utility to hide elements if needed */
+        .hidden {
+            display: none;
+        }
+    </style>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://livegrade.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "COMSATS GPA Calculator",
+          "item": "https://livegrade.site/comsats-gpa-calculator.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "COMSATS GPA Calculator",
+      "url": "https://livegrade.site/comsats-gpa-calculator.html",
+      "description": "An online COMSATS GPA calculator that helps COMSATS University Islamabad students calculate their SGPA and CGPA using credit hours and the COMSATS grading system.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript. Compatible with Chrome, Firefox, Safari, and Edge.",
+      "version": "1.0",
+      "dateModified": "2026-02-26",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Live Grade",
+        "url": "https://livegrade.site/"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student"
+      },
+      "featureList": [
+        "Calculate SGPA and CGPA across multiple semesters",
+        "Uses COMSATS University grading scale",
+        "Credit hour–based GPA calculation",
+        "Instant GPA results"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1",
+        "bestRating": "5",
+        "worstRating": "0"
+      },
+      "isBasedOn": [
+        "Standard university GPA calculation methods",
+        "Official COMSATS University grading policy"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is GPA calculated at COMSATS University Islamabad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPA at COMSATS University Islamabad is calculated using a weighted average formula based on credit hours and grade points earned in each course."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the official COMSATS grading scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "COMSATS follows a 4.00 GPA scale where each letter grade corresponds to specific grade points used to compute SGPA and CGPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between SGPA and CGPA at COMSATS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SGPA refers to the GPA of a single semester, while CGPA represents the cumulative GPA across all completed semesters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do repeated courses affect my GPA at COMSATS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Repeated courses may be treated differently depending on COMSATS academic policy. In some cases, the most recent or highest grade is used for GPA calculation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this COMSATS GPA calculator official?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This calculator is an unofficial estimation tool designed to help students understand their academic standing. Official GPA values are calculated and maintained by COMSATS University Islamabad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do credit hours affect GPA calculation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Courses with higher credit hours have a greater impact on your GPA because they carry more weight in the weighted average formula."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this calculator help me predict my CGPA improvement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can enter projected grades for upcoming semesters to estimate how your CGPA may change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this GPA calculator work for all COMSATS campuses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, since the grading policy is standardized across all COMSATS campuses, this calculator applies universally."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSXB5G97K8');
+    </script> -->
+
+    <!-- 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5118554117280809"
+     crossorigin="anonymous"></script>
+      -->
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a href="/" class="logo"><img src="/src/header-logo.png"
+                    alt="LiveGrade - Professional GPA Calculation Tools" loading="lazy" width="32" height="30">Live
+                Grade</a>
+            <nav id="navLinks" class="effect">
+                <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()"
+                    aria-hidden="true">
+                <a href="/">Home</a>
+                <!-- <a href="/">About</a>
+                <a href="#">Contact</a> -->
+                <a href="#how-to-use">How to Use</a>
+                <a href="#how-it-works">How It Works</a>
+            </nav>
+            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"
+                style="cursor: pointer;">
+        </div>
+    </header>
+
+
+    <main>
+        <section class="clm">
+            <!-- <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" loading="lazy" width="90"
+                height="97" style="align-self: center; width: 100px;"> -->
+            <h1 style="text-align: center;">COMSATS GPA Calculator (SGPA & CGPA)</h1>
+            <p style="text-align: center;">This COMSATS GPA Calculator helps students of COMSATS University Islamabad
+                accurately calculate their Semester GPA (SGPA) and Cumulative GPA (CGPA) based on the official grading
+                policy. Enter your subjects, credit hours, and grades to instantly compute your result.</p>
+
+
+            <div class="tool">
+
+                <!-- INPUT SECTION -->
+                <div class="input-section" id="inputSection">
+
+                    <div class="input-row">
+                        <div class="input">
+                            <label>Subject Name</label>
+                            <input type="text" placeholder="e.g. Data Structures">
+                        </div>
+
+                        <div class="input">
+                            <label>Credit Hours</label>
+                            <input type="number" min="1" max="6" placeholder="3">
+                        </div>
+
+                        <div class="input">
+                            <label>Grade</label>
+                            <select>
+                                <option value="">Select Grade</option>
+                                <option value="4.00">A</option>
+                                <option value="3.67">A-</option>
+                                <option value="3.33">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.67">B-</option>
+                                <option value="2.33">C+</option>
+                                <option value="2.00">C</option>
+                                <option value="1.67">C-</option>
+                                <option value="1.00">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </div>
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Remove"
+                            onclick="removeRow(this)">
+                    </div>
+
+                </div>
+
+                <!-- BUTTON SECTION -->
+                <div class="btn-section">
+                    <button onclick="addRow()">Add Subject</button>
+                    <button onclick="calculateGPA()">Calculate GPA</button>
+                    <button onclick="resetCalculator()">Reset</button>
+                </div>
+
+                <!-- RESULT SECTION -->
+                <div class="result-section">
+                    <div>
+                        <h2 id="gpaResult">0.00</h2>
+                        <small>Semester GPA (SGPA)</small>
+                    </div>
+
+                    <div>
+                        <h2 id="totalCredits">0</h2>
+                        <small>Total Credit Hours</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+        <section class="clm">
+            <h2>How to Calculate GPA at COMSATS?</h2>
+            <p>At COMSATS University Islamabad, GPA is calculated using a weighted average formula based on credit hours
+                and grade points.</p>
+            <strong>GPA Formula:</strong>
+            <span>GPA = Σ (Credit Hours * Grade Points) / Σ Credit Hours</span>
+            <p>Each subject contributes according to its credit weight. Higher credit courses impact your GPA more
+                significantly.</p>
+        </section>
+
+        <hr>
+        <section class="clm">
+            <h2>COMSATS Grading Scale</h2>
+            <p>Include the grading scale table used by COMSATS:</p>
+            <div class="table-container">
+                <table class="grading-scale">
+                    <thead>
+                        <tr>
+                            <th scope="col">Grade</th>
+                            <th scope="col">Grade Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>4.00</td>
+                        </tr>
+                        <tr>
+                            <td>A-</td>
+                            <td>3.67</td>
+                        </tr>
+                        <tr>
+                            <td>B+</td>
+                            <td>3.33</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>3.00</td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>2.67</td>
+                        </tr>
+                        <tr>
+                            <td>C+</td>
+                            <td>2.33</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>2.00</td>
+                        </tr>
+                        <tr>
+                            <td>C-</td>
+                            <td>1.67</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>1.00</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://www.comsats.edu.pk/" target="_blank" rel="noopener noreferrer">
+                (Ensure accuracy with official policy.)
+            </a>
+        </section>
+
+
+        <hr>
+        <section class="clm">
+            <h2>Why Use This COMSATS GPA Calculator?</h2>
+            <ul>
+                <li>Accurate according to official grading rules</li>
+                <li>Instant automatic calculation</li>
+                <li>Supports unlimited subjects</li>
+                <li>Works on mobile and desktop</li>
+                <li>No login required</li>
+            </ul>
+            <p>Keep this benefit-focused.</p>
+        </section>
+
+
+
+        <hr>
+        <section class="clm">
+            <h2>FAQ's</h2>
+
+            <details>
+                <summary>
+                    <h3>How is GPA calculated at COMSATS University Islamabad?</h3>
+                </summary>
+                <p>The GPA at COMSATS University Islamabad is calculated using a weighted average formula based on
+                    credit hours and grade points earned in each course.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What is the official COMSATS grading scale for GPA calculation?</h3>
+                </summary>
+                <p>COMSATS follows a 4.00 GPA scale where each letter grade corresponds to specific grade points used to
+                    compute SGPA and CGPA.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>How do I calculate SGPA for a single semester at COMSATS?</h3>
+                </summary>
+                <p>To calculate Semester GPA (SGPA), multiply each course’s credit hours by its grade points, add them
+                    together, and divide by the total semester credit hours.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>How is CGPA calculated at COMSATS?</h3>
+                </summary>
+                <p>CGPA (Cumulative Grade Point Average) is calculated by combining all completed semesters and dividing
+                    total earned grade points by total attempted credit hours.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Does this COMSATS GPA calculator support both SGPA and CGPA?</h3>
+                </summary>
+                <p>Yes, this tool calculates both Semester GPA and Cumulative GPA according to the official COMSATS
+                    academic policy.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Can I calculate GPA using credit hours from different semesters?</h3>
+                </summary>
+                <p>For CGPA calculation, you must include all previous semesters' credit hours and grade points to get
+                    an accurate cumulative result.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What happens if I repeat a course at COMSATS?</h3>
+                </summary>
+                <p>If a course is repeated, the updated grade may replace the previous grade in GPA calculation
+                    depending on university academic regulations.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>How many credit hours are required to calculate GPA correctly?</h3>
+                </summary>
+                <p>You must enter the exact credit hours assigned to each subject as listed in your official transcript
+                    for accurate GPA computation.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Does this GPA calculator work for all COMSATS campuses?</h3>
+                </summary>
+                <p>Yes, since the grading policy is standardized across all campuses, this calculator applies
+                    universally.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What is the difference between GPA, SGPA, and CGPA at COMSATS?</h3>
+                </summary>
+                <p>GPA is a general term for Grade Point Average. SGPA refers to one semester’s performance, while CGPA
+                    reflects overall academic performance across multiple semesters.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Can I calculate my GPA before official results are announced?</h3>
+                </summary>
+                <p>Yes, you can estimate your GPA by entering expected grades and credit hours into this calculator.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Is the COMSATS GPA calculator based on the official grading policy?</h3>
+                </summary>
+                <p>Yes, the calculation formula aligns with the academic grading structure defined by COMSATS University
+                    Islamabad.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>How do credit hours affect GPA calculation?</h3>
+                </summary>
+                <p>Courses with higher credit hours have a greater impact on your GPA because they carry more academic
+                    weight in the weighted average formula.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Can this calculator help me predict my CGPA improvement?</h3>
+                </summary>
+                <p>Yes, you can enter projected grades for upcoming semesters to estimate how your CGPA may change.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Is this tool accurate for computing academic standing at COMSATS?</h3>
+                </summary>
+                <p>This calculator provides accurate GPA estimates; however, official academic standing is determined by
+                    the university’s examination department.</p>
+            </details>
+
+        </section>
+
+
+        <hr>
+
+        <section class="clm">
+
+            <h2>About the Developer</h2>
+            <p>
+                This COMSATS GPA Calculator was independently developed to help students accurately calculate their SGPA
+                and CGPA according to the official grading policy of COMSATS University Islamabad.
+            </p>
+
+            <h3>Why I Built This Tool</h3>
+            <p>
+                Many students struggle with manual GPA calculation, especially when dealing with multiple subjects,
+                varying credit hours, and cumulative semester records. Small calculation mistakes can significantly
+                affect academic planning, scholarship eligibility, and performance evaluation.
+            </p>
+
+            <p>
+                I built this tool to provide a fast, reliable, and easy-to-use GPA calculator that eliminates manual
+                errors and saves time. The goal was to create a lightweight academic utility that works instantly on
+                mobile and desktop without requiring registration or personal data.
+            </p>
+
+            <h3>Accuracy & Methodology</h3>
+            <p>
+                The calculation formula implemented in this tool follows the weighted average method used by COMSATS
+                University Islamabad:
+            </p>
+
+            <p>
+                <strong>GPA = Σ (Credit Hours × Grade Points) / Σ Credit Hours</strong>
+            </p>
+
+            <p>
+                The grading scale applied reflects the standard 4.00 GPA system used across COMSATS campuses.
+            </p>
+
+            <h3>Disclaimer</h3>
+            <p>
+                This is an independent academic tool and is not officially affiliated with COMSATS University Islamabad.
+                While every effort has been made to ensure accuracy, students should verify results with official
+                university records when required.
+            </p>
+
+            <h3>Last Updated</h3>
+            <p>
+                February 2026
+            </p>
+
+        </section>
+
+
+
+
+    </main>
+
+
+    <footer>
+        <div class="footer clm">
+            <a href="/" class="logo">
+                <img src="/src/footer-logo.png" alt="Live Grade - Official LSAC GPA Calculator Logo"
+                    title="Grades Calculator Tool" width="32" height="30"> Live Grade</a>
+            <p>Convert your grades and calculate your LSAC GPA instantly with Live Grade. Our online tool provides
+                reliable, easy-to-use, and accurate CAS GPA estimations for law school applicants.</p>
+
+            <a href="mailto:usama.saeed.free@gmail.com" class="email">Email: usama.saeed.free@gmail.com</a>
+            <div class="wraper">
+                <div class="wraper site effect">
+                    <a href="/">Home</a> |
+                    <a href="/about-us.html">About Us</a> |
+                    <a href="/contact-us.html">Contact Us</a> |
+                    <a href="/privacy-policy.html">Privacy Policy</a> |
+                    <a href="/terms-and-conditions.html">Terms and Conditions</a> |
+                    <a href="/disclaimer.html">Disclaimer</a>
+                </div>
+                <div class="wraper social-media effect">
+                    <a href="https://web.facebook.com/profile.php?id=100081021373803" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/facebook-profile.svg" alt="Facebook" width="25" height="25"> Visit Facebook
+                    </a>
+
+                    <a href="https://www.instagram.com/saeedusama313/" target="_blank" rel="noopener noreferrer">
+                        <img src="/src/instagram-profile.svg" alt="Instagram" width="25" height="25"> Visit Instagram
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/usama-saeed-4b814123a" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/linkedin-profile.svg" alt="LinkedIn" width="25" height="25"> Visit LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <small>&copy; 2025 Live Grade. All Rights Reserved.</small>
+    </footer>
+    <script>
+        // Navigation Bar
+        function navBar() {
+            const navLinks = document.getElementById("navLinks");
+            if (navLinks) navLinks.classList.toggle("show");
+        }
+
+
+
+        function addRow() {
+            const section = document.getElementById("inputSection");
+
+            const row = document.createElement("div");
+            row.classList.add("input-row");
+
+            row.innerHTML = `
+        <div class="input">
+            <label>Subject Name</label>
+            <input type="text" placeholder="e.g. Operating Systems">
+        </div>
+
+        <div class="input">
+            <label>Credit Hours</label>
+            <input type="number" min="1" max="6" placeholder="3">
+        </div>
+
+        <div class="input">
+            <label>Grade</label>
+            <select>
+                <option value="">Select Grade</option>
+                <option value="4.00">A</option>
+                <option value="3.67">A-</option>
+                <option value="3.33">B+</option>
+                <option value="3.00">B</option>
+                <option value="2.67">B-</option>
+                <option value="2.33">C+</option>
+                <option value="2.00">C</option>
+                <option value="1.67">C-</option>
+                <option value="1.00">D</option>
+                <option value="0.00">F</option>
+            </select>
+        </div>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
+             alt="Remove"
+             onclick="removeRow(this)">
+    `;
+
+            section.appendChild(row);
+        }
+
+        function removeRow(element) {
+            const rows = document.querySelectorAll(".input-row");
+            if (rows.length > 1) {
+                element.parentElement.remove();
+            }
+        }
+
+        function calculateGPA() {
+            const rows = document.querySelectorAll(".input-row");
+
+            let totalQualityPoints = 0;
+            let totalCredits = 0;
+
+            rows.forEach(row => {
+                const credit = parseFloat(row.querySelector("input[type='number']").value);
+                const grade = parseFloat(row.querySelector("select").value);
+
+                if (!isNaN(credit) && !isNaN(grade)) {
+                    totalQualityPoints += credit * grade;
+                    totalCredits += credit;
+                }
+            });
+
+            const gpa = totalCredits > 0 ? (totalQualityPoints / totalCredits).toFixed(2) : "0.00";
+
+            document.getElementById("gpaResult").innerText = gpa;
+            document.getElementById("totalCredits").innerText = totalCredits;
+        }
+
+        function resetCalculator() {
+            document.getElementById("inputSection").innerHTML = "";
+            addRow();
+            document.getElementById("gpaResult").innerText = "0.00";
+            document.getElementById("totalCredits").innerText = "0";
+        }
+
+    </script>
+</body>
+
+</html>
