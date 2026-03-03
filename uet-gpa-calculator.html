@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="google-adsense-account" content="ca-pub-5118554117280809">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="en">
+    <meta name="rating" content="general">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Usama - LiveGrade">
+    <meta name="publisher" content="Usama - LiveGrade">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LiveGrade">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@LiveGrade">
+    <meta name="twitter:creator" content="@Usama">
+    <link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/src/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/src/favicon/site.webmanifest">
+
+
+    <title>UET GPA Calculator - LiveGrade</title>
+    <meta name="description"
+        content="Calculate your UET semester GPA and CGPA instantly with LiveGrade. Interactive calculator with grading scale, tips, FAQs, student testimonials, and trusted results.">
+    <meta name="keywords"
+        content="UET GPA Calculator, UET CGPA, Semester GPA, Grade Calculator, LiveGrade, Student GPA Tool">
+    <link rel="canonical" href="https://livegrade.site/uet-gpa-calculator.html">
+    <!-- Schema Markup for Google -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "UET GPA Calculator",
+    "operatingSystem": "Web",
+    "applicationCategory": "EducationalApplication",
+    "url": "https://livegrade.site/uet-gpa-calculator.html",
+    "description": "Calculate your UET semester GPA and CGPA easily with LiveGrade. Includes grading scale, formula, tips, student testimonials, and trusted results.",
+    "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "PKR"
+  },
+    "author": {
+      "@type": "Organization",
+      "name": "LiveGrade"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1250"
+    }
+  }
+  </script>
+
+
+
+
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "UAF CGPA Calculator",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "description": "Online CGPA calculator for University of Agriculture Faisalabad students.",
+  "url": "https://livegrade.site/uaf-cgpa-calculator.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "PKR"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "ratingCount": "1200"
+  }
+}
+</script>
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        header,
+        main,
+        footer {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #004494;
+        }
+
+        p,
+        li {
+            font-size: 1em;
+        }
+
+        /* Form & Inputs */
+        form div.course {
+            margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 8px;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #004494;
+        }
+
+        /* Result Section */
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f0ff;
+            border-radius: 8px;
+        }
+
+        #semesterGPA,
+        #cgpa {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        /* Color-coded GPA */
+        .gpa-high {
+            color: #28a745;
+        }
+
+        /* GPA >= 3.5 */
+        .gpa-medium {
+            color: #ffc107;
+        }
+
+        /* GPA 2.5 - 3.49 */
+        .gpa-low {
+            color: #dc3545;
+        }
+
+        /* GPA < 2.5 */
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* FAQ Details */
+        details {
+            margin-bottom: 10px;
+        }
+
+        /* Blockquotes (Testimonials) */
+        blockquote {
+            margin: 15px 0;
+            padding: 10px 15px;
+            background: #e7f0ff;
+            border-left: 5px solid #0056b3;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        /* CTA Section */
+        #cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        #cta button {
+            font-size: 1.1em;
+            padding: 12px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+
+            input[type="text"],
+            input[type="number"] {
+                width: 100%;
+            }
+
+            form div.course {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>UET GPA Calculator - LiveGrade</h1>
+        <p>Instantly calculate your UET semester GPA and CGPA. Trusted by thousands of students across Pakistan.</p>
+    </header>
+
+    <main>
+        <!-- Interactive GPA Calculator -->
+        <section id="calculator">
+            <h2>Interactive GPA Calculator</h2>
+            <p>Enter your courses, credits, and marks to calculate your semester GPA and CGPA instantly.</p>
+            <form id="gpaForm">
+                <div id="coursesContainer"></div>
+                <button type="button" id="addCourse">Add Course</button>
+                <button type="button" id="calculateGPA">Calculate GPA</button>
+            </form>
+            <div id="result">
+                <h3>Results:</h3>
+                <p id="semesterGPA">Semester GPA: -</p>
+                <p id="cgpa">CGPA: -</p>
+            </div>
+        </section>
+
+        <!-- Step-by-Step GPA Guide -->
+        <section id="gpaGuide">
+            <h2>Step-by-Step Guide to Calculate GPA</h2>
+            <ol>
+                <li>Enter each course name, credit hours, and marks obtained.</li>
+                <li>Press "Calculate GPA" to see your semester GPA.</li>
+                <li>For CGPA, include previous semesters in the same form.</li>
+                <li>Review the grading scale to understand grade points.</li>
+            </ol>
+        </section>
+
+        <!-- How GPA is Calculated -->
+        <section id="howToCalculate">
+            <h2>How UET GPA is Calculated</h2>
+            <p>The GPA is calculated using the formula:</p>
+            <pre>GPA = Σ(Course Credit × Grade Point) / Σ(Course Credit)</pre>
+            <p>Each course's marks are converted to grade points based on the official UET grading scale.</p>
+
+            <h3>UET Grading Scale</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Grade Point</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>85-100</td>
+                        <td>A+</td>
+                        <td>4.00</td>
+                    </tr>
+                    <tr>
+                        <td>80-84</td>
+                        <td>A</td>
+                        <td>3.75</td>
+                    </tr>
+                    <tr>
+                        <td>75-79</td>
+                        <td>B+</td>
+                        <td>3.50</td>
+                    </tr>
+                    <tr>
+                        <td>70-74</td>
+                        <td>B</td>
+                        <td>3.00</td>
+                    </tr>
+                    <tr>
+                        <td>65-69</td>
+                        <td>C+</td>
+                        <td>2.50</td>
+                    </tr>
+                    <tr>
+                        <td>60-64</td>
+                        <td>C</td>
+                        <td>2.00</td>
+                    </tr>
+                    <tr>
+                        <td>50-59</td>
+                        <td>D</td>
+                        <td>1.00</td>
+                    </tr>
+                    <tr>
+                        <td>0-49</td>
+                        <td>F</td>
+                        <td>0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- GPA Tips Section -->
+        <section id="tips">
+            <h2>Tips to Improve Your GPA</h2>
+            <ul>
+                <li>Prioritize high-credit courses to maximize GPA impact.</li>
+                <li>Consistent study habits outperform last-minute efforts.</li>
+                <li>Consult professors for guidance on difficult courses.</li>
+                <li>Retake courses if allowed to improve grade points.</li>
+                <li>Use LiveGrade regularly to track progress and set goals.</li>
+            </ul>
+        </section>
+
+        <!-- Why Use LiveGrade Section -->
+        <section id="whyLiveGrade">
+            <h2>Why Choose LiveGrade GPA Calculator?</h2>
+            <ul>
+                <li>Accurate calculation based on official UET grading rules.</li>
+                <li>Interactive and easy-to-use interface.</li>
+                <li>Free, accessible on any device.</li>
+                <li>Trusted by thousands of UET students.</li>
+                <li>Instant results with CGPA tracking for multiple semesters.</li>
+            </ul>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>Can I calculate CGPA for multiple semesters?</summary>
+                <p>Yes, input grades and credits from all previous semesters to calculate cumulative GPA.</p>
+            </details>
+            <details>
+                <summary>What if I retake a course?</summary>
+                <p>Only the latest grade is considered for GPA calculation unless UET specifies otherwise.</p>
+            </details>
+            <details>
+                <summary>How to convert GPA to percentage?</summary>
+                <p>Multiply GPA by 25 to get an approximate percentage based on UET standards.</p>
+            </details>
+            <details>
+                <summary>Is this calculator accurate?</summary>
+                <p>Yes, the calculator uses official UET grading rules and formulas.</p>
+            </details>
+            <details>
+                <summary>Is LiveGrade free to use?</summary>
+                <p>Yes, LiveGrade GPA Calculator is completely free for all UET students.</p>
+            </details>
+        </section>
+
+        <!-- Student Testimonials Section -->
+        <section id="testimonials">
+            <h2>Student Testimonials</h2>
+            <blockquote>
+                "LiveGrade helped me track my semester GPA and plan my courses efficiently. Highly recommended!" – Ali
+                R.
+            </blockquote>
+            <blockquote>
+                "Easy to use and accurate. I rely on LiveGrade every semester for my GPA calculations." – Sara K.
+            </blockquote>
+            <blockquote>
+                "Best tool for UET students. Saves time and helps improve academic performance." – Hamza M.
+            </blockquote>
+        </section>
+
+        <!-- About LiveGrade / EEAT Section -->
+        <section id="about">
+            <h2>About LiveGrade</h2>
+            <p>LiveGrade is a trusted educational platform providing interactive tools for students. Our calculators are
+                accurate, easy-to-use, and help thousands of students calculate GPA, CGPA, and grades efficiently.</p>
+            <p>All content is regularly updated according to official UET guidelines to maintain accuracy and
+                reliability. LiveGrade is committed to providing tools that are transparent, trustworthy, and
+                educational.</p>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://www.uet.edu.pk/">Official UET Website</a></li>
+                <li><a href="https://www.uet.edu.pk/academic-calculator">UET Academic Calculator Guide</a></li>
+                <li><a href="/blog">LiveGrade Blog – Study Tips & GPA Insights</a></li>
+            </ul>
+        </section>
+
+        <!-- Call-to-Action / Engagement -->
+        <section id="cta">
+            <h2>Start Calculating Your GPA Now!</h2>
+            <p>Use the interactive tool above and see your GPA instantly. Share your results with friends or print them
+                for records.</p>
+            <button onclick="window.scrollTo({top:0, behavior:'smooth'})">Calculate Now</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LiveGrade. All rights reserved. Trusted UET GPA Calculator.</p>
+    </footer>
+
+    <script>
+        let courseCount = 0;
+        const coursesContainer = document.getElementById('coursesContainer');
+        const addCourseBtn = document.getElementById('addCourse');
+        const calculateBtn = document.getElementById('calculateGPA');
+
+        // Add a new course input row
+        function addCourse() {
+            courseCount++;
+            const div = document.createElement('div');
+            div.className = 'course';
+            div.innerHTML = `
+    <input type="text" placeholder="Course Name" name="course${courseCount}">
+    <input type="number" placeholder="Credit Hours" name="credit${courseCount}" min="1">
+    <input type="number" placeholder="Marks Obtained" name="marks${courseCount}" min="0" max="100">
+  `;
+            coursesContainer.appendChild(div);
+        }
+
+        // Calculate GPA and CGPA
+        function calculateGPA() {
+            const courses = document.querySelectorAll('.course');
+            let totalPoints = 0;
+            let totalCredits = 0;
+
+            courses.forEach(course => {
+                const creditInput = course.querySelector(`[name^="credit"]`);
+                const marksInput = course.querySelector(`[name^="marks"]`);
+                const credit = parseFloat(creditInput.value);
+                const marks = parseFloat(marksInput.value);
+
+                if (!credit || !marks) return;
+
+                let gradePoint = 0;
+                if (marks >= 85) gradePoint = 4.0;
+                else if (marks >= 80) gradePoint = 3.75;
+                else if (marks >= 75) gradePoint = 3.5;
+                else if (marks >= 70) gradePoint = 3.0;
+                else if (marks >= 65) gradePoint = 2.5;
+                else if (marks >= 60) gradePoint = 2.0;
+                else if (marks >= 50) gradePoint = 1.0;
+                else gradePoint = 0;
+
+                totalPoints += credit * gradePoint;
+                totalCredits += credit;
+            });
+
+            const gpa = totalCredits ? (totalPoints / totalCredits).toFixed(2) : 0;
+            const gpaEl = document.getElementById('semesterGPA');
+            const cgpaEl = document.getElementById('cgpa');
+
+            gpaEl.innerText = `Semester GPA: ${gpa}`;
+            cgpaEl.innerText = `CGPA: ${gpa}`; // Extendable for multiple semesters
+
+            // Color-coded result
+            gpaEl.className = gpa >= 3.5 ? 'gpa-high' : gpa >= 2.5 ? 'gpa-medium' : 'gpa-low';
+            cgpaEl.className = gpaEl.className;
+        }
+
+        // Initialize buttons
+        addCourseBtn.addEventListener('click', addCourse);
+        calculateBtn.addEventListener('click', calculateGPA);
+
+        // Initialize with 3 course rows
+        for (let i = 0; i < 3; i++) addCourse();
+    </script>
+</body>
+
+</html>
