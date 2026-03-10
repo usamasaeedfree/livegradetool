@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="google-adsense-account" content="ca-pub-5118554117280809">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="en">
+    <meta name="rating" content="general">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Usama - LiveGrade">
+    <meta name="publisher" content="Usama - LiveGrade">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LiveGrade">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@LiveGrade">
+    <meta name="twitter:creator" content="@Usama">
+    <link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/src/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/src/favicon/site.webmanifest">
+    <link rel="stylesheet" href="/src/style.css">
+
+    <link rel="manifest" href="/manifest/lsac.json">
+
+    <!-- Page Title -->
+    <title>UMT GPA Calculator (2026) | Calculate GPA Instantly</title>
+    <meta property="og:title" content="UMT GPA Calculator (2026) | Calculate GPA Instantly">
+    <meta name="twitter:title" content="UMT GPA Calculator (2026) | Calculate GPA Instantly">
+
+    <!-- Page Canonical URL -->
+    <link rel="canonical" href="https://livegrade.site/umt-gpa-calculator.html">
+    <meta property="og:url" content="https://livegrade.site/umt-gpa-calculator.html">
+
+
+    <!-- Page Description -->
+    <meta name="description"
+        content="Calculate your UMT GPA instantly. Enter courses, credit hours, and grades to get accurate GPA based on the official UMT grading system.">
+
+    <meta property="og:description"
+        content="Calculate your UMT GPA instantly. Enter courses, credit hours, and grades to get accurate GPA based on the official UMT grading system.">
+    <meta name="twitter:description"
+        content="Calculate your UMT GPA instantly. Enter courses, credit hours, and grades to get accurate GPA based on the official UMT grading system.">
+
+
+    <!-- Page Keywords -->
+    <meta name="keywords"
+        content="UMT GPA Calculator, gpa calculator UMT, calculate GPA UMT, gpa UMT calculator, how to calculate GPA UMT, online GPA calculator UMT, online UMT GPA calculator, UMT GPA calculator formula, UMT GPA calculator Lahore, UMT GPA calculator 2018, UMT grading system, UMT semester GPA, UMT course grades, UMT credit hours, UMT grade points, UMT GPA scale, semester GPA calculator UMT, calculate semester GPA UMT, UMT GPA estimation, UMT grade to GPA, UMT CGPA, cumulative GPA UMT">
+
+
+    <!-- Twitter Card Meta Tags 
+    <meta property="og:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp">
+    <meta name="twitter:image" content="https://livegrade.site/src/lsac-gpa-converter-tool.webp">
+
+    <meta property="og:image" content="https://livegrade.site/src/lsac-cas-gpa-calculator.webp">
+    <meta name="twitter:image" content="https://livegrade.site/src/lsac-cas-gpa-calculator.webp"> -->
+
+
+    <style>
+        /* Container Styling */
+        #gpa-calculator {
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 25px 30px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* Heading */
+        #gpa-calculator h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #007bff;
+            letter-spacing: 0.5px;
+        }
+
+        /* Course Row */
+        .course-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .course-row input,
+        .course-row select {
+            padding: 8px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        .course-row input:focus,
+        .course-row select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+            outline: none;
+        }
+
+        /* Buttons */
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Add & Calculate Buttons */
+        #add-course,
+        #calculate-gpa {
+            padding: 10px 15px;
+            margin-top: 12px;
+            width: 48%;
+        }
+
+        #add-course {
+            background-color: #17a2b8;
+        }
+
+        #add-course:hover {
+            background-color: #117a8b;
+        }
+
+        /* Remove Button */
+        .remove-course {
+            background-color: #dc3545;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .remove-course:hover {
+            background-color: #a71d2a;
+        }
+
+        /* Result Styling */
+        #result {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #28a745;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #e9f7ef;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .course-row {
+                flex-direction: column;
+            }
+
+            #add-course,
+            #calculate-gpa {
+                width: 100%;
+            }
+        }
+    </style>
+
+
+
+
+
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSXB5G97K8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YSXB5G97K8');
+    </script> -->
+
+    <!-- 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5118554117280809"
+     crossorigin="anonymous"></script>
+      -->
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a href="/" class="logo"><img src="/src/header-logo.png"
+                    alt="LiveGrade - Professional GPA Calculation Tools" loading="lazy" width="32" height="30">Live
+                Grade</a>
+            <nav id="navLinks" class="effect">
+                <img src="/src/close-menu-button.svg" alt="menu close icon" width="25" height="25" onclick="navBar()"
+                    aria-hidden="true">
+                <a href="/">Home</a>
+                <a href="/about-us.html">About</a>
+                <a href="/contact-us.html">Contact</a>
+            </nav>
+            <img src="/src/open-menu-button.svg" alt="open menu icon" width="25" height="25" onclick="navBar()"
+                style="cursor: pointer;">
+        </div>
+    </header>
+
+
+    <main>
+        <section class="clm">
+            <!-- <img src="/src/lsac-gpa-calculator.webp" alt="law school gpa estimator" loading="lazy" width="90"
+                height="97" style="align-self: center; width: 100px;"> -->
+            <h1 style="text-align: center;">UMT GPA Calculator</h1>
+            <p style="text-align: center;">Use this UMT GPA calculator to quickly calculate your semester GPA based on
+                the official UMT grading system and methodology. Enter your courses, credit hours, and grades to get an
+                accurate GPA instantly.</p>
+
+
+
+            <!-- UMT GPA Calculator Tool -->
+            <div id="gpa-calculator"
+                style="max-width:600px;margin:0 auto;padding:20px;border:1px solid #ddd;border-radius:8px;font-family:sans-serif;">
+                <h2 style="text-align:center;">UMT GPA Calculator</h2>
+
+                <div id="courses-container">
+                    <div class="course-row" style="display:flex;gap:10px;margin-bottom:10px;">
+                        <input type="text" class="course-name" placeholder="Course Name" style="flex:2;padding:5px;">
+                        <input type="number" class="course-credit" placeholder="Credit Hours" min="0"
+                            style="flex:1;padding:5px;">
+                        <select class="course-grade" style="flex:1;padding:5px;">
+                            <option value="">Grade</option>
+                            <option value="4.0">A</option>
+                            <option value="3.7">A-</option>
+                            <option value="3.3">B+</option>
+                            <option value="3.0">B</option>
+                            <option value="2.7">B-</option>
+                            <option value="2.3">C+</option>
+                            <option value="2.0">C</option>
+                            <option value="1.7">C-</option>
+                            <option value="1.3">D+</option>
+                            <option value="1.0">D</option>
+                            <option value="0.0">F</option>
+                        </select>
+                        <button type="button" class="remove-course" style="flex:0;padding:5px;">Remove</button>
+                    </div>
+                </div>
+
+                <button id="add-course" style="margin-top:10px;padding:8px 12px;">Add Course</button>
+                <button id="calculate-gpa" style="margin-top:10px;padding:8px 12px;">Calculate GPA</button>
+
+                <div id="result" style="margin-top:20px;font-size:18px;font-weight:bold;text-align:center;"></div>
+            </div>
+
+
+
+        </section>
+
+
+        <hr>
+        <section class="clm">
+            <h2>UMT Grading System</h2>
+            <p>The University of Management and Technology (UMT) uses a 4.00 GPA grading scale to evaluate student
+                performance. Each letter grade corresponds to a specific grade point value that is used to calculate
+                your semester GPA. Our UMT GPA calculator on this page uses the same grading system to ensure accurate
+                and reliable results.</p>
+            <p>Here is the UMT grading scale:</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Grade</th>
+                            <th>Grade Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>4.00</td>
+                        </tr>
+                        <tr>
+                            <td>A-</td>
+                            <td>3.70</td>
+                        </tr>
+                        <tr>
+                            <td>B+</td>
+                            <td>3.30</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>3.00</td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>2.70</td>
+                        </tr>
+                        <tr>
+                            <td>C+</td>
+                            <td>2.30</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>2.00</td>
+                        </tr>
+                        <tr>
+                            <td>C-</td>
+                            <td>1.70</td>
+                        </tr>
+                        <tr>
+                            <td>D+</td>
+                            <td>1.30</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>1.00</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>These grade points are multiplied by the credit hours of each course to calculate total grade points.
+                Your GPA is then calculated by dividing the total grade points by the total credit hours for the
+                semester. Using the official UMT grading system ensures that your GPA calculation is accurate and
+                reflects your true academic performance.
+
+            </p>
+        </section>
+
+        <hr>
+        <section class="clm">
+            <h2>How UMT GPA Is Calculated</h2>
+            <p>Calculating your GPA at UMT is simple once you know the formula. Your GPA is determined by dividing the
+                total grade points earned by the total credit hours of all courses in a semester.</p>
+
+            <h3>GPA Formula:</h3>
+            <p>GPA = Total Grade Points ÷ Total Credit Hours</p>
+
+            <h3>Step-by-Step Example:</h3>
+            <ol>
+                <li>Suppose you have three courses:
+                    <ol>
+                        <li>Course 1: A (4.0) × 3 credit hours = 12 grade points</li>
+                        <li>Course 2: B+ (3.3) × 3 credit hours = 9.9 grade points</li>
+                        <li>Course 3: B (3.0) × 4 credit hours = 12 grade points</li>
+                    </ol>
+                </li>
+                <li>Add the total grade points: 12 + 9.9 + 12 = 33.9</li>
+                <li>Add the total credit hours: 3 + 3 + 4 = 10</li>
+                <li>Divide total grade points by total credit hours: 33.9 ÷ 10 = 3.39 GPA</li>
+            </ol>
+
+            <p>This is exactly how the UMT GPA calculator on this page works—it multiplies each course’s grade point by
+                its credit hours, sums the results, and divides by the total credits to give you an instant, accurate
+                GPA.</p>
+        </section>
+
+        <hr>
+        <section class="clm">
+            <h2>How to Use the UMT GPA Calculator</h2>
+            <p>Using the UMT GPA calculator is quick and straightforward. Follow these steps to calculate your semester
+                GPA instantly:</p>
+            <ol>
+                <li><strong>Enter your course names: </strong>Add each course you are enrolled in for the semester.</li>
+                <li><strong>Input credit hours: </strong>Specify the number of credit hours assigned to each course.
+                </li>
+                <li><strong>Select your grades: </strong>Choose the grade you received for each course from the UMT
+                    grading scale.</li>
+                <li><strong>Click “Calculate GPA”: </strong>The calculator will automatically compute your semester GPA.
+                </li>
+                <li><strong>View your result: </strong>Your GPA and total credit hours will be displayed immediately.
+                </li>
+            </ol>
+            <p>This tool eliminates manual calculation, ensuring accurate results based on the official UMT grading
+                system. You can also add or remove courses if needed and recalculate your GPA in seconds.</p>
+        </section>
+
+
+
+
+        <hr>
+
+        <section class="clm">
+            <h2>UMT GPA Calculator FAQs</h2>
+
+            <details>
+                <summary>
+                    <h3>What is the highest GPA a student can achieve at UMT?</h3>
+                </summary>
+                <p>The highest possible GPA at the University of Management and Technology (UMT) is
+                    <strong>4.00</strong>. This represents excellent academic performance in a semester and follows the
+                    official UMT grading scale.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>How is GPA calculated at UMT?</h3>
+                </summary>
+                <p>UMT calculates GPA by multiplying each course's grade points by its credit hours, summing all the
+                    grade points, and then dividing by the total credit hours for that semester. This method ensures
+                    accurate semester GPA results.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>How do I calculate my UMT GPA?</h3>
+                </summary>
+                <p>To calculate your UMT GPA manually, follow these steps: list all your courses for the semester, note
+                    the credit hours for each, convert your letter grades into grade points based on the official UMT
+                    grading scale, multiply each grade point by its credit hours, sum the results, and divide by the
+                    total credit hours. Or, use this online GPA calculator for instant results.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Can this calculator be used for CGPA?</h3>
+                </summary>
+                <p>No, this calculator is specifically for calculating <strong>semester GPA</strong>. To calculate your
+                    <strong>cumulative GPA (CGPA)</strong> across multiple semesters, please use the dedicated UMT CGPA
+                    calculator.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Are the results from this calculator accurate?</h3>
+                </summary>
+                <p>Yes, this tool uses the <strong>official UMT grading scale and formula</strong> to provide precise
+                    GPA calculations. You can rely on it for accurate semester GPA estimations.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Can I add or remove courses while using the calculator?</h3>
+                </summary>
+                <p>Yes, you can add as many courses as you need or remove them before calculating. The calculator
+                    automatically updates your GPA in real-time.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>Do I need to register or log in to use this calculator?</h3>
+                </summary>
+                <p>No registration or login is required. The UMT GPA calculator is <strong>completely free</strong> and
+                    instantly accessible online.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What is 75% in GPA at UMT?</h3>
+                </summary>
+                <p>At UMT, 75% roughly corresponds to a grade of <strong>B+</strong>, which equals <strong>3.3
+                        GPA</strong> based on the official 4.0 scale.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What is 70% of a 4.0 GPA?</h3>
+                </summary>
+                <p>70% of the maximum 4.0 GPA is approximately <strong>2.8 GPA</strong>. This typically corresponds to a
+                    <strong>B</strong> grade at UMT.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What grade corresponds to a 2.8 CGPA?</h3>
+                </summary>
+                <p>A CGPA of 2.8 usually corresponds to a <strong>B</strong> grade at UMT. Keep in mind that this is an
+                    average across all courses taken.</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>What is the UMT grading percentage scale?</h3>
+                </summary>
+                <p>The UMT grading percentage scale converts numeric marks to letter grades and GPA as follows: A
+                    (85–100%), A- (80–84%), B+ (75–79%), B (70–74%), B- (65–69%), C+ (60–64%), C (55–59%), C- (50–54%),
+                    D+ (45–49%), D (40–44%), F (&lt;40%).</p>
+            </details>
+
+            <details>
+                <summary>
+                    <h3>How do I convert GPA to CGPA at UMT?</h3>
+                </summary>
+                <p>To convert semester GPA to CGPA, sum the GPA of all completed semesters multiplied by their credit
+                    hours, then divide by the total credit hours completed. This gives your cumulative GPA on the 4.0
+                    scale.</p>
+            </details>
+        </section>
+
+
+
+    </main>
+
+
+    <footer>
+        <div class="footer clm">
+            <a href="/" class="logo">
+                <img src="/src/footer-logo.png" alt="Live Grade - Official LSAC GPA Calculator Logo"
+                    title="Grades Calculator Tool" width="32" height="30"> Live Grade</a>
+            <p>Calculate your UMT GPA instantly with this easy-to-use online tool. Enter your courses, credit hours, and
+                grades to get accurate semester GPA results based on the official UMT grading system. Reliable, fast,
+                and designed for UMT students.</p>
+
+            <a href="mailto:usama.saeed.free@gmail.com" class="email">Email: usama.saeed.free@gmail.com</a>
+            <div class="wraper">
+                <div class="wraper site effect">
+                    <a href="/">Home</a> |
+                    <a href="/about-us.html">About Us</a> |
+                    <a href="/contact-us.html">Contact Us</a> |
+                    <a href="/privacy-policy.html">Privacy Policy</a> |
+                    <a href="/terms-and-conditions.html">Terms and Conditions</a> |
+                    <a href="/disclaimer.html">Disclaimer</a>
+                </div>
+                <div class="wraper social-media effect">
+                    <a href="https://web.facebook.com/profile.php?id=100081021373803" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/facebook-profile.svg" alt="Facebook" width="25" height="25"> Visit Facebook
+                    </a>
+
+                    <a href="https://www.instagram.com/saeedusama313/" target="_blank" rel="noopener noreferrer">
+                        <img src="/src/instagram-profile.svg" alt="Instagram" width="25" height="25"> Visit Instagram
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/usama-saeed-4b814123a" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="/src/linkedin-profile.svg" alt="LinkedIn" width="25" height="25"> Visit LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <small>&copy; 2025 Live Grade. All Rights Reserved.</small>
+    </footer>
+    <script>
+        // Navigation Bar
+        function navBar() {
+            const navLinks = document.getElementById("navLinks");
+            if (navLinks) navLinks.classList.toggle("show");
+        }
+
+    </script>
+
+    <script>
+        const container = document.getElementById('courses-container');
+        const addBtn = document.getElementById('add-course');
+        const calculateBtn = document.getElementById('calculate-gpa');
+        const resultDiv = document.getElementById('result');
+
+        // Function to add a new course row
+        addBtn.addEventListener('click', () => {
+            const row = document.createElement('div');
+            row.className = 'course-row';
+            row.style.display = 'flex';
+            row.style.gap = '10px';
+            row.style.marginBottom = '10px';
+            row.innerHTML = `
+    <input type="text" class="course-name" placeholder="Course Name" style="flex:2;padding:5px;">
+    <input type="number" class="course-credit" placeholder="Credit Hours" min="0" style="flex:1;padding:5px;">
+    <select class="course-grade" style="flex:1;padding:5px;">
+      <option value="">Grade</option>
+      <option value="4.0">A</option>
+      <option value="3.7">A-</option>
+      <option value="3.3">B+</option>
+      <option value="3.0">B</option>
+      <option value="2.7">B-</option>
+      <option value="2.3">C+</option>
+      <option value="2.0">C</option>
+      <option value="1.7">C-</option>
+      <option value="1.3">D+</option>
+      <option value="1.0">D</option>
+      <option value="0.0">F</option>
+    </select>
+    <button type="button" class="remove-course" style="flex:0;padding:5px;">Remove</button>
+  `;
+            container.appendChild(row);
+
+            // Add remove functionality
+            row.querySelector('.remove-course').addEventListener('click', () => row.remove());
+        });
+
+        // Initial remove button for first row
+        document.querySelectorAll('.remove-course').forEach(btn => {
+            btn.addEventListener('click', (e) => e.target.parentElement.remove());
+        });
+
+        // Calculate GPA
+        calculateBtn.addEventListener('click', () => {
+            const rows = document.querySelectorAll('.course-row');
+            let totalPoints = 0;
+            let totalCredits = 0;
+            let valid = true;
+
+            rows.forEach(row => {
+                const credit = parseFloat(row.querySelector('.course-credit').value);
+                const grade = parseFloat(row.querySelector('.course-grade').value);
+                if (!credit || credit <= 0 || isNaN(grade)) {
+                    valid = false;
+                } else {
+                    totalPoints += grade * credit;
+                    totalCredits += credit;
+                }
+            });
+
+            if (!valid || totalCredits === 0) {
+                resultDiv.textContent = 'Please enter valid credit hours and grades for all courses.';
+                return;
+            }
+
+            const gpa = (totalPoints / totalCredits).toFixed(2);
+            resultDiv.textContent = `Your GPA: ${gpa} (Total Credits: ${totalCredits})`;
+        });
+    </script>
+</body>
+
+</html>
